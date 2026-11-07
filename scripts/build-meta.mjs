@@ -4,19 +4,58 @@ import fs from 'node:fs';
 
 const SITE = 'https://michtru.github.io/CeM/';
 const svg = fs.readFileSync('src/assets/logo-inline.svg', 'utf8');
-const amp = svg.match(/class="cm-amp" d="([^"]+)"/)[1];
+// la "&" del logo, ritracciata con più ammorbidimento per le icone grandi
+const amp = fs.readFileSync('assets-src/logo/amp-icona.txt', 'utf8').replace(/-?\d+\.\d+/g, (n) => (+n).toFixed(1));
 const nums = amp.match(/-?\d+(\.\d+)?/g).map(Number);
 const xs = nums.filter((_, i) => i % 2 === 0);
 const ys = nums.filter((_, i) => i % 2 === 1);
 const [x0, x1, y0, y1] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
-const size = Math.max(x1 - x0, y1 - y0) * 1.7;
-const cx = (x0 + x1) / 2;
-const cy = (y0 + y1) / 2;
-const vb = `${cx - size / 2} ${cy - size / 2} ${size} ${size}`;
-const fav = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${vb}"><rect x="${cx - size / 2}" y="${cy - size / 2}" width="${size}" height="${size}" rx="${size * 0.22}" fill="#16110D"/><path fill="#BBBAB5" fill-rule="evenodd" d="${amp}"/></svg>`;
-fs.writeFileSync('public/favicon.svg', fav);
-await sharp(Buffer.from(fav)).resize(32, 32).png().toFile('public/favicon-32.png');
-await sharp(Buffer.from(fav)).resize(180, 180).png().toFile('public/apple-touch-icon.png');
+// Icona: la "&" del logo su fondo espresso, con la luce della tenda e la linea cognac
+function icon(px, { maskable = false, rounded = true } = {}) {
+  const S = 1000;
+  const scale = maskable ? 0.5 : 0.62;              // la "&" occupa il centro (zona sicura per maskable)
+  const w = x1 - x0, h = y1 - y0;
+  const k = (S * scale) / Math.max(w, h);
+  const tx = S / 2 - (x0 + w / 2) * k;
+  const ty = S / 2 - (y0 + h / 2) * k - S * 0.03;
+  const lineY = S / 2 + (h * k) / 2 + S * 0.05;
+  const lineW = S * (maskable ? 0.36 : 0.46);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${px}" height="${px}" viewBox="0 0 ${S} ${S}">
+  <defs>
+    <radialGradient id="bg" cx="28%" cy="18%" r="95%"><stop offset="0" stop-color="#3a2b21"/><stop offset=".55" stop-color="#211913"/><stop offset="1" stop-color="#140f0b"/></radialGradient>
+    <linearGradient id="blade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffd6aa" stop-opacity="0"/><stop offset=".5" stop-color="#ffd6aa" stop-opacity=".13"/><stop offset="1" stop-color="#ffd6aa" stop-opacity="0"/></linearGradient>
+    <linearGradient id="amp" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f5efe6"/><stop offset="1" stop-color="#d8c3a8"/></linearGradient>
+    <linearGradient id="line" x1="0" x2="1"><stop offset="0" stop-color="#9a6440" stop-opacity="0"/><stop offset=".5" stop-color="#c48a5e"/><stop offset="1" stop-color="#9a6440" stop-opacity="0"/></linearGradient>
+  </defs>
+  <rect width="${S}" height="${S}" rx="${rounded ? S * 0.22 : 0}" fill="url(#bg)"/>
+  <g transform="rotate(-28 500 500)"><rect x="-300" y="300" width="1600" height="170" fill="url(#blade)"/><rect x="-300" y="560" width="1600" height="70" fill="url(#blade)"/></g>
+  <path transform="translate(${tx} ${ty}) scale(${k})" fill="url(#amp)" fill-rule="evenodd" d="${amp}"/>
+  <rect x="${S / 2 - lineW / 2}" y="${lineY}" width="${lineW}" height="${S * 0.012}" rx="${S * 0.006}" fill="url(#line)"/>
+</svg>`;
+}
+fs.writeFileSync('public/favicon.svg', icon(64));
+const png = (svg, size, file) => sharp(Buffer.from(svg)).resize(size, size).png({ compressionLevel: 9 }).toFile(file);
+await png(icon(32), 32, 'public/favicon-32.png');
+await png(icon(180, { rounded: false }), 180, 'public/apple-touch-icon.png');
+await png(icon(192), 192, 'public/icon-192.png');
+await png(icon(512), 512, 'public/icon-512.png');
+await png(icon(512, { maskable: true, rounded: false }), 512, 'public/icon-maskable-512.png');
+fs.writeFileSync('public/manifest.webmanifest', JSON.stringify({
+  name: 'Cassani & Martignani',
+  short_name: 'C&M Arredi',
+  description: 'Showroom di arredamento a Lugo con falegnameria propria a Massa Lombarda.',
+  lang: 'it',
+  start_url: './',
+  scope: './',
+  display: 'standalone',
+  background_color: '#16110D',
+  theme_color: '#16110D',
+  icons: [
+    { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
+    { src: 'icon-512.png', sizes: '512x512', type: 'image/png' },
+    { src: 'icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+  ],
+}, null, 2));
 
 // Open Graph 1200×630
 const logo = await sharp('public/logo/logo-cassani-martignani-light.svg', { density: 300 }).resize(520).png().toBuffer();
