@@ -274,10 +274,10 @@ function page(c) {
   <meta name="description" content="${esc(c.description)}">
   <meta name="theme-color" content="#16110D">
   <link rel="canonical" href="${url}">
-  <link rel="icon" href="@base/favicon.svg" type="image/svg+xml">
-  <link rel="icon" href="@base/favicon-32.png" sizes="32x32" type="image/png">
-  <link rel="apple-touch-icon" href="@base/apple-touch-icon.png">
-  <link rel="manifest" href="@base/manifest.webmanifest">
+  <link rel="icon" href="@base/favicon-v2.svg" type="image/svg+xml">
+  <link rel="icon" href="@base/favicon-v2-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="@base/apple-touch-icon-v2.png">
+  <link rel="manifest" href="@base/manifest.webmanifest?v=2">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="C&amp;M Arredi">

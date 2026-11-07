@@ -33,13 +33,13 @@ function icon(px, { maskable = false, rounded = true } = {}) {
   <rect x="${S / 2 - lineW / 2}" y="${lineY}" width="${lineW}" height="${S * 0.012}" rx="${S * 0.006}" fill="url(#line)"/>
 </svg>`;
 }
-fs.writeFileSync('public/favicon.svg', icon(64));
+fs.writeFileSync('public/favicon-v2.svg', icon(64));
 const png = (svg, size, file) => sharp(Buffer.from(svg)).resize(size, size).png({ compressionLevel: 9 }).toFile(file);
-await png(icon(32), 32, 'public/favicon-32.png');
-await png(icon(180, { rounded: false }), 180, 'public/apple-touch-icon.png');
-await png(icon(192), 192, 'public/icon-192.png');
-await png(icon(512), 512, 'public/icon-512.png');
-await png(icon(512, { maskable: true, rounded: false }), 512, 'public/icon-maskable-512.png');
+await png(icon(32), 32, 'public/favicon-v2-32.png');
+await png(icon(180, { rounded: false }), 180, 'public/apple-touch-icon-v2.png');
+await png(icon(192), 192, 'public/icon-v2-192.png');
+await png(icon(512), 512, 'public/icon-v2-512.png');
+await png(icon(512, { maskable: true, rounded: false }), 512, 'public/icon-v2-maskable-512.png');
 fs.writeFileSync('public/manifest.webmanifest', JSON.stringify({
   name: 'Cassani & Martignani',
   short_name: 'C&M Arredi',
@@ -51,9 +51,9 @@ fs.writeFileSync('public/manifest.webmanifest', JSON.stringify({
   background_color: '#16110D',
   theme_color: '#16110D',
   icons: [
-    { src: 'icon-192.png', sizes: '192x192', type: 'image/png' },
-    { src: 'icon-512.png', sizes: '512x512', type: 'image/png' },
-    { src: 'icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+    { src: 'icon-v2-192.png', sizes: '192x192', type: 'image/png' },
+    { src: 'icon-v2-512.png', sizes: '512x512', type: 'image/png' },
+    { src: 'icon-v2-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
   ],
 }, null, 2));
 
