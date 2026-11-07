@@ -19,9 +19,18 @@ export function initRooms() {
   initLoops();
 }
 
-// I video in loop partono solo quando sono visibili
+// I video in loop: poster e video si caricano solo vicino allo schermo,
+// e partono solo quando sono visibili.
 export function initLoops() {
   const vids = [...document.querySelectorAll('video.loop')];
+  const near = new IntersectionObserver((entries) => {
+    entries.forEach(({ target: v, isIntersecting }) => {
+      if (!isIntersecting) return;
+      if (v.dataset.poster) { v.poster = v.dataset.poster; delete v.dataset.poster; }
+      near.unobserve(v);
+    });
+  }, { rootMargin: '800px 0px' });
+  vids.forEach((v) => near.observe(v));
   if (reduced) return; // con movimento ridotto restano i poster statici
   const io = new IntersectionObserver((entries) => {
     entries.forEach(({ target: v, isIntersecting }) => {

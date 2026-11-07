@@ -1,4 +1,3 @@
-import '@fontsource-variable/archivo/wdth.css';
 import '@fontsource-variable/outfit/wght.css';
 import './styles/main.css';
 import './styles/legal.css';

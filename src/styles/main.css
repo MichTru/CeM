@@ -2,6 +2,16 @@
    Cassani & Martignani · design token e stili
    ========================================================================== */
 
+/* Archivo expanded, solo maiuscole: generato da scripts/build-fonts.sh */
+@font-face {
+  font-family: 'Archivo CM';
+  src: url('/fonts/archivo-expanded-maiuscole.woff2') format('woff2');
+  font-weight: 500 600;
+  font-stretch: 125%;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Colori */
   --espresso: #16110d;
@@ -16,7 +26,7 @@
   --glass: rgb(36 27 21 / 0.55);
 
   /* Tipografia */
-  --f-display: 'Archivo Variable', 'Archivo', 'Arial Black', sans-serif;
+  --f-display: 'Archivo CM', 'Arial Black', sans-serif;
   --f-body: 'Outfit Variable', 'Outfit', system-ui, sans-serif;
   --fs-hero: clamp(1.85rem, 0.9rem + 3vw, 3.9rem);
   --fs-h2: clamp(2rem, 1.2rem + 3.4vw, 4.6rem);
@@ -129,33 +139,39 @@ ul, ol { padding: 0; list-style: none; }
 }
 .ambient i {
   position: absolute; inset: -30% -40%;
+  /* bande di luce già sfumate: niente filter blur, costoso su layer così grandi */
   background: repeating-linear-gradient(
     112deg,
-    transparent 0 7%,
-    rgb(255 214 170 / 0.055) 9% 13%,
-    transparent 16% 21%,
-    rgb(255 214 170 / 0.035) 23% 25%,
-    transparent 28% 34%
+    rgb(255 214 170 / 0) 0%,
+    rgb(255 214 170 / 0.012) 5%,
+    rgb(255 214 170 / 0.05) 9%,
+    rgb(255 214 170 / 0.055) 11%,
+    rgb(255 214 170 / 0.02) 14%,
+    rgb(255 214 170 / 0) 18%,
+    rgb(255 214 170 / 0) 22%,
+    rgb(255 214 170 / 0.03) 24.5%,
+    rgb(255 214 170 / 0) 28%,
+    rgb(255 214 170 / 0) 34%
   );
-  filter: blur(28px);
   animation: curtain 46s var(--ease-move) infinite alternate;
   will-change: transform;
 }
 .ambient i:nth-child(2) {
   background: repeating-linear-gradient(
     116deg,
-    transparent 0 12%,
-    rgb(255 205 150 / 0.04) 14% 19%,
-    transparent 22% 40%
+    rgb(255 205 150 / 0) 0%,
+    rgb(255 205 150 / 0.015) 10%,
+    rgb(255 205 150 / 0.04) 15%,
+    rgb(255 205 150 / 0.015) 20%,
+    rgb(255 205 150 / 0) 26%,
+    rgb(255 205 150 / 0) 40%
   );
-  filter: blur(50px);
   animation-duration: 63s;
   animation-delay: -20s;
 }
 .ambient i:nth-child(3) {
   inset: 0;
   background: linear-gradient(180deg, transparent 50%, rgb(22 17 13 / 0.8));
-  filter: none;
   animation: none;
 }
 @keyframes curtain {
@@ -1082,12 +1098,11 @@ ul, ol { padding: 0; list-style: none; }
 .intro-curtain { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
 .intro-curtain i {
   position: absolute; inset: -30% -40%;
-  background: repeating-linear-gradient(112deg, transparent 0 7%, rgb(255 214 170 / 0.07) 9% 13%, transparent 16% 21%, rgb(255 214 170 / 0.045) 23% 25%, transparent 28% 34%);
-  filter: blur(28px);
+  background: repeating-linear-gradient(112deg, rgb(255 214 170 / 0) 0%, rgb(255 214 170 / 0.03) 6%, rgb(255 214 170 / 0.075) 10%, rgb(255 214 170 / 0.03) 14%, rgb(255 214 170 / 0) 18%, rgb(255 214 170 / 0) 22%, rgb(255 214 170 / 0.045) 24.5%, rgb(255 214 170 / 0) 28%, rgb(255 214 170 / 0) 34%);
 }
 .intro-curtain i + i {
+  inset: 0;
   background: radial-gradient(60% 50% at 30% 30%, rgb(154 100 64 / 0.16), transparent 70%);
-  filter: none;
 }
 
 @media (max-width: 600px) {

@@ -30,10 +30,12 @@
       d.classList.add('js');
       var seen = false;
       try { seen = sessionStorage.getItem('cm-intro') === '1'; } catch (e) {}
+      if (/[?&]intro=0/.test(location.search)) seen = true;
       if (seen) d.classList.add('no-intro');
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduced');
     })();
   </script>
+  <link rel="preload" href="@base/fonts/archivo-expanded-maiuscole.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" as="image" type="image/avif"
     imagesrcset="@base/img/cucina-isola-salvia-rovere-vetrine-480.avif 480w, @base/img/cucina-isola-salvia-rovere-vetrine-800.avif 800w, @base/img/cucina-isola-salvia-rovere-vetrine-1200.avif 1200w, @base/img/cucina-isola-salvia-rovere-vetrine-1600.avif 1600w"
     imagesizes="(max-width: 860px) 100vw, 76vw" fetchpriority="high">
@@ -222,7 +224,7 @@
       <div class="stack">
         <article class="room" id="ambiente-cucine">
           <div class="room__media">
-            <video class="loop" muted loop playsinline preload="none" poster="@base/video/loop-cucina-isola-salvia-poster.webp" aria-label="Cucina con isola verde salvia e rovere">
+            <video class="loop" muted loop playsinline preload="none" data-poster="@base/video/loop-cucina-isola-salvia-poster.webp" aria-label="Cucina con isola verde salvia e rovere">
               <source src="@base/video/loop-cucina-isola-salvia.webm" type="video/webm">
               <source src="@base/video/loop-cucina-isola-salvia.mp4" type="video/mp4">
             </video>
@@ -238,7 +240,7 @@
 
         <article class="room" id="ambiente-giorno">
           <div class="room__media">
-            <video class="loop" muted loop playsinline preload="none" poster="@base/video/loop-giorno-velluto-verde-poster.webp" aria-label="Soggiorno con divano in velluto verde">
+            <video class="loop" muted loop playsinline preload="none" data-poster="@base/video/loop-giorno-velluto-verde-poster.webp" aria-label="Soggiorno con divano in velluto verde">
               <source src="@base/video/loop-giorno-velluto-verde.webm" type="video/webm">
               <source src="@base/video/loop-giorno-velluto-verde.mp4" type="video/mp4">
             </video>
@@ -347,7 +349,7 @@
       <ul class="grid" id="grid">
         <li class="tile tile--wide" data-cat="cucine">
           <button type="button" class="tile__btn" data-full="cucina-isola-salvia-rovere-vetrine" data-video="loop-cucina-isola-salvia" aria-label="Apri: cucina con isola verde salvia e rovere">
-            <video class="loop" muted loop playsinline preload="none" poster="@base/video/loop-cucina-isola-salvia-poster.webp" aria-hidden="true">
+            <video class="loop" muted loop playsinline preload="none" data-poster="@base/video/loop-cucina-isola-salvia-poster.webp" aria-hidden="true">
               <source src="@base/video/loop-cucina-isola-salvia.webm" type="video/webm">
               <source src="@base/video/loop-cucina-isola-salvia.mp4" type="video/mp4">
             </video>
@@ -370,7 +372,7 @@
         </li>
         <li class="tile tile--wide" data-cat="giorno">
           <button type="button" class="tile__btn" data-full="giorno-divano-velluto-verde-lampada" data-video="loop-giorno-velluto-verde" aria-label="Apri: soggiorno con divano in velluto verde">
-            <video class="loop" muted loop playsinline preload="none" poster="@base/video/loop-giorno-velluto-verde-poster.webp" aria-hidden="true">
+            <video class="loop" muted loop playsinline preload="none" data-poster="@base/video/loop-giorno-velluto-verde-poster.webp" aria-hidden="true">
               <source src="@base/video/loop-giorno-velluto-verde.webm" type="video/webm">
               <source src="@base/video/loop-giorno-velluto-verde.mp4" type="video/mp4">
             </video>
@@ -389,7 +391,7 @@
         </li>
         <li class="tile tile--wide" data-cat="giorno">
           <button type="button" class="tile__btn" data-full="giorno-divano-angolare-vetrata" data-video="loop-giorno-vetrata" aria-label="Apri: zona giorno con divano angolare e vetrata">
-            <video class="loop" muted loop playsinline preload="none" poster="@base/video/loop-giorno-vetrata-poster.webp" aria-hidden="true">
+            <video class="loop" muted loop playsinline preload="none" data-poster="@base/video/loop-giorno-vetrata-poster.webp" aria-hidden="true">
               <source src="@base/video/loop-giorno-vetrata.webm" type="video/webm">
               <source src="@base/video/loop-giorno-vetrata.mp4" type="video/mp4">
             </video>
