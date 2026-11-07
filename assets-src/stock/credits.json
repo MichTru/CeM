@@ -298,5 +298,45 @@
   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "foreign_landing_url": "https://www.rawpixel.com/image/5939095/wood-plan",
   "source": "rawpixel"
+ },
+ "stock-ristr-pianta": {
+  "title": "Free architect blueprint image",
+  "creator": null,
+  "creator_url": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "foreign_landing_url": "https://www.rawpixel.com/image/5913068/image-public-domain-pen-student",
+  "source": "rawpixel"
+ },
+ "stock-ristr-misure": {
+  "title": "Level Construction",
+  "creator": "Michal Jarmoluk",
+  "creator_url": "https://stocksnap.io/author/34629",
+  "license": "cc0",
+  "license_version": "1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "foreign_landing_url": "https://stocksnap.io/photo/level-construction-ROG47AU0LS",
+  "source": "stocksnap"
+ },
+ "stock-ristr-cantiere": {
+  "title": "Construction site",
+  "creator": null,
+  "creator_url": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "foreign_landing_url": "https://www.rawpixel.com/image/9677375/construction-site",
+  "source": "rawpixel"
+ },
+ "stock-ristr-lavori": {
+  "title": "Lincoln Park Construction Concrete is",
+  "creator": null,
+  "creator_url": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "foreign_landing_url": "https://www.rawpixel.com/image/9676968/image-person-wood-public-domain",
+  "source": "rawpixel"
  }
 }

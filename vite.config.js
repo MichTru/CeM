@@ -67,6 +67,7 @@ export default defineConfig({
         cookie: resolve(import.meta.dirname, 'cookie.html'),
         ...Object.fromEntries(categorie.map((a) => [a.slug, resolve(import.meta.dirname, `${a.slug}/index.html`)])),
         crediti: resolve(import.meta.dirname, 'crediti.html'),
+        ristrutturi: resolve(import.meta.dirname, 'ristrutturi/index.html'),
       },
     },
   },

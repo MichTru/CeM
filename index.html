@@ -100,8 +100,8 @@
           <ul>
             <li><a href="#chi-siamo">Chi siamo</a></li>
             <li><a href="#categorie">Prodotti</a></li>
-            <li><a href="#su-misura">Su misura</a></li>
-            <li><a href="#galleria">Galleria</a></li>
+            <li><a href="@base/su-misura/">Su misura</a></li>
+            <li><a href="@base/ristrutturi/">Ristrutturi</a></li>
           </ul>
         </nav>
         <a class="btn btn--light topbar__cta" href="#contatti">Contatti <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></a>
@@ -153,7 +153,7 @@
           </div>
         </a>
 
-        <a class="bento__card bento__card--misura" href="#su-misura">
+        <a class="bento__card bento__card--misura" href="@base/su-misura/">
           <div class="bento__head">
             <h2 class="bento__title">Su misura</h2>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
@@ -193,43 +193,9 @@
       <!--PARTIAL:categorie-->
     </section>
 
-    <!-- Su misura, con il 3D -->
-    <section class="section misura" id="su-misura" aria-labelledby="misura-title">
-      <div class="misura__pin">
-        <div class="misura__stage" id="misura-stage">
-          <div class="misura__fallback" aria-hidden="true">
-            <img src="@base/img/3d/fase-1.webp" alt="" width="1200" height="1000" loading="lazy" decoding="async" data-step="0" class="is-on">
-            <img src="@base/img/3d/fase-2.webp" alt="" width="1200" height="1000" loading="lazy" decoding="async" data-step="1">
-            <img src="@base/img/3d/fase-3.webp" alt="" width="1200" height="1000" loading="lazy" decoding="async" data-step="2">
-            <img src="@base/img/3d/fase-4.webp" alt="" width="1200" height="1000" loading="lazy" decoding="async" data-step="3">
-          </div>
-          <canvas class="misura__canvas" aria-hidden="true"></canvas>
-          <div class="misura__floor" aria-hidden="true"></div>
-        </div>
-        <div class="misura__text">
-          <h2 class="h-display" id="misura-title">Su misura,<br>dalla nostra<br>falegnameria</h2>
-          <ol class="steps" aria-label="Dall'idea al montaggio">
-            <li class="step is-on">
-              <h3>L'idea</h3>
-              <p>Si parte da te: come vivi la casa, che cosa ti serve, che cosa ti piace.</p>
-            </li>
-            <li class="step">
-              <h3>Il progetto</h3>
-              <p>Rilievo delle misure, disegno e scelta di legni, laccature e ferramenta.</p>
-            </li>
-            <li class="step">
-              <h3>La falegnameria</h3>
-              <p>A Massa Lombarda il progetto diventa mobile, pezzo per pezzo, nella nostra falegnameria.</p>
-            </li>
-            <li class="step">
-              <h3>Il montaggio</h3>
-              <p>Marco e Mauro seguono consegna e montaggio, e restano al tuo fianco anche dopo.</p>
-            </li>
-          </ol>
-          <p class="misura__caption">Arredamento su misura in Romagna: cucine, armadi, librerie e boiserie realizzati sulle tue misure.</p>
-          <a class="btn btn--ghost misura__more" href="@base/su-misura/">La falegnameria</a>
-        </div>
-      </div>
+    <!-- Ristrutturi casa? -->
+    <section class="section ristrutturi" id="ristrutturi" aria-labelledby="ristrutturi-title">
+      <!--PARTIAL:ristrutturi-->
     </section>
 
     <!-- Galleria -->

@@ -43,4 +43,16 @@ if (!reduced) {
       });
   });
 }
+// Ristrutturi: la linea del tempo si riempie scorrendo, le tappe entrano a sipario
+const line = document.querySelector('.tappe__line i');
+if (line && !reduced) {
+  gsap.to(line, { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '.tappe__list', start: 'top 70%', end: 'bottom 70%', scrub: true } });
+  document.querySelectorAll('.tappa').forEach((t) => {
+    gsap.fromTo(t.querySelector('.tappa__media'), { clipPath: 'inset(0% 50% 0% 50% round 20px)' }, {
+      clipPath: 'inset(0% 0% 0% 0% round 20px)', duration: 1.3, ease: 'expo.inOut',
+      scrollTrigger: { trigger: t, start: 'top 80%', once: true },
+    });
+    gsap.from(t.querySelector('.tappa__body'), { y: 30, opacity: 0, duration: 1.1, delay: 0.2, scrollTrigger: { trigger: t, start: 'top 80%', once: true } });
+  });
+}
 ScrollTrigger.refresh();

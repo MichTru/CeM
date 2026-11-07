@@ -303,3 +303,43 @@
 @media (max-width: 600px) {
   .tipo__media { aspect-ratio: 1; }
 }
+
+/* Ristrutturi: linea del tempo */
+.tappe__grid { display: grid; grid-template-columns: 0.8fr 1.6fr; gap: clamp(24px, 5vw, 80px); }
+.tappe__head { position: sticky; top: 110px; align-self: start; display: grid; gap: 18px; }
+.tappe__line { position: relative; width: 2px; height: 180px; margin-top: 10px; background: var(--line-strong); border-radius: 2px; overflow: hidden; }
+.tappe__line i { position: absolute; inset: 0; background: var(--cognac-chiaro); transform-origin: top; transform: scaleY(0); }
+.tappe__list { display: grid; gap: clamp(40px, 6vw, 90px); }
+.tappa { display: grid; grid-template-columns: 1.2fr 1fr; gap: clamp(16px, 3vw, 40px); align-items: center; }
+.tappa:nth-child(even) .tappa__media { order: 2; }
+.tappa__media { position: relative; aspect-ratio: 4 / 3; border-radius: var(--r-card); overflow: hidden; border: 1px solid var(--line); }
+.tappa__media .pic, .tappa__media .ph { position: absolute; inset: 0; width: 100%; height: 100%; min-height: 0; aspect-ratio: auto !important; }
+.tappa__body { display: grid; gap: 10px; }
+.tappa__body h3 { font-weight: 300; font-size: clamp(1.4rem, 1.1rem + 1.2vw, 2.2rem); line-height: 1.1; }
+.tappa__body p { color: rgb(245 239 230 / 0.8); max-width: 40ch; }
+
+/* Ristrutturi: cosa facciamo */
+.servizi__grid {
+  display: grid; grid-template-columns: 0.9fr 1.3fr;
+  border-radius: var(--r-shell); overflow: hidden;
+  border: 1px solid var(--line);
+  background: linear-gradient(160deg, #33261d, #1e1712);
+}
+.servizi__media { position: relative; min-height: 320px; }
+.servizi__media .pic { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto !important; }
+.servizi__body { display: grid; gap: 24px; align-content: center; justify-items: start; padding: clamp(24px, 4vw, 60px); }
+.servizi__body .h-display { font-size: clamp(1.7rem, 1.1rem + 2vw, 3rem); }
+.servizi__list { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 28px; }
+.servizi__list li { padding-left: 16px; border-left: 1px solid var(--cognac); }
+.servizi__list h3 { font-weight: 400; font-size: 1.05rem; line-height: 1.25; margin-bottom: 4px; }
+.servizi__list p { font-size: 0.9rem; color: var(--sabbia); }
+
+@media (max-width: 860px) {
+  .tappe__grid { grid-template-columns: 1fr; }
+  .tappe__head { position: static; }
+  .tappe__line { display: none; }
+  .tappa { grid-template-columns: 1fr; }
+  .tappa:nth-child(even) .tappa__media { order: 0; }
+  .servizi__grid { grid-template-columns: 1fr; }
+  .servizi__list { grid-template-columns: 1fr; }
+}

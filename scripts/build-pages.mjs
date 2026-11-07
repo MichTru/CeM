@@ -10,6 +10,7 @@ const proposte = read('proposte.json').items;
 const percorsi = read('percorsi.json');
 const occasioni = read('occasioni.json').items;
 const storie = read('storie.json').items;
+const ristr = read('ristrutturi.json');
 
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const img = (name, sizes, extra = '') => (images[name] ? `<cm-img name="${name}" sizes="${sizes}"${extra}></cm-img>` : '');
@@ -308,7 +309,7 @@ function page(c) {
             <li><a href="@base/#chi-siamo">Chi siamo</a></li>
             <li><a href="@base/#categorie">Prodotti</a></li>
             <li><a href="@base/su-misura/"${c.slug === 'su-misura' ? ' aria-current="page"' : ''}>Su misura</a></li>
-            <li><a href="@base/#galleria">Galleria</a></li>
+            <li><a href="@base/ristrutturi/">Ristrutturi</a></li>
           </ul>
         </nav>
         <a class="btn btn--light topbar__cta" href="#contatti">Prenota <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></a>
@@ -414,9 +415,74 @@ fs.writeFileSync('src/partials/crediti.html', `<ul class="crediti">${stock.map((
       </li>`).join('')}
     </ul>\n`);
 
+// --- Ristrutturi: pagina e fascia della home -----------------------------------
+function ristrPage() {
+  const c = {
+    slug: 'ristrutturi', nome: 'Ristrutturi casa', form: 'Casa intera', title: ristr.title, description: ristr.description,
+    h1: ristr.h1, sub: ristr.sub, hero: ristr.hero, lead: ristr.lead, testo: [], marchi: [], tipi: [],
+  };
+  let html = page(c);
+  const body = `
+    <section class="section tappe" id="tappe" aria-labelledby="tappe-title">
+      <div class="tappe__grid">
+        <div class="tappe__head">
+          <h2 class="h-display" id="tappe-title">Dal cantiere<br>alla casa finita</h2>
+          <p class="lead">Cinque passaggi, un solo riferimento.</p>
+          <div class="tappe__line" aria-hidden="true"><i></i></div>
+        </div>
+        <ol class="tappe__list">${ristr.tappe.map((t) => `
+          <li class="tappa">
+            <div class="tappa__media">${media(t.img, t.titolo, '(max-width: 860px) 100vw, 40vw', ' alt=""')}</div>
+            <div class="tappa__body">
+              <h3>${esc(t.titolo)}</h3>
+              <p>${esc(t.testo)}</p>
+            </div>
+          </li>`).join('')}
+        </ol>
+      </div>
+    </section>
+    <section class="section servizi" aria-labelledby="servizi-title">
+      <div class="servizi__grid">
+        <div class="servizi__media">${img('stock-ristr-cantiere', '(max-width: 860px) 100vw, 40vw', ' alt=""')}</div>
+        <div class="servizi__body">
+          <h2 class="h-display" id="servizi-title">Cosa facciamo<br>per te</h2>
+          <ul class="servizi__list">${ristr.servizi.map((v) => `
+            <li><h3>${esc(v.titolo)}</h3><p>${esc(v.testo)}</p></li>`).join('')}
+          </ul>
+          <a class="btn btn--light" href="#contatti" data-prefill data-ambiente="Casa intera" data-msg="Sto ristrutturando casa e vorrei una consulenza per arredarla.">Prenota una consulenza</a>
+        </div>
+      </div>
+    </section>`;
+  // la pagina ristrutturi: tappe e servizi al posto dei blocchi di categoria
+  html = html.replace(/(<\/section>\n\n    <section class="section pintro"[\s\S]*?<\/section>)/, `$1\n${body}`);
+  html = html.replace(/<div class="phero__btns">[\s\S]*?<\/div>/, `<div class="phero__btns">
+              <a class="btn btn--light" href="#contatti" data-prefill data-ambiente="Casa intera" data-msg="Sto ristrutturando casa e vorrei una consulenza per arredarla.">Prenota una consulenza</a>
+              <a class="btn btn--ghost" href="#tappe">Come lavoriamo</a>
+            </div>`);
+  html = html.replace('<li><a href="@base/ristrutturi/">Ristrutturi</a></li>', '<li><a href="@base/ristrutturi/" aria-current="page">Ristrutturi</a></li>');
+  html = html.replace("Cos'altro cerchi?", 'Stanza per stanza');
+  // niente "serve un pezzo in più": la falegnameria è già una tappa
+  html = html.replace(/\n    <section class="section plus"[\s\S]*?<\/section>/, '');
+  fs.mkdirSync('ristrutturi', { recursive: true });
+  fs.writeFileSync('ristrutturi/index.html', html);
+}
+
+fs.writeFileSync('src/partials/ristrutturi.html', `<a class="rhome" href="@base/ristrutturi/">
+        <div class="rhome__media">${img(ristr.homeImg, '(max-width: 860px) 100vw, 50vw', ' alt=""')}</div>
+        <div class="rhome__body">
+          <span class="tag">Ristrutturi casa?</span>
+          <h2 class="h-display rhome__title" id="ristrutturi-title">Dal cantiere<br>alla casa finita</h2>
+          <p>Arrediamo tutta la casa insieme ai lavori: rilievo in cantiere, un unico preventivo, la nostra falegnameria per i pezzi su misura e i montaggi a fine lavori.</p>
+          <ol class="rhome__steps" aria-label="Come lavoriamo">${ristr.tappe.map((t) => `<li>${esc(t.breve)}</li>`).join('')}</ol>
+          <span class="btn btn--light">Come lavoriamo <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+        </div>
+      </a>
+`);
+
 // --- Pagine -------------------------------------------------------------------
 for (const c of categorie) {
   fs.mkdirSync(c.slug, { recursive: true });
   fs.writeFileSync(`${c.slug}/index.html`, page(c));
 }
-console.log('pagine:', categorie.map((c) => c.slug).join(', '));
+ristrPage();
+console.log('pagine:', [...categorie.map((c) => c.slug), 'ristrutturi'].join(', '));

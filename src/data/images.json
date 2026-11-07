@@ -696,5 +696,81 @@
    "link": "https://www.rawpixel.com/image/5939095/wood-plan"
   },
   "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAwCdASoYABAAPu1mqk2ppaQiMAgBMB2JZQCdAA085cBC6AD+7xR6PFyWfLkeSlCAywqg3SR+AQOS8s4RfUj5yjduRX073yNH1q72Fxeie353EzIl5czRoAA="
+ },
+ "stock-ristr-pianta": {
+  "cat": "stock",
+  "alt": "Planimetria di una casa con penna e righello",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/5913068/image-public-domain-pen-student"
+  },
+  "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABwAgCdASoYABAAA4BaJZwC/OELY8ciBMJe3TYgAP7twa6TnteQC/GdlJCUu+bFF2OM5PCYwb9kSXWMJDeKkAAA"
+ },
+ "stock-ristr-misure": {
+  "cat": "stock",
+  "alt": "Mani che appoggiano una livella rossa su un piano durante i lavori",
+  "w": 960,
+  "h": 639,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Michal Jarmoluk",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/level-construction-ROG47AU0LS"
+  },
+  "lqip": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADQAwCdASoYABAAPu1iqk2ppaQiMAgBMB2JaACsABbY5d0S6u0t1zAA/tqSJgZoGNNyQHJGkhiBuFwVJO/h1BFovY6aTea5NfBEC+jNPyrOccX+UphC0GMl0U8/+1q+/f4mkaz+/Nbrx0vksxb1VxMAAAA="
+ },
+ "stock-ristr-cantiere": {
+  "cat": "stock",
+  "alt": "Casa in ristrutturazione con pareti aperte e i disegni del progetto a terra",
+  "w": 1024,
+  "h": 681,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/9677375/construction-site"
+  },
+  "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAABwAwCdASoYABAAPu1kqk4ppaQiMAgBMB2JQBOgAcc5FpEyyIIA+wvCCoDvgym8ewvcP0zJkb5CmNDO+zop6uyHrTQ1JWAYHnMvcpD//FdwUPBTlyK7AAAA"
+ },
+ "stock-ristr-lavori": {
+  "cat": "stock",
+  "alt": "Stanza in ristrutturazione con un operaio al lavoro vicino alla finestra",
+  "w": 1024,
+  "h": 681,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/9676968/image-person-wood-public-domain"
+  },
+  "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQBACdASoYABAAPu1orU6ppiSiMAgBMB2JZQCdACDlWrt2kFx1is0gAAD+gxO3jq8qq5hGdx4Cjo7ZVSgWmlzAFN0sTc/R5PAp/fIU/uLoIgAA"
  }
 }
