@@ -28,15 +28,10 @@
     (function () {
       var d = document.documentElement;
       d.classList.add('js');
-      // L'intro parte a ogni apertura o ricarica della home; si salta solo
-      // tornando da una pagina interna del sito (o con ?intro=0).
+      // L'intro parte ogni volta che si apre la home (si salta solo con ?intro=0).
       var skip = /[?&]intro=0/.test(location.search);
-      try {
-        var nav = performance.getEntriesByType('navigation')[0];
-        var type = nav ? nav.type : 'navigate';
-        var internal = document.referrer && new URL(document.referrer).origin === location.origin && new URL(document.referrer).pathname !== location.pathname;
-        if (type === 'back_forward' || (type === 'navigate' && internal)) skip = true;
-      } catch (e) {}
+      // Se il browser ripristina la pagina dalla memoria (tasto indietro), la ricarica per rifare l'intro.
+      addEventListener('pageshow', function (e) { if (e.persisted && !skip) location.reload(); });
       if (skip) d.classList.add('no-intro');
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduced');
     })();
