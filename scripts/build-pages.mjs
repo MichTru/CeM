@@ -27,7 +27,7 @@ function productCard(a, p) {
           <div class="pcard__media">${media(p.immagine, `${p.marchio} · ${p.nome}`, '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw')}${p.in_showroom ? '<span class="tag pcard__flag">In showroom</span>' : ''}</div>
           <div class="pcard__body">
             <span class="pcard__brand">${esc(p.marchio)}</span>
-            <h4 class="pcard__title">${esc(p.nome)}</h4>
+            <h3 class="pcard__title">${esc(p.nome)}</h3>
             ${p.descrizione ? `<p>${esc(p.descrizione)}</p>` : ''}
             ${mat ? `<ul class="pcard__mat" aria-label="Materiali">${mat}</ul>` : ''}
             ${prefill(a.form, `Vorrei vedere in showroom: ${p.marchio}, ${p.nome}.`, 'Vienila a vedere')}
@@ -79,7 +79,7 @@ function occasioniSection(a) {
           <div class="pcard__media">${media(o.immagine, `${o.marchio || ''} ${o.nome}`.trim(), '(max-width: 600px) 100vw, 33vw')}<span class="tag pcard__flag">Occasione</span></div>
           <div class="pcard__body">
             ${o.marchio ? `<span class="pcard__brand">${esc(o.marchio)}</span>` : ''}
-            <h4 class="pcard__title">${esc(o.nome)}</h4>
+            <h3 class="pcard__title">${esc(o.nome)}</h3>
             ${o.descrizione ? `<p>${esc(o.descrizione)}</p>` : ''}
             ${o.prezzo ? `<p class="pcard__price">${o.prezzo_listino ? `<s>${esc(o.prezzo_listino)}</s> ` : ''}<strong>${esc(o.prezzo)}</strong></p>` : ''}
             ${prefill(a.form, `Mi interessa l'occasione: ${o.marchio ? `${o.marchio}, ` : ''}${o.nome}.`, 'La voglio vedere')}
@@ -89,7 +89,7 @@ function occasioniSection(a) {
         <article class="pcard pcard--ph reveal-card">
           <div class="pcard__media">${ph('Occasione d\'esposizione')}<span class="tag pcard__flag">Occasione</span></div>
           <div class="pcard__body">
-            <h4 class="pcard__title">Pezzo d'esposizione</h4>
+            <h3 class="pcard__title">Pezzo d'esposizione</h3>
             <p>Qui compariranno i pezzi d'esposizione e fine serie disponibili in showroom.</p>
           </div>
         </article>`).join('');
