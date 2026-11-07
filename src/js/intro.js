@@ -1,11 +1,5 @@
 import { gsap, lenis, reduced, EASE_MOVE } from './motion.js';
 
-const KEY = 'cm-intro';
-
-function markSeen() {
-  try { sessionStorage.setItem(KEY, '1'); } catch (e) { /* storage non disponibile */ }
-}
-
 /**
  * Intro di circa 4,5 secondi:
  * 1. una lama di luce entra in diagonale, rallenta e si ferma come una tenda appena scostata;
@@ -22,7 +16,6 @@ export function runIntro() {
     return Promise.resolve();
   }
 
-  markSeen();
   lenis?.stop();
 
   const svg = intro.querySelector('.cm-logo');
