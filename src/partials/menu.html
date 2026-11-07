@@ -1,23 +1,40 @@
 <!-- Menu mobile a schermo intero -->
-<div class="menu" id="menu" hidden>
+<div class="menu" id="menu" role="dialog" aria-modal="true" aria-label="Menu" hidden data-lenis-prevent>
   <div class="menu__blade" aria-hidden="true"></div>
-  <nav aria-label="Menu principale">
-    <ul>
-      <li><a href="@base/cucine/">Cucine</a></li>
-      <li><a href="@base/divani-e-poltrone/">Divani e poltrone</a></li>
-      <li><a href="@base/letti/">Letti</a></li>
-      <li><a href="@base/armadi/">Armadi e cabine</a></li>
-      <li><a href="@base/camerette/">Camerette</a></li>
-      <li><a href="@base/zona-pranzo/">Zona pranzo</a></li>
-      <li><a href="@base/soggiorno/">Soggiorno</a></li>
-      <li><a href="@base/su-misura/">Su misura</a></li>
-      <li><a href="@base/ristrutturi/">Ristrutturi casa</a></li>
-      <li><a href="@base/#galleria">Galleria</a></li>
-      <li><a href="#contatti">Prenota una visita</a></li>
-    </ul>
-  </nav>
-  <div class="menu__foot">
-    <a href="tel:+39054531440">0545 31440</a>
-    <span>Via Francesco Baracca 70, Lugo</span>
+  <div class="menu__top">
+    <a href="@base/" aria-label="Cassani &amp; Martignani, home"><img src="@base/logo/logo-cassani-martignani-light.svg" alt="" width="140" height="31"></a>
+    <button type="button" class="menu__close" aria-label="Chiudi il menu"><svg class="ico" aria-hidden="true"><use href="#i-close"/></svg> Chiudi</button>
+  </div>
+  <div class="menu__body">
+    <nav aria-label="Prodotti">
+      <p class="menu__label">Prodotti</p>
+      <ul class="menu__cats">
+        <li><a class="menu__cat" href="@base/cucine/"><cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="170px" alt="" nobadge></cm-img><span>Cucine</span></a></li>
+        <li><a class="menu__cat" href="@base/divani-e-poltrone/"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="170px" alt="" nobadge></cm-img><span>Divani e poltrone</span></a></li>
+        <li><a class="menu__cat" href="@base/letti/"><cm-img name="stock-letto-imbottito" sizes="170px" alt="" nobadge></cm-img><span>Letti</span></a></li>
+        <li><a class="menu__cat" href="@base/armadi/"><cm-img name="notte-armadio-bianco-maniglia-scura" sizes="170px" alt="" nobadge></cm-img><span>Armadi e cabine</span></a></li>
+        <li><a class="menu__cat" href="@base/camerette/"><cm-img name="stock-cameretta" sizes="170px" alt="" nobadge></cm-img><span>Camerette</span></a></li>
+        <li><a class="menu__cat" href="@base/zona-pranzo/"><cm-img name="stock-tavolo-pranzo" sizes="170px" alt="" nobadge></cm-img><span>Zona pranzo</span></a></li>
+        <li><a class="menu__cat" href="@base/soggiorno/"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="170px" alt="" nobadge></cm-img><span>Soggiorno</span></a></li>
+        <li><a class="menu__cat" href="@base/su-misura/"><cm-img name="su-misura-dettaglio-maniglia" sizes="170px" alt="" nobadge></cm-img><span>Su misura</span></a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Menu principale">
+      <ul class="menu__links">
+        <li class="menu__home"><a href="@base/">Home <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a></li>
+        <li><a href="@base/ristrutturi/">Ristrutturi casa? <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a></li>
+        <li><a href="@base/#galleria">Galleria <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a></li>
+        <li><a href="@base/#chi-siamo">Chi siamo <svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></a></li>
+      </ul>
+    </nav>
+    <div class="menu__cta">
+      <a class="btn btn--light" href="#contatti">Prenota una visita</a>
+      <a class="btn btn--ghost" href="tel:+39054531440" aria-label="Chiama lo showroom"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg> Chiama</a>
+    </div>
+    <div class="menu__info">
+      <p class="status menu__status"><span class="status__dot"></span><span class="status__text">Orari dello showroom</span></p>
+      <p>Via Francesco Baracca 70, 48022 Lugo (RA)</p>
+      <p>Mar–sab 9:30–12:30 · 15:00–19:00 · Lun 15:00–19:00</p>
+    </div>
   </div>
 </div>

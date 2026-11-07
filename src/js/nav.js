@@ -29,8 +29,17 @@ export function initNav() {
   floatNav.addEventListener('focusin', () => floatNav.classList.add('is-visible'));
 
   // Menu a schermo intero su mobile
-  const links = [...menu.querySelectorAll('nav a')];
   const blade = menu.querySelector('.menu__blade');
+  const closeBtn = menu.querySelector('.menu__close');
+  const items = () => [...menu.querySelectorAll('.menu__cats li, .menu__links li, .menu__cta, .menu__info')];
+  const here = location.pathname.replace(/index\.html$/, '');
+  menu.querySelectorAll('a[href]').forEach((a) => {
+    const u = new URL(a.href, location.href);
+    if (!u.hash && u.pathname === here) a.setAttribute('aria-current', 'page');
+  });
+  const homeItem = menu.querySelector('.menu__home');
+  if (homeItem && document.getElementById('intro') !== null) homeItem.remove();
+  if (homeItem && here.replace(/\/$/, '') === (import.meta.env.BASE_URL || '/').replace(/\/$/, '')) homeItem.remove();
   let isOpen = false;
   let lastFocus = null;
 
@@ -38,38 +47,40 @@ export function initNav() {
     isOpen = true;
     lastFocus = document.activeElement;
     menu.hidden = false;
+    menu.scrollTop = 0;
     document.body.classList.add('menu-open');
-    burgers.forEach((b) => { b.setAttribute('aria-expanded', 'true'); b.setAttribute('aria-label', 'Chiudi il menu'); });
-    floatNav.classList.add('is-visible');
+    burgers.forEach((b) => b.setAttribute('aria-expanded', 'true'));
     lenis?.stop();
+    document.documentElement.style.overflow = 'hidden';
     if (!reduced) {
-      gsap.fromTo(menu, { clipPath: 'polygon(0 0, 0 0, 0 100%, 0 100%)' }, { clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0 100%)', duration: 0.8, ease: 'expo.inOut' });
-      gsap.fromTo(blade, { xPercent: -60, opacity: 0 }, { xPercent: 10, opacity: 1, duration: 1.4, ease: 'expo.out', delay: 0.15 });
-      gsap.fromTo(links, { yPercent: 110 }, { yPercent: 0, duration: 0.9, stagger: 0.05, delay: 0.3 });
+      gsap.fromTo(menu, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: 'none' });
+      gsap.fromTo(blade, { xPercent: -50, opacity: 0 }, { xPercent: 10, opacity: 1, duration: 1.4, ease: 'expo.out' });
+      gsap.fromTo(items(), { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: 0.7, stagger: 0.035, delay: 0.08 });
     }
-    links[0]?.focus();
+    closeBtn.focus();
   }
   function closeMenu(restore = true) {
     if (!isOpen) return;
     isOpen = false;
-    burgers.forEach((b) => { b.setAttribute('aria-expanded', 'false'); b.setAttribute('aria-label', 'Apri il menu'); });
+    burgers.forEach((b) => b.setAttribute('aria-expanded', 'false'));
     document.body.classList.remove('menu-open');
+    document.documentElement.style.overflow = '';
     lenis?.start();
-    const end = () => { menu.hidden = true; if (restore) lastFocus?.focus(); };
+    const end = () => { menu.hidden = true; gsap.set(menu, { clearProps: 'opacity' }); if (restore) lastFocus?.focus(); };
     if (reduced) end();
-    else gsap.to(menu, { opacity: 0, duration: 0.4, ease: 'power2.out', onComplete: () => { gsap.set(menu, { opacity: 1 }); end(); } });
+    else gsap.to(menu, { opacity: 0, duration: 0.3, ease: 'power2.out', onComplete: end });
   }
   burgers.forEach((b) => b.addEventListener('click', () => (isOpen ? closeMenu() : openMenu())));
+  closeBtn.addEventListener('click', () => closeMenu());
   menu.addEventListener('click', (e) => e.target.closest('a') && closeMenu(false));
   document.addEventListener('keydown', (e) => {
     if (!isOpen) return;
     if (e.key === 'Escape') closeMenu();
     if (e.key === 'Tab') {
-      // focus trap tra le voci del menu e il bottone di chiusura
-      const items = [...links, ...menu.querySelectorAll('.menu__foot a'), floatNav.querySelector('.burger')];
-      const i = items.indexOf(document.activeElement);
-      if (e.shiftKey && i <= 0) { e.preventDefault(); items.at(-1).focus(); }
-      else if (!e.shiftKey && i === items.length - 1) { e.preventDefault(); items[0].focus(); }
+      const f = [...menu.querySelectorAll('a[href], button')].filter((el) => el.offsetParent !== null);
+      const i = f.indexOf(document.activeElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); f.at(-1).focus(); }
+      else if (!e.shiftKey && i === f.length - 1) { e.preventDefault(); f[0].focus(); }
     }
   });
 }

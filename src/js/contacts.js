@@ -40,13 +40,15 @@ export function openStatus(now = romeNow()) {
 }
 
 function initStatus() {
-  const el = document.getElementById('status');
-  if (!el) return;
+  const els = [...document.querySelectorAll('#status, .menu__status')];
+  if (!els.length) return;
   const paint = () => {
     const s = openStatus();
-    el.classList.toggle('is-open', s.open);
-    el.classList.toggle('is-closed', !s.open);
-    el.querySelector('.status__text').textContent = s.text;
+    els.forEach((el) => {
+      el.classList.toggle('is-open', s.open);
+      el.classList.toggle('is-closed', !s.open);
+      el.querySelector('.status__text').textContent = s.text;
+    });
   };
   paint();
   setInterval(paint, 60 * 1000);
