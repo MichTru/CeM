@@ -82,6 +82,57 @@ export function initHero() {
   document.fonts?.ready.then(shape);
   shape();
 
+  // --- Sipario a lamelle ------------------------------------------------------
+  async function curtain(slide, forward, done) {
+    const pic = slide.querySelector('.pic');
+    const img = slide.querySelector('img');
+    if (!img.complete || !img.naturalWidth) {
+      try { await Promise.race([img.decode(), new Promise((r) => setTimeout(r, 900))]); } catch { /* ignorato */ }
+    }
+    const src = img.currentSrc || img.src;
+    const W = slide.offsetWidth;
+    const H = slide.offsetHeight;
+    const nw = img.naturalWidth || 1600;
+    const nh = img.naturalHeight || 900;
+    const k = Math.max(W / nw, H / nh);
+    const cw = nw * k;
+    const ch = nh * k;
+    const ox = (W - cw) / 2;
+    const oy = (H - ch) / 2;
+    const n = MOBILE.matches ? 5 : 9;
+    const sw = W / n;
+
+    const wrap = document.createElement('div');
+    wrap.className = 'hero__slats';
+    const strips = [];
+    for (let i = 0; i < n; i++) {
+      const el = document.createElement('i');
+      el.style.cssText = `left:${i * sw}px;width:${sw + 1}px;background-image:url("${src}");background-size:${cw}px ${ch}px;background-position:${ox - i * sw}px ${oy}px`;
+      el.appendChild(document.createElement('b'));
+      wrap.appendChild(el);
+      strips.push(el);
+    }
+    slide.appendChild(wrap);
+    pic.style.opacity = '0';
+
+    const order = { each: 0.065, from: forward ? 'start' : 'end' };
+    gsap.fromTo(wrap, { scale: 1.06 }, { scale: 1, duration: 1.5, ease: 'expo.out' });
+    gsap.fromTo(strips.map((e) => e.firstChild), { opacity: 1 }, { opacity: 0, duration: 1.1, ease: 'power2.out', stagger: order });
+    gsap.fromTo(strips,
+      { rotationY: forward ? -88 : 88, transformPerspective: 1400, transformOrigin: forward ? '0% 50%' : '100% 50%' },
+      {
+        rotationY: 0,
+        duration: 1.0,
+        ease: 'power3.out',
+        stagger: order,
+        onComplete() {
+          pic.style.opacity = '';
+          wrap.remove();
+          done();
+        },
+      });
+  }
+
   // --- Cambio tab -------------------------------------------------------------
   function select(i, { user = false, focus = false } = {}) {
     if (user) stopAutoplay();
@@ -110,9 +161,10 @@ export function initHero() {
 
     const done = () => {
       from.classList.remove('is-active');
+      gsap.set(from.querySelector('img'), { scale: 1 });
       to.classList.add('is-active');
       to.classList.remove('is-entering');
-      gsap.set(to, { clearProps: 'clipPath,opacity' });
+      gsap.set(to, { clearProps: 'opacity' });
       busy = false;
       if (autoplayOn && started) runAutoplay();
     };
@@ -124,15 +176,9 @@ export function initHero() {
       return;
     }
 
-    // La nuova foto si rivela con un clip-path e un leggero zoom
-    const img = to.querySelector('img');
-    gsap.fromTo(
-      to,
-      { clipPath: forward ? 'inset(0% 0% 0% 100%)' : 'inset(0% 100% 0% 0%)' },
-      { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.15, ease: 'expo.inOut', onComplete: done },
-    );
-    gsap.fromTo(img, { scale: 1.16 }, { scale: 1, duration: 1.6, ease: 'expo.out' });
-    gsap.fromTo(from.querySelector('img'), { scale: 1 }, { scale: 1.05, duration: 1.15, ease: EASE_MOVE });
+    // La nuova foto entra a lamelle verticali, come una tenda a pannelli
+    curtain(to, forward, done);
+    gsap.fromTo(from.querySelector('img'), { scale: 1 }, { scale: 1.05, duration: 1.2, ease: EASE_MOVE });
 
     // Il titolo si riscrive parola per parola
     const out = title.querySelectorAll('.w > span');
@@ -225,8 +271,8 @@ export function initHero() {
       scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true },
     });
     if (finePointer) {
-      const qx = gsap.quickTo(slides.map((s) => s.querySelector('.pic')), 'x', { duration: 1.2, ease: 'power3.out' });
-      const qy = gsap.quickTo(slides.map((s) => s.querySelector('.pic')), 'y', { duration: 1.2, ease: 'power3.out' });
+      const qx = gsap.quickTo(slides, 'x', { duration: 1.2, ease: 'power3.out' });
+      const qy = gsap.quickTo(slides, 'y', { duration: 1.2, ease: 'power3.out' });
       frame.addEventListener('pointermove', (e) => {
         const r = frame.getBoundingClientRect();
         qx(((e.clientX - r.left) / r.width - 0.5) * -18);
