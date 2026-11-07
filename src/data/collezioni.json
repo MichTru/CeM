@@ -1,0 +1,13 @@
+{
+  "_come_si_usa": "Una voce per ogni linea o modello da mostrare. 'ambiente' è lo slug della pagina (cucine, zona-giorno, zona-notte, complementi, elettrodomestici). 'immagine' è il nome di una foto preparata con npm run images (vedi scripts/build-images.mjs). Finché un marchio non ha voci, la sua pagina mostra un segnaposto.",
+  "_esempio": {
+    "ambiente": "cucine",
+    "marchio": "Doimo Cucine",
+    "nome": "Nome della linea",
+    "descrizione": "Una frase su forma, materiali e carattere della linea.",
+    "materiali": ["Laccato opaco", "Rovere"],
+    "immagine": "nome-foto-senza-estensione",
+    "in_showroom": true
+  },
+  "items": []
+}

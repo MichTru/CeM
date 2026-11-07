@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/build-pages.mjs",
     "build": "vite build",
+    "pages": "node scripts/build-pages.mjs",
     "preview": "vite preview",
     "images": "node scripts/build-images.mjs"
   },

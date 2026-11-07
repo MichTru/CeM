@@ -1121,3 +1121,78 @@ ul, ol { padding: 0; list-style: none; }
   position: absolute; inset: 0;
   background: linear-gradient(90deg, rgb(255 226 192 / 0.38), rgb(255 226 192 / 0.06) 35%, transparent 60%, rgb(10 7 5 / 0.45));
 }
+
+/* Sottomenu Ambienti nell'header flottante */
+.float-nav .has-sub { position: relative; }
+.float-nav .sub {
+  position: absolute; top: calc(100% + 14px); left: 50%;
+  display: grid !important; gap: 2px; min-width: 200px;
+  padding: 8px;
+  border-radius: 18px;
+  border: 1px solid var(--line-strong);
+  background: rgb(36 27 21 / 0.92);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 50px -20px rgb(0 0 0 / 0.7);
+  opacity: 0; visibility: hidden;
+  transform: translate(-50%, 6px);
+  transition: opacity 0.35s var(--ease-out), transform 0.5s var(--ease-out), visibility 0.35s;
+}
+.float-nav .sub::before { content: ''; position: absolute; left: 0; right: 0; top: -16px; height: 16px; }
+.float-nav .has-sub:hover .sub, .float-nav .has-sub:focus-within .sub { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+.float-nav .sub a { display: block; padding: 9px 14px; border-radius: 12px; }
+.float-nav .sub a::after { display: none; }
+.float-nav .sub a:hover { background: rgb(245 239 230 / 0.08); }
+.menu__more { margin-bottom: 14px; }
+.menu__more a { font-size: 1rem !important; color: var(--sabbia) !important; }
+.footer__gap { margin-top: 12px; }
+.topbar__nav a[aria-current='page'] { color: var(--avorio); }
+.topbar__nav a[aria-current='page']::after { transform: scaleX(1); }
+
+/* Link dagli ambienti della home alle pagine */
+.room__link { display: inline-flex; align-items: center; gap: 12px; margin-top: 8px; text-decoration: none; font-size: 0.95rem; }
+.room__link .round-arrow { width: 40px; height: 40px; }
+.room__link:hover .round-arrow { transform: rotate(45deg); background: var(--avorio); color: var(--espresso); }
+.misura__more { display: inline-flex; margin-top: 22px; }
+
+/* Prenotazione: giorno e fascia */
+.when { display: grid; gap: 12px; margin: 0; padding: 16px; border: 1px solid var(--line); border-radius: 18px; background: rgb(22 17 13 / 0.3); min-width: 0; }
+.when[hidden] { display: none; }
+.when__legend { padding: 0 6px; font-size: 0.85rem; color: var(--sabbia); }
+.when__days {
+  display: flex; gap: 8px;
+  overflow-x: auto; scroll-snap-type: x proximity;
+  padding: 2px 2px 8px; margin: 0 -2px;
+  scrollbar-width: thin; scrollbar-color: var(--noce) transparent;
+  -webkit-mask: linear-gradient(90deg, #000 85%, transparent);
+  mask: linear-gradient(90deg, #000 85%, transparent);
+}
+.day, .slot { position: relative; flex: none; cursor: pointer; scroll-snap-align: start; }
+.day input, .slot input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.day span {
+  display: grid; justify-items: center; gap: 2px;
+  width: 64px; padding: 10px 0;
+  border-radius: 16px; border: 1px solid var(--line-strong);
+  transition: background-color 0.35s var(--ease-out), color 0.35s, border-color 0.35s, transform 0.4s var(--ease-out);
+}
+.day small { font-size: 0.72rem; color: var(--sabbia); text-transform: lowercase; }
+.day b { font-weight: 400; font-size: 1.35rem; line-height: 1.1; }
+.day:hover span { border-color: rgb(245 239 230 / 0.4); }
+.day input:checked + span { background: var(--avorio); color: var(--espresso); border-color: transparent; transform: translateY(-2px); }
+.day input:checked + span small { color: rgb(22 17 13 / 0.7); }
+.day input:focus-visible + span, .slot input:focus-visible + span { outline: 2px solid var(--cognac-chiaro); outline-offset: 2px; }
+.day.is-closed { cursor: not-allowed; }
+.day.is-closed span { opacity: 0.35; border-style: dashed; }
+.when__slots { display: flex; flex-wrap: wrap; gap: 8px; }
+.slot span {
+  display: inline-flex; gap: 8px; align-items: center;
+  height: 46px; padding: 0 18px;
+  border-radius: var(--r-pill); border: 1px solid var(--line-strong);
+  font-size: 0.9rem; color: rgb(245 239 230 / 0.85);
+  transition: background-color 0.35s, color 0.35s;
+}
+.slot b { font-weight: 500; }
+.slot input:checked + span { background: var(--avorio); color: var(--espresso); border-color: transparent; }
+.slot.is-off { cursor: not-allowed; }
+.slot.is-off span { opacity: 0.35; text-decoration: line-through; }
+.when__summary { font-size: 0.85rem; color: var(--sabbia); }

@@ -22,17 +22,18 @@ export function initScroll() {
     gsap.ticker.lagSmoothing(500, 33);
   }
 
-  // Ancore interne con scroll morbido e focus accessibile
+  // Ancore interne con scroll morbido e focus accessibile, anche per i link
+  // assoluti che puntano a una sezione della pagina corrente (es. /CeM/#galleria)
   document.addEventListener('click', (e) => {
-    const a = e.target.closest('a[href^="#"]');
-    if (!a) return;
-    const id = a.getAttribute('href');
-    if (id.length < 2) return;
-    const target = document.querySelector(id);
+    const a = e.target.closest('a[href*="#"]');
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey) return;
+    const url = new URL(a.href, location.href);
+    if (url.pathname !== location.pathname || !url.hash || url.hash.length < 2) return;
+    const target = document.querySelector(url.hash);
     if (!target) return;
     e.preventDefault();
     scrollToEl(target);
-    history.replaceState(null, '', id);
+    history.replaceState(null, '', url.hash);
   });
 }
 

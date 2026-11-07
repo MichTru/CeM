@@ -1,0 +1,25 @@
+<!-- Header flottante: fuori dalla hero sulla home, sempre presente nelle pagine interne -->
+<header class="float-nav" id="float-nav" aria-label="Navigazione rapida">
+  <a class="float-nav__logo" href="@base/" aria-label="Cassani &amp; Martignani, home">
+    <img src="@base/logo/logo-cassani-martignani-light.svg" alt="" width="140" height="31">
+  </a>
+  <nav aria-label="Sezioni">
+    <ul>
+      <li><a href="@base/#chi-siamo">Chi siamo</a></li>
+      <li class="has-sub">
+        <a href="@base/#ambienti" aria-haspopup="true">Ambienti</a>
+        <ul class="sub">
+          <li><a href="@base/cucine/">Cucine</a></li>
+          <li><a href="@base/zona-giorno/">Zona giorno</a></li>
+          <li><a href="@base/zona-notte/">Zona notte</a></li>
+          <li><a href="@base/complementi/">Complementi</a></li>
+          <li><a href="@base/elettrodomestici/">Elettrodomestici</a></li>
+        </ul>
+      </li>
+      <li><a href="@base/su-misura/">Su misura</a></li>
+      <li><a href="@base/#galleria">Galleria</a></li>
+    </ul>
+  </nav>
+  <a class="btn btn--light btn--sm" href="#contatti">Prenota <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></a>
+  <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</header>

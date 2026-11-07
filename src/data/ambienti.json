@@ -1,0 +1,107 @@
+[
+  {
+    "slug": "cucine",
+    "nome": "Cucine",
+    "form": "Cucina",
+    "gallery": "cucine",
+    "title": "Cucine su misura a Lugo · Cassani & Martignani",
+    "description": "Cucine moderne e su misura nello showroom di Lugo (RA): Doimo Cucine, Cucinesse, Gicinque, Prima Cucine e Paganelli. Progetto, elettrodomestici e montaggio.",
+    "h1": ["Cucine", "a Lugo"],
+    "sub": "Le cucine dei marchi che scegliamo, progettate sulle tue misure.",
+    "hero": "cucina-nera-penisola-legno",
+    "lead": "La cucina è la stanza in cui si passa più tempo, e la scelta che si fa una volta sola. Nel nostro showroom di Lugo la vedi dal vero, apri le ante, tocchi i piani e capisci come si muove la luce sulle finiture.",
+    "testo": [
+      "Partiamo dal rilievo delle misure a casa tua e dalle tue abitudini: chi cucina, quanto spazio serve, come si apre la stanza sul soggiorno. Poi scegliamo insieme composizione, finiture ed elettrodomestici, e prepariamo il progetto con il preventivo.",
+      "Consegna e montaggio li seguiamo noi, con la nostra squadra, e restiamo il tuo riferimento anche dopo, per l'assistenza post-vendita. Se un vano ha bisogno di un pezzo fuori standard, la nostra falegnameria di Massa Lombarda lo realizza su misura."
+    ],
+    "marchi": ["Doimo Cucine", "Cucinesse", "Gicinque", "Prima Cucine", "Paganelli Cucine"],
+    "keywords": "cucine Lugo, cucine su misura Lugo, cucine moderne Romagna"
+  },
+  {
+    "slug": "zona-giorno",
+    "nome": "Zona giorno",
+    "form": "Zona giorno",
+    "gallery": "giorno",
+    "title": "Divani e zona giorno a Lugo · Cassani & Martignani",
+    "description": "Divani, pareti attrezzate, librerie e tavoli per la zona giorno nello showroom di Lugo (RA): Voltan, Cinquanta3, Felis, Samoa e Zamagna.",
+    "h1": ["Zona giorno", "da vivere"],
+    "sub": "Divani, pareti attrezzate e tavoli per il soggiorno di tutti i giorni.",
+    "hero": "giorno-divano-angolare-vetrata",
+    "lead": "Il soggiorno è il posto dove ci si ritrova, da soli o in compagnia. Lo pensiamo partendo da come lo vivi: dove ti siedi la sera, quanto spazio serve agli ospiti, dove vanno libri e televisione.",
+    "testo": [
+      "In showroom puoi provare i divani e vedere da vicino tessuti, pelli e finiture delle pareti attrezzate. Ti aiutiamo a scegliere misure e composizioni, e a tenere insieme soggiorno, cucina e zona pranzo in un unico progetto.",
+      "Quando una parete o una nicchia chiedono una soluzione diversa dal catalogo, la falegnameria di Massa Lombarda adatta o realizza il pezzo su misura."
+    ],
+    "marchi": ["Voltan", "Cinquanta3", "Felis", "Samoa", "Zamagna"],
+    "keywords": "divani Lugo, arredamento soggiorno Lugo, pareti attrezzate Romagna"
+  },
+  {
+    "slug": "zona-notte",
+    "nome": "Zona notte",
+    "form": "Zona notte",
+    "gallery": "notte",
+    "title": "Camere da letto a Lugo · Cassani & Martignani",
+    "description": "Camere da letto, armadi, cabine armadio, camerette, letti e materassi nello showroom di Lugo (RA): Voltan, Cinquanta3, Albamobili, Bside Letti, Felis, Nidi e Castiflex.",
+    "h1": ["Camere da letto", "a Lugo"],
+    "sub": "Armadi, letti, camerette e materassi pensati per riposare davvero.",
+    "hero": "notte-armadio-bianco-maniglia-scura",
+    "lead": "Una buona camera da letto si sente prima ancora di vederla: un letto comodo, un armadio che contiene tutto, la luce giusta. La progettiamo con te, dalla camera matrimoniale alla cameretta dei ragazzi.",
+    "testo": [
+      "Misuriamo la stanza, valutiamo armadi a battente o scorrevoli, cabine armadio e contenitori, e ti facciamo provare letti e materassi in showroom. Per le camerette pensiamo a soluzioni che crescono insieme a chi le usa.",
+      "Pareti fuori squadra, mansarde e nicchie si risolvono con l'arredamento su misura della nostra falegnameria di Massa Lombarda."
+    ],
+    "marchi": ["Voltan", "Cinquanta3", "Albamobili", "Bside Letti", "Felis", "Nidi", "Castiflex"],
+    "keywords": "camere da letto Lugo, armadi su misura Lugo, camerette Romagna, materassi Lugo"
+  },
+  {
+    "slug": "complementi",
+    "nome": "Complementi",
+    "form": "Complementi",
+    "gallery": "",
+    "title": "Complementi d'arredo a Lugo · Cassani & Martignani",
+    "description": "Carte da parati, specchi e complementi d'arredo nello showroom di Lugo (RA): LondonArt e Pezzani, per completare ogni stanza.",
+    "h1": ["Complementi", "d'arredo"],
+    "sub": "I dettagli che completano una stanza e la rendono tua.",
+    "hero": "giorno-divano-velluto-verde-lampada",
+    "lead": "Una parete, uno specchio, un dettaglio scelto bene possono cambiare il carattere di una stanza. I complementi sono l'ultimo passo del progetto, e spesso quello che lo rende personale.",
+    "testo": [
+      "In showroom ti mostriamo le collezioni e ti aiutiamo ad abbinarle a cucina, soggiorno e camera, così che l'insieme resti coerente."
+    ],
+    "marchi": ["LondonArt", "Pezzani"],
+    "keywords": "complementi d'arredo Lugo, carta da parati Lugo, arredamento Romagna"
+  },
+  {
+    "slug": "elettrodomestici",
+    "nome": "Elettrodomestici",
+    "form": "Elettrodomestici",
+    "gallery": "",
+    "title": "Elettrodomestici da incasso a Lugo · Cassani & Martignani",
+    "description": "Forni, piani cottura, frigoriferi, lavastoviglie e lavelli da incasso a Lugo (RA): AEG, Electrolux, Siemens, Bosch, Whirlpool, Beko, Grundig, Miele, Franke e Foster.",
+    "h1": ["Elettrodomestici", "da incasso"],
+    "sub": "Scelti insieme alla cucina e installati dalla nostra squadra.",
+    "hero": "cucina-loft-isola-cemento",
+    "lead": "Gli elettrodomestici fanno funzionare la cucina ogni giorno. Li scegliamo insieme al progetto, così misure, prese, scarichi e aperture sono pensati fin dall'inizio.",
+    "testo": [
+      "Trattiamo forni, piani cottura a induzione e a gas, cappe, frigoriferi, lavastoviglie e lavelli dei grandi marchi, e ti aiutiamo a confrontare consumi, dimensioni e funzioni. L'installazione la segue la nostra squadra, insieme al montaggio della cucina."
+    ],
+    "marchi": ["AEG", "Electrolux", "Siemens", "Bosch", "Whirlpool", "Beko", "Grundig", "Miele", "Franke", "Foster"],
+    "keywords": "elettrodomestici da incasso Lugo, forni da incasso Romagna, piani cottura Lugo"
+  },
+  {
+    "slug": "su-misura",
+    "nome": "Su misura",
+    "form": "Su misura",
+    "gallery": "misura",
+    "title": "Arredamento su misura in Romagna · Cassani & Martignani",
+    "description": "Arredamento su misura dalla nostra falegnameria di Massa Lombarda: adattiamo e realizziamo cucine, armadi, librerie e mobili per Lugo e la Romagna.",
+    "h1": ["Su misura,", "dalla falegnameria"],
+    "sub": "Quello che il catalogo non risolve, lo costruiamo a Massa Lombarda.",
+    "hero": "su-misura-modulo-rovere",
+    "lead": "Una nicchia, una mansarda, una parete fuori squadra: a volte il prodotto giusto ha bisogno di un pezzo in più. La nostra falegnameria di Massa Lombarda adatta e completa i mobili dei marchi che trattiamo, o realizza da zero quello che serve.",
+    "testo": [
+      "Si parte dal rilievo delle misure e dal progetto, poi scegliamo insieme legni, laccature e ferramenta. In falegnameria il progetto diventa mobile, pezzo per pezzo, e il montaggio lo seguiamo noi, fino all'assistenza dopo la consegna."
+    ],
+    "marchi": [],
+    "keywords": "arredamento su misura Romagna, falegnameria Massa Lombarda, mobili su misura Lugo"
+  }
+]

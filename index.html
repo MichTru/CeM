@@ -44,6 +44,7 @@
   {
     "@context": "https://schema.org",
     "@type": "FurnitureStore",
+    "@id": "https://michtru.github.io/CeM/#store",
     "name": "Cassani & Martignani",
     "description": "Showroom di arredamento a Lugo con falegnameria propria a Massa Lombarda per l'arredamento su misura.",
     "url": "https://michtru.github.io/CeM/",
@@ -84,40 +85,8 @@
     <div class="intro-logo"><!--LOGO-INTRO--></div>
   </div>
 
-  <!-- Header flottante fuori dalla hero -->
-  <header class="float-nav" id="float-nav" aria-label="Navigazione rapida">
-    <a class="float-nav__logo" href="#top" aria-label="Cassani &amp; Martignani, torna all'inizio">
-      <img src="@base/logo/logo-cassani-martignani-light.svg" alt="" width="140" height="31">
-    </a>
-    <nav aria-label="Sezioni">
-      <ul>
-        <li><a href="#chi-siamo">Chi siamo</a></li>
-        <li><a href="#ambienti">Ambienti</a></li>
-        <li><a href="#su-misura">Su misura</a></li>
-        <li><a href="#galleria">Galleria</a></li>
-      </ul>
-    </nav>
-    <a class="btn btn--light btn--sm" href="#contatti">Contatti <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></a>
-    <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
-  </header>
-
-  <!-- Menu mobile a schermo intero -->
-  <div class="menu" id="menu" hidden>
-    <div class="menu__blade" aria-hidden="true"></div>
-    <nav aria-label="Menu principale">
-      <ul>
-        <li><a href="#chi-siamo">Chi siamo</a></li>
-        <li><a href="#ambienti">Ambienti</a></li>
-        <li><a href="#su-misura">Su misura</a></li>
-        <li><a href="#galleria">Galleria</a></li>
-        <li><a href="#contatti">Contatti</a></li>
-      </ul>
-    </nav>
-    <div class="menu__foot">
-      <a href="tel:+39054531440">0545 31440</a>
-      <span>Via Francesco Baracca 70, Lugo</span>
-    </div>
-  </div>
+  <!--PARTIAL:floatnav-->
+  <!--PARTIAL:menu-->
 
   <main id="contenuto">
     <!-- La card sospesa: header, hero e bento -->
@@ -235,6 +204,7 @@
             <ul class="brands" aria-label="Marchi cucine">
               <li>Doimo Cucine</li><li>Cucinesse</li><li>Gicinque</li><li>Prima Cucine</li><li>Paganelli Cucine</li>
             </ul>
+            <a class="room__link" href="@base/cucine/">Scopri cucine <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
           </div>
         </article>
 
@@ -251,6 +221,7 @@
             <ul class="brands" aria-label="Marchi zona giorno">
               <li>Voltan</li><li>Cinquanta3</li><li>Felis</li><li>Samoa</li><li>Zamagna</li>
             </ul>
+            <a class="room__link" href="@base/zona-giorno/">Scopri zona giorno <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
           </div>
         </article>
 
@@ -264,6 +235,7 @@
             <ul class="brands" aria-label="Marchi zona notte">
               <li>Voltan</li><li>Cinquanta3</li><li>Albamobili</li><li>Bside Letti</li><li>Felis</li><li>Nidi</li><li>Castiflex</li>
             </ul>
+            <a class="room__link" href="@base/zona-notte/">Scopri zona notte <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
           </div>
         </article>
 
@@ -277,6 +249,7 @@
             <ul class="brands" aria-label="Marchi complementi">
               <li>LondonArt</li><li>Pezzani</li>
             </ul>
+            <a class="room__link" href="@base/complementi/">Scopri complementi <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
           </div>
         </article>
 
@@ -290,6 +263,7 @@
             <ul class="brands" aria-label="Marchi elettrodomestici">
               <li>AEG</li><li>Electrolux</li><li>Siemens</li><li>Bosch</li><li>Whirlpool</li><li>Beko</li><li>Grundig</li><li>Miele</li><li>Franke</li><li>Foster</li>
             </ul>
+            <a class="room__link" href="@base/elettrodomestici/">Scopri elettrodomestici <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
           </div>
         </article>
       </div>
@@ -329,6 +303,7 @@
             </li>
           </ol>
           <p class="misura__caption">Arredamento su misura in Romagna: cucine, armadi, librerie e boiserie realizzati sulle tue misure.</p>
+          <a class="btn btn--ghost misura__more" href="@base/su-misura/">La falegnameria</a>
         </div>
       </div>
     </section>
@@ -477,139 +452,10 @@
       </div>
     </section>
 
-    <!-- Showroom e contatti -->
-    <section class="section contatti" id="contatti" aria-labelledby="contatti-title">
-      <div class="contatti__grid">
-        <div class="contatti__info">
-          <h2 class="h-display" id="contatti-title">Vieni in<br>showroom</h2>
-          <p class="status" id="status" aria-live="polite"><span class="status__dot"></span><span class="status__text">Orari dello showroom</span></p>
-
-          <dl class="info">
-            <div>
-              <dt>Indirizzo</dt>
-              <dd>Via Francesco Baracca 70<br>48022 Lugo (RA)</dd>
-            </div>
-            <div>
-              <dt>Orari</dt>
-              <dd>
-                <span class="hours"><span>Martedì – sabato</span><span>9:30–12:30 · 15:00–19:00</span></span>
-                <span class="hours"><span>Lunedì</span><span>15:00–19:00</span></span>
-                <span class="hours"><span>Domenica</span><span>Chiuso</span></span>
-              </dd>
-            </div>
-            <div>
-              <dt>Telefono</dt>
-              <dd><a href="tel:+39054531440">0545 31440</a></dd>
-            </div>
-            <div>
-              <dt>Email</dt>
-              <dd><a href="mailto:cassaniemartignani@gmail.com">cassaniemartignani@gmail.com</a></dd>
-            </div>
-          </dl>
-
-          <div class="contatti__actions">
-            <a class="btn btn--light" href="tel:+39054531440"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg> Chiama</a>
-            <a class="btn btn--ghost" href="https://wa.me/[NUMERO WHATSAPP]" target="_blank" rel="noopener" data-whatsapp><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp</a>
-          </div>
-
-          <div class="map" id="map">
-            <div class="map__preview">
-              <svg class="map__art" viewBox="0 0 400 220" aria-hidden="true">
-                <defs><radialGradient id="mg" cx="50%" cy="48%" r="60%"><stop offset="0" stop-color="#3A2B21"/><stop offset="1" stop-color="#241B15"/></radialGradient></defs>
-                <rect width="400" height="220" fill="url(#mg)"/>
-                <g fill="none" stroke="#F5EFE6" stroke-opacity=".09" stroke-width="1">
-                  <circle cx="200" cy="104" r="34"/><circle cx="200" cy="104" r="70"/><circle cx="200" cy="104" r="110"/><circle cx="200" cy="104" r="160"/>
-                </g>
-                <circle cx="200" cy="104" r="6" fill="#9A6440"/><circle cx="200" cy="104" r="14" fill="#9A6440" fill-opacity=".25"/>
-              </svg>
-              <div class="map__copy">
-                <p>Via Francesco Baracca 70, Lugo</p>
-                <div class="map__btns">
-                  <button type="button" class="btn btn--light btn--sm" id="map-load">Mostra la mappa</button>
-                  <a class="btn btn--ghost btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Francesco+Baracca+70+48022+Lugo+RA" target="_blank" rel="noopener">Apri in Google Maps</a>
-                </div>
-                <p class="map__note">La mappa è un contenuto di Google: si carica solo se lo consenti.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <form class="form" id="form" action="[ENDPOINT FORM]" method="POST" novalidate>
-          <h3 class="form__title">Prenota una visita o chiedi un preventivo</h3>
-          <fieldset class="form__kind">
-            <legend class="visually-hidden">Tipo di richiesta</legend>
-            <label><input type="radio" name="richiesta" value="Visita in showroom" checked><span>Visita in showroom</span></label>
-            <label><input type="radio" name="richiesta" value="Preventivo"><span>Preventivo</span></label>
-          </fieldset>
-          <div class="field">
-            <label for="f-nome">Nome e cognome</label>
-            <input id="f-nome" name="nome" type="text" autocomplete="name" required>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="f-tel">Telefono</label>
-              <input id="f-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel">
-            </div>
-            <div class="field">
-              <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required>
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-amb">Ambiente d'interesse</label>
-            <select id="f-amb" name="ambiente">
-              <option>Cucina</option>
-              <option>Zona giorno</option>
-              <option>Zona notte</option>
-              <option>Su misura</option>
-              <option>Complementi</option>
-              <option>Elettrodomestici</option>
-              <option>Casa intera</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-msg">Messaggio</label>
-            <textarea id="f-msg" name="messaggio" rows="4"></textarea>
-          </div>
-          <label class="check">
-            <input type="checkbox" name="privacy" required>
-            <span>Ho letto l'<a href="@base/privacy.html">informativa privacy</a> e acconsento al trattamento dei dati per ricevere una risposta.</span>
-          </label>
-          <button class="btn btn--light form__send" type="submit">Invia la richiesta</button>
-          <p class="form__msg" id="form-msg" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
+    <!--PARTIAL:contatti-->
   </main>
 
-  <footer class="footer">
-    <div class="footer__top">
-      <img src="@base/logo/logo-cassani-martignani-light.svg" alt="Cassani &amp; Martignani, arredi e design" width="220" height="49" loading="lazy">
-      <div class="footer__cols">
-        <div>
-          <h2>Showroom</h2>
-          <p>Via Francesco Baracca 70<br>48022 Lugo (RA)</p>
-        </div>
-        <div>
-          <h2>Contatti</h2>
-          <p>Telefono <a href="tel:+39054531440">0545 31440</a><br><a href="mailto:cassaniemartignani@gmail.com">cassaniemartignani@gmail.com</a></p>
-        </div>
-        <div>
-          <h2>Orari</h2>
-          <p>9:30–12:30 · 15:00–19:00<br>Chiuso domenica e lunedì mattina</p>
-        </div>
-        <div>
-          <h2>Seguici</h2>
-          <p><a href="https://www.facebook.com/cassaniemartignani/" target="_blank" rel="noopener">Facebook</a><br><a href="https://www.instagram.com/cassaniemartignani/" target="_blank" rel="noopener">Instagram</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p>© <span data-year>2026</span> Cassani &amp; Martignani · P.IVA 02413240397</p>
-      <p><a href="@base/privacy.html">Privacy policy</a> · <a href="@base/cookie.html">Cookie policy</a> · <button type="button" class="linklike" data-cookie-prefs>Preferenze cookie</button></p>
-    </div>
-  </footer>
-
+  <!--PARTIAL:footer-->
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galleria a schermo intero" hidden>
     <div class="lightbox__stage"></div>
@@ -619,25 +465,6 @@
     <p class="lightbox__caption" aria-live="polite"></p>
   </div>
 
-  <!-- Banner cookie -->
-  <div class="cookie" id="cookie" role="dialog" aria-label="Preferenze cookie" hidden>
-    <p>Usiamo solo cookie tecnici. La mappa di Google e gli altri contenuti esterni si caricano solo se lo consenti. <a href="@base/cookie.html">Cookie policy</a></p>
-    <div class="cookie__btns">
-      <button type="button" class="btn btn--ghost btn--sm" data-consent="no">Solo tecnici</button>
-      <button type="button" class="btn btn--light btn--sm" data-consent="yes">Accetta contenuti esterni</button>
-    </div>
-  </div>
-
-  <div class="cursor" aria-hidden="true"><i></i></div>
-
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
-    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.8h2.6l1.4 4-2 1.4a11 11 0 0 0 6.2 6.2l1.4-2 4 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 6a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
-    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.2 8.6c.3-.6.6-.6.9-.6h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.1.4-.2.6-.1l1.5.6c.3.1.4.3.4.5v.5c0 .3 0 .6-.6.9-.6.4-1.6.5-3-.1a8.3 8.3 0 0 1-4-4c-.6-1.4-.5-2.4-.1-3Z" fill="currentColor"/></symbol>
-  </svg>
+  <!--PARTIAL:tail-->
 </body>
 </html>

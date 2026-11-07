@@ -1,0 +1,13 @@
+{
+  "_come_si_usa": "Storie di progetto: un lavoro raccontato in tre passaggi. 'ambiente' è lo slug della pagina. 'immagini' è un elenco di nomi di foto preparate con npm run images; la prima è la copertina.",
+  "_esempio": {
+    "ambiente": "cucine",
+    "titolo": "Cucina con isola a Lugo",
+    "luogo": "Lugo",
+    "richiesta": "Cosa chiedeva il cliente.",
+    "progetto": "Come l'abbiamo pensata.",
+    "risultato": "Com'è venuta e cosa ha fatto la falegnameria.",
+    "immagini": ["foto-1", "foto-2"]
+  },
+  "items": []
+}

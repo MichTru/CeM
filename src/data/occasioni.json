@@ -1,0 +1,13 @@
+{
+  "_come_si_usa": "Pezzi d'esposizione e fine serie. 'ambiente' è lo slug della pagina. 'prezzo' e 'prezzo_listino' sono facoltativi: lasciali vuoti se i titolari preferiscono non mostrarli. 'immagine' è il nome di una foto preparata con npm run images.",
+  "_esempio": {
+    "ambiente": "zona-giorno",
+    "marchio": "Felis",
+    "nome": "Divano tre posti",
+    "descrizione": "Pezzo d'esposizione, tessuto e dimensioni.",
+    "prezzo": "",
+    "prezzo_listino": "",
+    "immagine": "nome-foto-senza-estensione"
+  },
+  "items": []
+}

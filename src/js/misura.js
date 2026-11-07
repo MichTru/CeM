@@ -55,7 +55,7 @@ export function initMisura() {
   ScrollTrigger.create({
     trigger: pin,
     start: 'top top',
-    end: () => `+=${innerHeight * (MOBILE.matches ? 2.4 : 3)}`,
+    end: () => `+=${innerHeight * (MOBILE.matches ? 1.8 : 2.2)}`,
     pin: true,
     scrub: 0.6,
     anticipatePin: 1,

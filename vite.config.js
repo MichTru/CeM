@@ -5,6 +5,8 @@ import { resolve } from 'node:path';
 const BASE = '/CeM/';
 const images = JSON.parse(fs.readFileSync('src/data/images.json', 'utf8'));
 const logoInline = fs.readFileSync('src/assets/logo-inline.svg', 'utf8');
+const ambienti = JSON.parse(fs.readFileSync('src/data/ambienti.json', 'utf8'));
+const partial = (name) => fs.readFileSync(`src/partials/${name}.html`, 'utf8');
 
 // <cm-img name="..." sizes="..." class="..." loading="lazy" fetchpriority="high" alt="...">
 // diventa un <picture> con AVIF/WebP responsive e placeholder sfocato.
@@ -34,10 +36,15 @@ function cmHtml() {
     configResolved(c) {
       base = c.base;
     },
+    // in sviluppo, una modifica ai partial ricarica la pagina
+    handleHotUpdate({ file, server }) {
+      if (file.includes('/src/partials/')) server.ws.send({ type: 'full-reload' });
+    },
     transformIndexHtml: {
       order: 'post',
       handler(html) {
         return html
+          .replace(/<!--PARTIAL:([a-z]+)-->/g, (_, n) => partial(n))
           .replace(/<cm-img([^>]*)><\/cm-img>/g, (_, a) => picture(a))
           .replace('<!--LOGO-INTRO-->', logoInline)
           .replaceAll('@base/', base);
@@ -57,6 +64,7 @@ export default defineConfig({
         main: resolve(import.meta.dirname, 'index.html'),
         privacy: resolve(import.meta.dirname, 'privacy.html'),
         cookie: resolve(import.meta.dirname, 'cookie.html'),
+        ...Object.fromEntries(ambienti.map((a) => [a.slug, resolve(import.meta.dirname, `${a.slug}/index.html`)])),
       },
     },
   },

@@ -1,4 +1,5 @@
 import { hasConsent, onConsent, askConsent } from './consent.js';
+import { initBooking, bookingIncomplete } from './booking.js';
 
 // Orari: mar–sab 9:30–12:30 e 15:00–19:00, lunedì solo pomeriggio, domenica chiuso.
 const MORNING = [9 * 60 + 30, 12 * 60 + 30];
@@ -69,6 +70,12 @@ function initForm() {
       invalid[0].focus();
       return;
     }
+    const missing = bookingIncomplete(form);
+    if (missing) {
+      msg.textContent = 'Scegli il giorno e la fascia oraria della visita.';
+      missing.focus();
+      return;
+    }
     const data = new FormData(form);
     const btn = form.querySelector('[type="submit"]');
 
@@ -91,6 +98,7 @@ function initForm() {
     // Fallback: email precompilata
     const body = [
       `Richiesta: ${data.get('richiesta')}`,
+      ...(data.get('appuntamento') && !document.getElementById('when')?.hidden ? [`Quando: ${data.get('appuntamento')}`] : []),
       `Nome: ${data.get('nome')}`,
       `Telefono: ${data.get('telefono') || '-'}`,
       `Email: ${data.get('email')}`,
@@ -130,6 +138,7 @@ function initMap() {
 
 export function initContacts() {
   initStatus();
+  initBooking();
   initForm();
   initMap();
   // [NUMERO WHATSAPP] è ancora da completare con il cliente
