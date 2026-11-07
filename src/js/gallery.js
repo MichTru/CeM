@@ -2,6 +2,8 @@ import { gsap, lenis, reduced } from './motion.js';
 import images from '../data/images.json';
 
 const BASE = import.meta.env.BASE_URL;
+// Ritmo dell'impaginato: grande, due piccole, due medie, una a tutta larghezza...
+const RHYTHM = ['g-xl', 'g-s', 'g-s', 'g-m', 'g-m', 'g-w', 'g-q', 'g-q', 'g-q'];
 
 function pictureHTML(name) {
   const img = images[name];
@@ -15,18 +17,34 @@ export function initGallery() {
   const tiles = [...grid.querySelectorAll('.tile')];
   const filters = [...document.querySelectorAll('.filter')];
 
-  // --- Rivelazione allo scroll ------------------------------------------------
+  const layout = () => {
+    let k = 0;
+    tiles.forEach((t) => {
+      RHYTHM.forEach((c) => t.classList.remove(c));
+      if (!t.classList.contains('is-hidden')) t.classList.add(RHYTHM[k++ % RHYTHM.length]);
+    });
+  };
+  layout();
+
+  // --- Rivelazione a sipario, dal centro verso i lati ------------------------
   if (!reduced) {
     tiles.forEach((t) => {
+      const media = t.querySelector('img, video, .ph');
       gsap.fromTo(t,
-        { clipPath: 'inset(18% 0% 0% 0% round 20px)', opacity: 0.001 },
+        { clipPath: 'inset(0% 50% 0% 50% round 20px)' },
         {
           clipPath: 'inset(0% 0% 0% 0% round 20px)',
-          opacity: 1,
-          duration: 1.2,
+          duration: 1.3,
+          ease: 'expo.inOut',
           scrollTrigger: { trigger: t, start: 'top 92%', once: true },
           onComplete: () => gsap.set(t, { clearProps: 'clipPath' }),
         });
+      if (media) {
+        gsap.fromTo(media, { scale: 1.25 }, {
+          scale: 1, duration: 1.8, ease: 'expo.out', clearProps: 'transform',
+          scrollTrigger: { trigger: t, start: 'top 92%', once: true },
+        });
+      }
     });
   }
 
@@ -39,23 +57,23 @@ export function initGallery() {
     });
     const before = new Map(tiles.filter((t) => !t.classList.contains('is-hidden')).map((t) => [t, t.getBoundingClientRect()]));
     tiles.forEach((t) => t.classList.toggle('is-hidden', f !== 'tutti' && t.dataset.cat !== f));
+    layout();
     if (reduced) return;
     tiles.forEach((t) => {
       if (t.classList.contains('is-hidden')) return;
       const a = before.get(t);
       const b = t.getBoundingClientRect();
-      gsap.set(t, { clearProps: 'clipPath', opacity: 1 });
+      gsap.set(t, { clearProps: 'clipPath' });
       if (a) {
         gsap.fromTo(t,
           { x: a.left - b.left, y: a.top - b.top, scaleX: a.width / b.width, scaleY: a.height / b.height, transformOrigin: '0 0' },
           { x: 0, y: 0, scaleX: 1, scaleY: 1, duration: 0.9, ease: 'expo.out', clearProps: 'transform' });
       } else {
-        gsap.fromTo(t, { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, duration: 0.8, delay: 0.1, clearProps: 'transform' });
+        gsap.fromTo(t, { clipPath: 'inset(0% 50% 0% 50% round 20px)' }, { clipPath: 'inset(0% 0% 0% 0% round 20px)', duration: 0.9, ease: 'expo.inOut', clearProps: 'clipPath' });
       }
     });
   }
   filters.forEach((b) => b.addEventListener('click', () => apply(b.dataset.f)));
-  // Le card e i marchi possono portare direttamente a un filtro
   document.addEventListener('click', (e) => {
     const a = e.target.closest('[data-filter]');
     if (a) apply(a.dataset.filter);
@@ -78,25 +96,60 @@ function initLightbox(tiles) {
 
   const items = () => tiles.filter((t) => !t.classList.contains('is-hidden')).map((t) => t.querySelector('.tile__btn')).filter(Boolean);
 
+  function setCaption(btn) {
+    caption.innerHTML = `<span>${btn.dataset.catLabel || ''}</span><b>${btn.dataset.title || ''}</b><span>${index + 1} di ${list.length}</span>`;
+  }
+
+  // Cambio immagine: la nuova si apre a sipario dal centro
   function show(i, dir = 0) {
     index = (i + list.length) % list.length;
     const btn = list[index];
-    const name = btn.dataset.full;
     setZoom(false);
-    stage.innerHTML = pictureHTML(name);
-    caption.textContent = `${images[name].alt} · ${index + 1} di ${list.length}`;
-    if (!reduced) gsap.fromTo(stage.firstElementChild, { opacity: 0, x: dir * 40 }, { opacity: 1, x: 0, duration: 0.7 });
+    const old = stage.firstElementChild;
+    stage.insertAdjacentHTML('beforeend', pictureHTML(btn.dataset.full));
+    const pic = stage.lastElementChild;
+    setCaption(btn);
+    if (reduced || !old) { old?.remove(); return pic; }
+    gsap.set(pic, { position: 'absolute', inset: 0 });
+    gsap.fromTo(pic, { clipPath: 'inset(0% 50% 0% 50%)' }, {
+      clipPath: 'inset(0% 0% 0% 0%)',
+      duration: 0.9,
+      ease: 'expo.inOut',
+      onComplete: () => { old.remove(); gsap.set(pic, { clearProps: 'all' }); },
+    });
+    gsap.fromTo(pic.querySelector('img'), { scale: 1.12, x: dir * 30 }, { scale: 1, x: 0, duration: 1.3, ease: 'expo.out', clearProps: 'transform' });
+    gsap.to(old, { opacity: 0.25, duration: 0.9, ease: 'power2.out' });
+    return pic;
   }
 
+  // Apertura: la foto cresce dalla sua posizione nella griglia (FLIP)
   function open(btn) {
     list = items();
     opener = btn;
     box.hidden = false;
     lenis?.stop();
     document.documentElement.style.overflow = 'hidden';
-    show(list.indexOf(btn));
-    if (!reduced) gsap.fromTo(box, { opacity: 0 }, { opacity: 1, duration: 0.5, ease: 'none' });
+    stage.innerHTML = '';
+    index = list.indexOf(btn);
+    const pic = show(index);
     btnClose.focus();
+    if (reduced) return;
+    gsap.fromTo(box, { backgroundColor: 'rgba(14,10,8,0)' }, { backgroundColor: 'rgba(14,10,8,0.94)', duration: 0.6, ease: 'none' });
+    gsap.fromTo([btnClose, btnPrev, btnNext, caption], { opacity: 0 }, { opacity: 1, duration: 0.5, delay: 0.35, ease: 'none' });
+    const img = pic.querySelector('img');
+    requestAnimationFrame(() => {
+      const from = btn.getBoundingClientRect();
+      const to = img.getBoundingClientRect();
+      if (!to.width) return;
+      gsap.fromTo(img,
+        {
+          x: from.left + from.width / 2 - (to.left + to.width / 2),
+          y: from.top + from.height / 2 - (to.top + to.height / 2),
+          scale: Math.max(from.width / to.width, from.height / to.height),
+          clipPath: `inset(${Math.max(0, (1 - from.height / from.width * to.width / to.height) * 50)}% 0% round 20px)`,
+        },
+        { x: 0, y: 0, scale: 1, clipPath: 'inset(0% 0% round 16px)', duration: 0.9, ease: 'expo.inOut', clearProps: 'transform,clipPath' });
+    });
   }
   function close() {
     const end = () => {
@@ -107,14 +160,14 @@ function initLightbox(tiles) {
       opener?.focus();
     };
     if (reduced) end();
-    else gsap.to(box, { opacity: 0, duration: 0.35, ease: 'none', onComplete: end });
+    else gsap.to(box, { opacity: 0, duration: 0.35, ease: 'none', onComplete: () => { gsap.set(box, { clearProps: 'opacity' }); end(); } });
   }
 
   // Zoom: click per ingrandire, poi la foto segue il puntatore
   function setZoom(on, e) {
     zoomed = on;
     box.classList.toggle('is-zoomed', on);
-    const img = stage.querySelector('img');
+    const img = stage.lastElementChild?.querySelector('img');
     if (!img) return;
     if (on && e) {
       const r = img.getBoundingClientRect();
@@ -123,28 +176,25 @@ function initLightbox(tiles) {
     img.style.transition = 'transform 0.6s cubic-bezier(0.16,1,0.3,1)';
     img.style.transform = on ? 'scale(2.2)' : '';
   }
+
+  let sx = 0;
+  let sy = 0;
+  let moved = false;
   stage.addEventListener('click', (e) => {
     if (moved) return;
     if (e.target.tagName === 'IMG') setZoom(!zoomed, e);
   });
-  stage.addEventListener('pointermove', (e) => {
-    if (!zoomed || e.pointerType !== 'mouse') return;
-    const img = stage.querySelector('img');
-    const r = stage.getBoundingClientRect();
-    img.style.transformOrigin = `${((e.clientX - r.left) / r.width) * 100}% ${((e.clientY - r.top) / r.height) * 100}%`;
-  });
-
-  // Swipe su touch; con lo zoom attivo il trascinamento sposta la foto
-  let sx = 0;
-  let sy = 0;
-  let moved = false;
   stage.addEventListener('pointerdown', (e) => { sx = e.clientX; sy = e.clientY; moved = false; });
   stage.addEventListener('pointermove', (e) => {
-    if (e.pointerType === 'mouse' || !zoomed || !(e.buttons || e.pressure)) return;
-    const img = stage.querySelector('img');
+    if (!zoomed) return;
+    const img = stage.lastElementChild?.querySelector('img');
     const r = stage.getBoundingClientRect();
-    img.style.transition = 'none';
-    img.style.transformOrigin = `${100 - ((e.clientX - r.left) / r.width) * 100}% ${100 - ((e.clientY - r.top) / r.height) * 100}%`;
+    if (e.pointerType === 'mouse') {
+      img.style.transformOrigin = `${((e.clientX - r.left) / r.width) * 100}% ${((e.clientY - r.top) / r.height) * 100}%`;
+    } else if (e.buttons || e.pressure) {
+      img.style.transition = 'none';
+      img.style.transformOrigin = `${100 - ((e.clientX - r.left) / r.width) * 100}% ${100 - ((e.clientY - r.top) / r.height) * 100}%`;
+    }
   });
   stage.addEventListener('pointerup', (e) => {
     const dx = e.clientX - sx;

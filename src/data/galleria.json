@@ -1,0 +1,17 @@
+{
+  "_come_si_usa": "Voci della galleria in home, nell'ordine in cui compaiono. 'img' è il nome di una foto preparata con npm run images; 'video' (facoltativo) è il nome di un loop in public/video; senza 'img' compare un segnaposto con l'etichetta 'ph'. 'cat' è il filtro: cucine, giorno, notte, misura.",
+  "items": [
+    { "img": "cucina-isola-salvia-rovere-vetrine", "video": "loop-cucina-isola-salvia", "titolo": "Isola salvia e rovere", "cat": "cucine" },
+    { "img": "giorno-parete-attrezzata-geometrica", "titolo": "Parete a moduli geometrici", "cat": "giorno" },
+    { "img": "notte-armadio-bianco-maniglia-scura", "titolo": "Armadio bianco, maniglia in legno", "cat": "notte" },
+    { "img": "cucina-loft-isola-cemento", "titolo": "Loft con isola in cemento", "cat": "cucine" },
+    { "img": "cucina-nera-penisola-legno", "titolo": "Nero opaco e penisola in legno", "cat": "cucine" },
+    { "img": "giorno-divano-velluto-verde-lampada", "video": "loop-giorno-velluto-verde", "titolo": "Velluto verde e luce calda", "cat": "giorno" },
+    { "ph": "Realizzazione su misura", "titolo": "Realizzazione su misura", "cat": "misura" },
+    { "ph": "Camera da letto", "titolo": "Camera da letto", "cat": "notte" },
+    { "img": "giorno-divano-angolare-vetrata", "video": "loop-giorno-vetrata", "titolo": "Angolare sulla vetrata", "cat": "giorno" },
+    { "img": "cucina-bianca-angolo-legno-scuro", "titolo": "Bianco e legno scuro", "cat": "cucine" },
+    { "ph": "Falegnameria di Massa Lombarda", "titolo": "In falegnameria", "cat": "misura" },
+    { "ph": "Montaggio", "titolo": "Il montaggio", "cat": "misura" }
+  ]
+}

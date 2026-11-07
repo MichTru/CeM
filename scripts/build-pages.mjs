@@ -323,6 +323,33 @@ ${collezioniSection(a)}${occasioniSection(a)}${misuraSections(a)}${storieSection
 `;
 }
 
+// Galleria della home: generata da src/data/galleria.json in un partial
+const CATS = { cucine: 'Cucine', giorno: 'Zona giorno', notte: 'Zona notte', misura: 'Su misura' };
+const galleria = read('galleria.json').items;
+const tiles = galleria.map((g) => {
+  const cap = `<div class="tile__cap"><span>${CATS[g.cat]}</span><h3>${esc(g.titolo)}</h3></div>`;
+  if (!g.img) return `
+        <li class="tile tile--ph" data-cat="${g.cat}">
+          ${ph(g.ph)}
+          ${cap}
+        </li>`;
+  const sizes = '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 60vw';
+  const inner = g.video
+    ? `<video class="loop" muted loop playsinline preload="none" data-poster="@base/video/${g.video}-poster.webp" aria-hidden="true">
+              <source src="@base/video/${g.video}.webm" type="video/webm">
+              <source src="@base/video/${g.video}.mp4" type="video/mp4">
+            </video>`
+    : `<cm-img name="${g.img}" sizes="${sizes}" alt=""></cm-img>`;
+  return `
+        <li class="tile" data-cat="${g.cat}">
+          <button type="button" class="tile__btn" data-full="${g.img}" data-title="${esc(g.titolo)}" data-cat-label="${CATS[g.cat]}" aria-label="Apri: ${esc(g.titolo)}">
+            ${inner}
+          </button>
+          ${cap}
+        </li>`;
+}).join('');
+fs.writeFileSync('src/partials/galleria.html', `<ul class="grid" id="grid">${tiles}\n      </ul>\n`);
+
 for (const a of ambienti) {
   fs.mkdirSync(a.slug, { recursive: true });
   fs.writeFileSync(`${a.slug}/index.html`, page(a));
