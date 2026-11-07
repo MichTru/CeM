@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Cassani &amp; Martignani · Arredamento su misura a Lugo</title>
+  <meta name="description" content="Showroom di arredamento a Lugo (RA) con falegnameria propria a Massa Lombarda: cucine su misura, zona giorno, camere da letto, complementi ed elettrodomestici. Ti seguiamo dal progetto al montaggio.">
+  <meta name="theme-color" content="#16110D">
+  <link rel="canonical" href="https://michtru.github.io/CeM/">
+  <link rel="icon" href="@base/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="@base/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="@base/apple-touch-icon.png">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="it_IT">
+  <meta property="og:site_name" content="Cassani &amp; Martignani">
+  <meta property="og:title" content="Cassani &amp; Martignani · Arredamento su misura a Lugo">
+  <meta property="og:description" content="Showroom a Lugo e falegnameria propria a Massa Lombarda. Cucine, zona giorno, zona notte e arredamento su misura in Romagna.">
+  <meta property="og:url" content="https://michtru.github.io/CeM/">
+  <meta property="og:image" content="https://michtru.github.io/CeM/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Soggiorno con divano in velluto verde e il logo Cassani &amp; Martignani">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <script>
+    // Prima del primo paint: decide se mostrare l'intro.
+    (function () {
+      var d = document.documentElement;
+      d.classList.add('js');
+      var seen = false;
+      try { seen = sessionStorage.getItem('cm-intro') === '1'; } catch (e) {}
+      if (seen) d.classList.add('no-intro');
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduced');
+    })();
+  </script>
+  <link rel="preload" as="image" type="image/avif"
+    imagesrcset="@base/img/cucina-isola-salvia-rovere-vetrine-480.avif 480w, @base/img/cucina-isola-salvia-rovere-vetrine-800.avif 800w, @base/img/cucina-isola-salvia-rovere-vetrine-1200.avif 1200w, @base/img/cucina-isola-salvia-rovere-vetrine-1600.avif 1600w"
+    imagesizes="(max-width: 860px) 100vw, 76vw" fetchpriority="high">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FurnitureStore",
+    "name": "Cassani & Martignani",
+    "description": "Showroom di arredamento a Lugo con falegnameria propria a Massa Lombarda per l'arredamento su misura.",
+    "url": "https://michtru.github.io/CeM/",
+    "image": "https://michtru.github.io/CeM/og-image.jpg",
+    "logo": "https://michtru.github.io/CeM/logo/logo-cassani-martignani-dark.svg",
+    "telephone": "+39 0545 31440",
+    "email": "cassaniemartignani@gmail.com",
+    "vatID": "IT02413240397",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Via Francesco Baracca 70",
+      "postalCode": "48022",
+      "addressLocality": "Lugo",
+      "addressRegion": "RA",
+      "addressCountry": "IT"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 44.41722, "longitude": 11.90076 },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "09:30", "closes": "12:30" },
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "15:00", "closes": "19:00" }
+    ],
+    "areaServed": ["Lugo", "Massa Lombarda", "Romagna"],
+    "sameAs": ["https://www.facebook.com/cassaniemartignani/", "https://www.instagram.com/cassaniemartignani/"]
+  }
+  </script>
+  <script type="module" src="/src/main.js"></script>
+</head>
+<body>
+  <a class="skip" href="#contenuto">Vai al contenuto</a>
+
+  <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- Intro: la luce, le due ditte che si uniscono, l'anta che si apre -->
+  <div class="intro" id="intro" aria-hidden="true">
+    <div class="intro-blade"></div>
+    <div class="intro-logo"><!--LOGO-INTRO--></div>
+  </div>
+
+  <!-- Header flottante fuori dalla hero -->
+  <header class="float-nav" id="float-nav" aria-label="Navigazione rapida">
+    <a class="float-nav__logo" href="#top" aria-label="Cassani &amp; Martignani, torna all'inizio">
+      <img src="@base/logo/logo-cassani-martignani-light.svg" alt="" width="140" height="31">
+    </a>
+    <nav aria-label="Sezioni">
+      <ul>
+        <li><a href="#chi-siamo">Chi siamo</a></li>
+        <li><a href="#ambienti">Ambienti</a></li>
+        <li><a href="#su-misura">Su misura</a></li>
+        <li><a href="#galleria">Galleria</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn--light btn--sm" href="#contatti">Contatti <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></a>
+    <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+  </header>
+
+  <!-- Menu mobile a schermo intero -->
+  <div class="menu" id="menu" hidden>
+    <div class="menu__blade" aria-hidden="true"></div>
+    <nav aria-label="Menu principale">
+      <ul>
+        <li><a href="#chi-siamo">Chi siamo</a></li>
+        <li><a href="#ambienti">Ambienti</a></li>
+        <li><a href="#su-misura">Su misura</a></li>
+        <li><a href="#galleria">Galleria</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+      </ul>
+    </nav>
+    <div class="menu__foot">
+      <a href="tel:+39054531440">0545 31440</a>
+      <span>Via Francesco Baracca 70, Lugo</span>
+    </div>
+  </div>
+
+  <main id="contenuto">
+    <!-- La card sospesa: header, hero e bento -->
+    <section class="shell" id="top" aria-label="Cassani &amp; Martignani">
+      <header class="topbar">
+        <a class="topbar__logo" href="#top" aria-label="Cassani &amp; Martignani, arredi e design">
+          <img src="@base/logo/logo-cassani-martignani-light.svg" alt="" width="190" height="42" id="header-logo">
+        </a>
+        <nav class="topbar__nav" aria-label="Principale">
+          <ul>
+            <li><a href="#chi-siamo">Chi siamo</a></li>
+            <li><a href="#ambienti">Ambienti</a></li>
+            <li><a href="#su-misura">Su misura</a></li>
+            <li><a href="#galleria">Galleria</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn--light topbar__cta" href="#contatti">Contatti <svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg></a>
+        <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+      </header>
+
+      <div class="hero" id="hero">
+        <div class="hero__tabs" role="tablist" aria-label="Ambienti in primo piano">
+          <span class="hero__pill" aria-hidden="true"><i class="hero__progress"></i></span>
+          <button class="hero__tab" role="tab" id="tab-cucine" aria-selected="true" aria-controls="hero-panel" data-i="0">Cucine</button>
+          <button class="hero__tab" role="tab" id="tab-giorno" aria-selected="false" aria-controls="hero-panel" tabindex="-1" data-i="1">Giorno</button>
+          <button class="hero__tab" role="tab" id="tab-notte" aria-selected="false" aria-controls="hero-panel" tabindex="-1" data-i="2">Notte</button>
+          <button class="hero__tab" role="tab" id="tab-misura" aria-selected="false" aria-controls="hero-panel" tabindex="-1" data-i="3">Su misura</button>
+        </div>
+
+        <div class="hero__frame" id="hero-panel" role="tabpanel" aria-labelledby="tab-cucine">
+          <div class="hero__media">
+            <div class="hero__slide is-active" data-i="0">
+              <cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="(max-width: 860px) 100vw, 76vw" loading="eager" fetchpriority="high"></cm-img>
+            </div>
+            <div class="hero__slide" data-i="1">
+              <cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 860px) 100vw, 76vw"></cm-img>
+            </div>
+            <div class="hero__slide" data-i="2">
+              <cm-img name="notte-armadio-bianco-maniglia-scura" sizes="(max-width: 860px) 100vw, 76vw"></cm-img>
+            </div>
+            <div class="hero__slide" data-i="3">
+              <cm-img name="su-misura-modulo-rovere" sizes="(max-width: 860px) 100vw, 76vw"></cm-img>
+            </div>
+          </div>
+          <div class="hero__shade" aria-hidden="true"></div>
+          <div class="hero__copy">
+            <h1 class="hero__title" id="hero-title">Cucine su misura<br>a Lugo</h1>
+            <p class="hero__sub" id="hero-sub">Progettate con te e montate dalla nostra squadra.</p>
+            <a class="btn btn--light" href="#contatti">Prenota una visita</a>
+          </div>
+          <div class="hero__door" aria-hidden="true"><i></i></div>
+        </div>
+      </div>
+
+      <div class="bento">
+        <a class="bento__card bento__card--feature" href="#galleria" data-filter="cucine">
+          <div class="bento__media">
+            <cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="(max-width: 860px) 100vw, 26vw" alt=""></cm-img>
+          </div>
+          <div class="bento__body">
+            <span class="tag">In evidenza</span>
+            <h2 class="bento__title">Isola salvia<br>e rovere</h2>
+            <span class="bento__meta">Cucine</span>
+          </div>
+        </a>
+
+        <a class="bento__card bento__card--misura" href="#su-misura">
+          <div class="bento__head">
+            <h2 class="bento__title">Su misura</h2>
+            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
+          </div>
+          <div class="bento__media bento__media--inset">
+            <cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 860px) 100vw, 24vw" alt="Dettaglio di un cassetto in rovere con maniglia in ottone"></cm-img>
+          </div>
+        </a>
+
+        <div class="bento__card bento__card--close">
+          <h2 class="bento__title bento__title--over">Da vicino</h2>
+          <div class="bento__media">
+            <cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 860px) 100vw, 22vw" class="pic--close"></cm-img>
+          </div>
+          <div class="hotspot" style="--x:18%;--y:24%">
+            <button type="button" aria-expanded="false" aria-describedby="hs-1" aria-label="Dettaglio: lampada"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            <span class="hotspot__label" id="hs-1" role="tooltip">Lampada a sfere in vetro opale</span>
+          </div>
+          <div class="hotspot" style="--x:40%;--y:62%">
+            <button type="button" aria-expanded="false" aria-describedby="hs-2" aria-label="Dettaglio: divano"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            <span class="hotspot__label" id="hs-2" role="tooltip">Divano in velluto verde salvia</span>
+          </div>
+          <div class="hotspot" style="--x:80%;--y:66%">
+            <button type="button" aria-expanded="false" aria-describedby="hs-3" aria-label="Dettaglio: poltrona"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            <span class="hotspot__label hotspot__label--left" id="hs-3" role="tooltip">Poltrona girevole coordinata</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ambienti -->
+    <section class="section ambienti" id="ambienti" aria-labelledby="ambienti-title">
+      <div class="section__head">
+        <h2 class="h-display" id="ambienti-title">Ambienti</h2>
+        <p class="lead">Dalla cucina alla camera da letto, una casa pensata stanza per stanza. In showroom a Lugo trovi i marchi che scegliamo ogni giorno per i nostri clienti.</p>
+      </div>
+
+      <div class="stack">
+        <article class="room" id="ambiente-cucine">
+          <div class="room__media">
+            <video class="loop" muted loop playsinline preload="none" poster="@base/video/loop-cucina-isola-salvia-poster.webp" aria-label="Cucina con isola verde salvia e rovere">
+              <source src="@base/video/loop-cucina-isola-salvia.webm" type="video/webm">
+              <source src="@base/video/loop-cucina-isola-salvia.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">Cucine</h3>
+            <p>Il centro della casa, disegnato al centimetro: rilievo delle misure, scelta delle finiture ed elettrodomestici, montaggio.</p>
+            <ul class="brands" aria-label="Marchi cucine">
+              <li>Doimo Cucine</li><li>Cucinesse</li><li>Gicinque</li><li>Prima Cucine</li><li>Paganelli Cucine</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="room" id="ambiente-giorno">
+          <div class="room__media">
+            <video class="loop" muted loop playsinline preload="none" poster="@base/video/loop-giorno-velluto-verde-poster.webp" aria-label="Soggiorno con divano in velluto verde">
+              <source src="@base/video/loop-giorno-velluto-verde.webm" type="video/webm">
+              <source src="@base/video/loop-giorno-velluto-verde.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">Zona giorno</h3>
+            <p>Divani, librerie e pareti attrezzate per un soggiorno dove ritrovarsi, da soli o in compagnia.</p>
+            <ul class="brands" aria-label="Marchi zona giorno">
+              <li>Voltan</li><li>Cinquanta3</li><li>Felis</li><li>Samoa</li><li>Zamagna</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="room" id="ambiente-notte">
+          <div class="room__media">
+            <cm-img name="notte-armadio-bianco-maniglia-scura" sizes="(max-width: 860px) 100vw, 58vw"></cm-img>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">Zona notte</h3>
+            <p>Camere da letto, armadi, cabine e camerette pensati per riposare davvero, con il letto e il materasso giusti.</p>
+            <ul class="brands" aria-label="Marchi zona notte">
+              <li>Voltan</li><li>Cinquanta3</li><li>Albamobili</li><li>Bside Letti</li><li>Felis</li><li>Nidi</li><li>Castiflex</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="room" id="ambiente-complementi">
+          <div class="room__media">
+            <div class="ph" data-ph="Complementi"><span>Foto da inserire · Complementi</span></div>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">Complementi</h3>
+            <p>Carte da parati, specchi e dettagli che completano una stanza e la rendono vostra.</p>
+            <ul class="brands" aria-label="Marchi complementi">
+              <li>LondonArt</li><li>Pezzani</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="room" id="ambiente-elettrodomestici">
+          <div class="room__media">
+            <div class="ph" data-ph="Elettrodomestici"><span>Foto da inserire · Elettrodomestici</span></div>
+          </div>
+          <div class="room__body">
+            <h3 class="room__title">Elettrodomestici</h3>
+            <p>Forni, piani cottura, frigoriferi e lavelli dei grandi marchi, scelti e installati insieme alla cucina.</p>
+            <ul class="brands" aria-label="Marchi elettrodomestici">
+              <li>AEG</li><li>Electrolux</li><li>Siemens</li><li>Bosch</li><li>Whirlpool</li><li>Beko</li><li>Grundig</li><li>Miele</li><li>Franke</li><li>Foster</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Su misura, con il 3D -->
+    <section class="section misura" id="su-misura" aria-labelledby="misura-title">
+      <div class="misura__pin">
+        <div class="misura__stage" id="misura-stage">
+          <div class="misura__fallback" aria-hidden="true">
+            <img src="@base/img/3d/fase-1.webp" alt="" width="1200" height="1000" loading="lazy" decoding="async" data-step="0" class="is-on">
+            <img src="@base/img/3d/fase-2.webp" alt="" width="1200" height="1000" loading="lazy" decoding="async" data-step="1">
+            <img src="@base/img/3d/fase-3.webp" alt="" width="1200" height="1000" loading="lazy" decoding="async" data-step="2">
+            <img src="@base/img/3d/fase-4.webp" alt="" width="1200" height="1000" loading="lazy" decoding="async" data-step="3">
+          </div>
+          <canvas class="misura__canvas" aria-hidden="true"></canvas>
+          <div class="misura__floor" aria-hidden="true"></div>
+        </div>
+        <div class="misura__text">
+          <h2 class="h-display" id="misura-title">Su misura,<br>dalla nostra<br>falegnameria</h2>
+          <ol class="steps" aria-label="Dall'idea al montaggio">
+            <li class="step is-on">
+              <h3>L'idea</h3>
+              <p>Si parte da te: come vivi la casa, che cosa ti serve, che cosa ti piace.</p>
+            </li>
+            <li class="step">
+              <h3>Il progetto</h3>
+              <p>Rilievo delle misure, disegno e scelta di legni, laccature e ferramenta.</p>
+            </li>
+            <li class="step">
+              <h3>La falegnameria</h3>
+              <p>A Massa Lombarda il progetto diventa mobile, pezzo per pezzo, nella nostra falegnameria.</p>
+            </li>
+            <li class="step">
+              <h3>Il montaggio</h3>
+              <p>Marco e Mauro seguono consegna e montaggio, e restano al tuo fianco anche dopo.</p>
+            </li>
+          </ol>
+          <p class="misura__caption">Arredamento su misura in Romagna: cucine, armadi, librerie e boiserie realizzati sulle tue misure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galleria -->
+    <section class="section galleria" id="galleria" aria-labelledby="galleria-title">
+      <div class="section__head section__head--row">
+        <h2 class="h-display" id="galleria-title">Galleria</h2>
+        <div class="filters" role="group" aria-label="Filtra per ambiente">
+          <button type="button" class="filter is-on" aria-pressed="true" data-f="tutti">Tutti</button>
+          <button type="button" class="filter" aria-pressed="false" data-f="cucine">Cucine</button>
+          <button type="button" class="filter" aria-pressed="false" data-f="giorno">Zona giorno</button>
+          <button type="button" class="filter" aria-pressed="false" data-f="notte">Zona notte</button>
+          <button type="button" class="filter" aria-pressed="false" data-f="misura">Su misura</button>
+        </div>
+      </div>
+
+      <ul class="grid" id="grid">
+        <li class="tile tile--wide" data-cat="cucine">
+          <button type="button" class="tile__btn" data-full="cucina-isola-salvia-rovere-vetrine" data-video="loop-cucina-isola-salvia" aria-label="Apri: cucina con isola verde salvia e rovere">
+            <video class="loop" muted loop playsinline preload="none" poster="@base/video/loop-cucina-isola-salvia-poster.webp" aria-hidden="true">
+              <source src="@base/video/loop-cucina-isola-salvia.webm" type="video/webm">
+              <source src="@base/video/loop-cucina-isola-salvia.mp4" type="video/mp4">
+            </video>
+          </button>
+        </li>
+        <li class="tile" data-cat="giorno">
+          <button type="button" class="tile__btn" data-full="giorno-parete-attrezzata-geometrica" aria-label="Apri: parete attrezzata geometrica">
+            <cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"></cm-img>
+          </button>
+        </li>
+        <li class="tile tile--tall" data-cat="notte">
+          <button type="button" class="tile__btn" data-full="notte-armadio-bianco-maniglia-scura" aria-label="Apri: armadio bianco con maniglia scura">
+            <cm-img name="notte-armadio-bianco-maniglia-scura" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"></cm-img>
+          </button>
+        </li>
+        <li class="tile" data-cat="cucine">
+          <button type="button" class="tile__btn" data-full="cucina-loft-isola-cemento" aria-label="Apri: cucina loft con isola effetto cemento">
+            <cm-img name="cucina-loft-isola-cemento" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"></cm-img>
+          </button>
+        </li>
+        <li class="tile tile--wide" data-cat="giorno">
+          <button type="button" class="tile__btn" data-full="giorno-divano-velluto-verde-lampada" data-video="loop-giorno-velluto-verde" aria-label="Apri: soggiorno con divano in velluto verde">
+            <video class="loop" muted loop playsinline preload="none" poster="@base/video/loop-giorno-velluto-verde-poster.webp" aria-hidden="true">
+              <source src="@base/video/loop-giorno-velluto-verde.webm" type="video/webm">
+              <source src="@base/video/loop-giorno-velluto-verde.mp4" type="video/mp4">
+            </video>
+          </button>
+        </li>
+        <li class="tile" data-cat="misura">
+          <div class="ph" data-ph="Realizzazione su misura"><span>Foto da inserire · Su misura</span></div>
+        </li>
+        <li class="tile" data-cat="cucine">
+          <button type="button" class="tile__btn" data-full="cucina-nera-penisola-legno" aria-label="Apri: cucina nera con penisola in legno">
+            <cm-img name="cucina-nera-penisola-legno" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"></cm-img>
+          </button>
+        </li>
+        <li class="tile tile--tall" data-cat="misura">
+          <div class="ph" data-ph="Falegnameria di Massa Lombarda"><span>Foto da inserire · Falegnameria</span></div>
+        </li>
+        <li class="tile tile--wide" data-cat="giorno">
+          <button type="button" class="tile__btn" data-full="giorno-divano-angolare-vetrata" data-video="loop-giorno-vetrata" aria-label="Apri: zona giorno con divano angolare e vetrata">
+            <video class="loop" muted loop playsinline preload="none" poster="@base/video/loop-giorno-vetrata-poster.webp" aria-hidden="true">
+              <source src="@base/video/loop-giorno-vetrata.webm" type="video/webm">
+              <source src="@base/video/loop-giorno-vetrata.mp4" type="video/mp4">
+            </video>
+          </button>
+        </li>
+        <li class="tile" data-cat="notte">
+          <div class="ph" data-ph="Camera da letto"><span>Foto da inserire · Camera da letto</span></div>
+        </li>
+        <li class="tile" data-cat="cucine">
+          <button type="button" class="tile__btn" data-full="cucina-bianca-angolo-legno-scuro" aria-label="Apri: cucina bianca ad angolo con legno scuro">
+            <cm-img name="cucina-bianca-angolo-legno-scuro" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw"></cm-img>
+          </button>
+        </li>
+        <li class="tile" data-cat="misura">
+          <div class="ph" data-ph="Montaggio"><span>Foto da inserire · Montaggio</span></div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Marchi -->
+    <section class="marchi" aria-labelledby="marchi-title">
+      <h2 class="visually-hidden" id="marchi-title">I marchi in showroom</h2>
+      <div class="marquee" data-dir="1">
+        <ul class="marquee__track">
+          <li><a href="#ambiente-cucine">Doimo Cucine</a></li>
+          <li><a href="#ambiente-giorno">Voltan</a></li>
+          <li><a href="#ambiente-cucine">Cucinesse</a></li>
+          <li><a href="#ambiente-giorno">Cinquanta3</a></li>
+          <li><a href="#ambiente-cucine">Gicinque</a></li>
+          <li><a href="#ambiente-giorno">Felis</a></li>
+          <li><a href="#ambiente-cucine">Prima Cucine</a></li>
+          <li><a href="#ambiente-giorno">Samoa</a></li>
+          <li><a href="#ambiente-cucine">Paganelli Cucine</a></li>
+          <li><a href="#ambiente-giorno">Zamagna</a></li>
+          <li><a href="#ambiente-notte">Albamobili</a></li>
+          <li><a href="#ambiente-notte">Bside Letti</a></li>
+          <li><a href="#ambiente-notte">Nidi</a></li>
+          <li><a href="#ambiente-notte">Castiflex</a></li>
+          <li><a href="#ambiente-complementi">LondonArt</a></li>
+          <li><a href="#ambiente-complementi">Pezzani</a></li>
+        </ul>
+      </div>
+      <div class="marquee marquee--small" data-dir="-1">
+        <ul class="marquee__track">
+          <li><a href="#ambiente-elettrodomestici">AEG</a></li>
+          <li><a href="#ambiente-elettrodomestici">Electrolux</a></li>
+          <li><a href="#ambiente-elettrodomestici">Siemens</a></li>
+          <li><a href="#ambiente-elettrodomestici">Bosch</a></li>
+          <li><a href="#ambiente-elettrodomestici">Whirlpool</a></li>
+          <li><a href="#ambiente-elettrodomestici">Beko</a></li>
+          <li><a href="#ambiente-elettrodomestici">Grundig</a></li>
+          <li><a href="#ambiente-elettrodomestici">Miele</a></li>
+          <li><a href="#ambiente-elettrodomestici">Franke</a></li>
+          <li><a href="#ambiente-elettrodomestici">Foster</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Chi siamo -->
+    <section class="section chi" id="chi-siamo" aria-labelledby="chi-title">
+      <div class="chi__grid">
+        <div class="chi__text">
+          <h2 class="h-display" id="chi-title">Due storie,<br>uno showroom</h2>
+          <p class="lead">Cassani Arredamenti e Arredamenti Martignani hanno messo insieme anni di lavoro nell'arredamento per aprire, in via Baracca a Lugo, uno showroom delle giuste dimensioni.</p>
+          <p>Siamo una realtà piccola, e ne siamo contenti: chi ti accoglie è anche chi ti consiglia, segue il progetto, ti consegna il risultato e resta a disposizione dopo la vendita. Proponiamo prodotti avanzati nella tecnologia e nel design, senza perdere di vista il giusto rapporto tra qualità e prezzo.</p>
+          <p>L'obiettivo è semplice: dare uno stile alla tua casa e farne il posto dove stai bene, magari cucinando qualcosa insieme o leggendo un libro.</p>
+        </div>
+        <div class="chi__media">
+          <div class="ph ph--parallax" data-ph="Showroom di via Baracca"><span>Foto da inserire · Showroom di via Baracca</span></div>
+        </div>
+      </div>
+
+      <div class="people">
+        <p class="people__intro">Marco e Mauro ti seguono passo passo: dalla scelta dei prodotti al rilievo delle misure, dal montaggio al servizio post-vendita.</p>
+        <article class="person">
+          <div class="person__ph" data-ph="Ritratto di Marco" aria-hidden="true"><span>M</span></div>
+          <h3>Marco</h3>
+        </article>
+        <article class="person">
+          <div class="person__ph" data-ph="Ritratto di Mauro" aria-hidden="true"><span>M</span></div>
+          <h3>Mauro</h3>
+        </article>
+      </div>
+    </section>
+
+    <!-- Showroom e contatti -->
+    <section class="section contatti" id="contatti" aria-labelledby="contatti-title">
+      <div class="contatti__grid">
+        <div class="contatti__info">
+          <h2 class="h-display" id="contatti-title">Vieni in<br>showroom</h2>
+          <p class="status" id="status" aria-live="polite"><span class="status__dot"></span><span class="status__text">Orari dello showroom</span></p>
+
+          <dl class="info">
+            <div>
+              <dt>Indirizzo</dt>
+              <dd>Via Francesco Baracca 70<br>48022 Lugo (RA)</dd>
+            </div>
+            <div>
+              <dt>Orari</dt>
+              <dd>
+                <span class="hours"><span>Martedì – sabato</span><span>9:30–12:30 · 15:00–19:00</span></span>
+                <span class="hours"><span>Lunedì</span><span>15:00–19:00</span></span>
+                <span class="hours"><span>Domenica</span><span>Chiuso</span></span>
+              </dd>
+            </div>
+            <div>
+              <dt>Telefono</dt>
+              <dd><a href="tel:+39054531440">0545 31440</a></dd>
+            </div>
+            <div>
+              <dt>Email</dt>
+              <dd><a href="mailto:cassaniemartignani@gmail.com">cassaniemartignani@gmail.com</a></dd>
+            </div>
+          </dl>
+
+          <div class="contatti__actions">
+            <a class="btn btn--light" href="tel:+39054531440"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg> Chiama</a>
+            <a class="btn btn--ghost" href="https://wa.me/[NUMERO WHATSAPP]" target="_blank" rel="noopener" data-whatsapp><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> WhatsApp</a>
+          </div>
+
+          <div class="map" id="map">
+            <div class="map__preview">
+              <svg class="map__art" viewBox="0 0 400 220" aria-hidden="true">
+                <defs><radialGradient id="mg" cx="50%" cy="48%" r="60%"><stop offset="0" stop-color="#3A2B21"/><stop offset="1" stop-color="#241B15"/></radialGradient></defs>
+                <rect width="400" height="220" fill="url(#mg)"/>
+                <g fill="none" stroke="#F5EFE6" stroke-opacity=".09" stroke-width="1">
+                  <circle cx="200" cy="104" r="34"/><circle cx="200" cy="104" r="70"/><circle cx="200" cy="104" r="110"/><circle cx="200" cy="104" r="160"/>
+                </g>
+                <circle cx="200" cy="104" r="6" fill="#9A6440"/><circle cx="200" cy="104" r="14" fill="#9A6440" fill-opacity=".25"/>
+              </svg>
+              <div class="map__copy">
+                <p>Via Francesco Baracca 70, Lugo</p>
+                <div class="map__btns">
+                  <button type="button" class="btn btn--light btn--sm" id="map-load">Mostra la mappa</button>
+                  <a class="btn btn--ghost btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=Via+Francesco+Baracca+70+48022+Lugo+RA" target="_blank" rel="noopener">Apri in Google Maps</a>
+                </div>
+                <p class="map__note">La mappa è un contenuto di Google: si carica solo se lo consenti.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="form" id="form" action="[ENDPOINT FORM]" method="POST" novalidate>
+          <h3 class="form__title">Prenota una visita o chiedi un preventivo</h3>
+          <fieldset class="form__kind">
+            <legend class="visually-hidden">Tipo di richiesta</legend>
+            <label><input type="radio" name="richiesta" value="Visita in showroom" checked><span>Visita in showroom</span></label>
+            <label><input type="radio" name="richiesta" value="Preventivo"><span>Preventivo</span></label>
+          </fieldset>
+          <div class="field">
+            <label for="f-nome">Nome e cognome</label>
+            <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-tel">Telefono</label>
+              <input id="f-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel">
+            </div>
+            <div class="field">
+              <label for="f-email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-amb">Ambiente d'interesse</label>
+            <select id="f-amb" name="ambiente">
+              <option>Cucina</option>
+              <option>Zona giorno</option>
+              <option>Zona notte</option>
+              <option>Su misura</option>
+              <option>Complementi</option>
+              <option>Elettrodomestici</option>
+              <option>Casa intera</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">Messaggio</label>
+            <textarea id="f-msg" name="messaggio" rows="4"></textarea>
+          </div>
+          <label class="check">
+            <input type="checkbox" name="privacy" required>
+            <span>Ho letto l'<a href="@base/privacy.html">informativa privacy</a> e acconsento al trattamento dei dati per ricevere una risposta.</span>
+          </label>
+          <button class="btn btn--light form__send" type="submit">Invia la richiesta</button>
+          <p class="form__msg" id="form-msg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__top">
+      <img src="@base/logo/logo-cassani-martignani-light.svg" alt="Cassani &amp; Martignani, arredi e design" width="220" height="49" loading="lazy">
+      <div class="footer__cols">
+        <div>
+          <h2>Showroom</h2>
+          <p>Via Francesco Baracca 70<br>48022 Lugo (RA)</p>
+        </div>
+        <div>
+          <h2>Contatti</h2>
+          <p>Telefono <a href="tel:+39054531440">0545 31440</a><br><a href="mailto:cassaniemartignani@gmail.com">cassaniemartignani@gmail.com</a></p>
+        </div>
+        <div>
+          <h2>Orari</h2>
+          <p>9:30–12:30 · 15:00–19:00<br>Chiuso domenica e lunedì mattina</p>
+        </div>
+        <div>
+          <h2>Seguici</h2>
+          <p><a href="https://www.facebook.com/cassaniemartignani/" target="_blank" rel="noopener">Facebook</a><br><a href="https://www.instagram.com/cassaniemartignani/" target="_blank" rel="noopener">Instagram</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <p>© <span data-year>2026</span> Cassani &amp; Martignani · P.IVA 02413240397</p>
+      <p><a href="@base/privacy.html">Privacy policy</a> · <a href="@base/cookie.html">Cookie policy</a> · <button type="button" class="linklike" data-cookie-prefs>Preferenze cookie</button></p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galleria a schermo intero" hidden>
+    <div class="lightbox__stage"></div>
+    <button type="button" class="lightbox__close round-btn" aria-label="Chiudi"><svg class="ico" aria-hidden="true"><use href="#i-close"/></svg></button>
+    <button type="button" class="lightbox__prev round-btn" aria-label="Precedente"><svg class="ico ico--flip" aria-hidden="true"><use href="#i-chev"/></svg></button>
+    <button type="button" class="lightbox__next round-btn" aria-label="Successiva"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
+    <p class="lightbox__caption" aria-live="polite"></p>
+  </div>
+
+  <!-- Banner cookie -->
+  <div class="cookie" id="cookie" role="dialog" aria-label="Preferenze cookie" hidden>
+    <p>Usiamo solo cookie tecnici. La mappa di Google e gli altri contenuti esterni si caricano solo se lo consenti. <a href="@base/cookie.html">Cookie policy</a></p>
+    <div class="cookie__btns">
+      <button type="button" class="btn btn--ghost btn--sm" data-consent="no">Solo tecnici</button>
+      <button type="button" class="btn btn--light btn--sm" data-consent="yes">Accetta contenuti esterni</button>
+    </div>
+  </div>
+
+  <div class="cursor" aria-hidden="true"><i></i></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m4.5 7.5 7.5 5.5 7.5-5.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 6v12M6 12h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6.6 3.8h2.6l1.4 4-2 1.4a11 11 0 0 0 6.2 6.2l1.4-2 4 1.4v2.6a2 2 0 0 1-2.2 2A16.5 16.5 0 0 1 4.6 6a2 2 0 0 1 2-2.2Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path d="M4.5 19.5 5.6 16A8 8 0 1 1 8.4 18.6Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M9.2 8.6c.3-.6.6-.6.9-.6h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .4-.1.6l-.5.6c.6 1.1 1.4 1.9 2.5 2.5l.6-.5c.2-.1.4-.2.6-.1l1.5.6c.3.1.4.3.4.5v.5c0 .3 0 .6-.6.9-.6.4-1.6.5-3-.1a8.3 8.3 0 0 1-4-4c-.6-1.4-.5-2.4-.1-3Z" fill="currentColor"/></symbol>
+  </svg>
+</body>
+</html>

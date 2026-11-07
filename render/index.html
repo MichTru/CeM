@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8"><title>Render 3D</title>
+<style>html,body{margin:0;background:transparent}canvas{display:block}</style></head>
+<body><canvas id="c"></canvas>
+<script type="module">
+  // Pagina di servizio (non pubblicata): renderizza la scena in immagini statiche.
+  import { createScene } from '/src/js/scene.js';
+  const c = document.getElementById('c');
+  window.shot = (p, view, w, h) => {
+    c.style.width = w + 'px'; c.style.height = h + 'px';
+    const s = window._s || (window._s = createScene(c, { pixelRatio: 1, preserve: true }));
+    s.resize(w, h);
+    s.setView(view);
+    s.setProgress(p);
+    return c.toDataURL('image/png');
+  };
+  window.ready = true;
+</script></body></html>

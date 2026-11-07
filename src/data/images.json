@@ -1,0 +1,130 @@
+{
+ "cucina-isola-salvia-rovere-vetrine": {
+  "cat": "cucine",
+  "alt": "Cucina con grande isola laccata verde salvia e vani a giorno in rovere, colonne con vetrine nere e forni a incasso",
+  "w": 1600,
+  "h": 888,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQBACdASoYAA0APu1kqU2ppaQiMAgBMB2JZwC7MoADS0NAOUYTZP0AAAD2sLDmslNHOz1WBY7U+r3Q8CKgN16bP9HLwcihOUPl6yBo41zqy9WbgAA="
+ },
+ "cucina-loft-isola-cemento": {
+  "cat": "cucine",
+  "alt": "Cucina in un loft con isola effetto cemento, colonne grigie e tavolo in legno con sedie colorate",
+  "w": 1600,
+  "h": 888,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAACwAwCdASoYAA0APu1iqU2ppaOiMAgBMB2JZwCw7A6xmkB3QhwGMAD+eSSbNSI4gighNUH8NDSXL3QNjA9nsdBzQ+mM2o4116OgyzC2af1MEnzewUqO5szIAAA="
+ },
+ "cucina-nera-penisola-legno": {
+  "cat": "cucine",
+  "alt": "Cucina lineare nera opaca con penisola in legno, sgabelli alti e colonna forni",
+  "w": 1600,
+  "h": 888,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAwCdASoYAA0APu1oqk6ppiQiMAgBMB2JYwDCgCKouvyTs0d/eCQA/idXHQmw8UHDAtryMunwAWdfRJmZ4tfJdNg5oTrBd8kmnDLcGwG/WYsOxIAAAA=="
+ },
+ "cucina-bianca-angolo-legno-scuro": {
+  "cat": "cucine",
+  "alt": "Cucina ad angolo bianca con mensole e colonne in legno scuro, pavimento in listoni chiari",
+  "w": 1600,
+  "h": 888,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAABQAwCdASoYAA0APu1kq04ppaQiMAgBMB2JZwAAK4YB/3AlQAD81vqQA8SzcFH0TQ+0+wvGF4tsYSnJzvVNog/LdOWwh8dDCZqaeJ38yGd/niNEAAA="
+ },
+ "giorno-divano-velluto-verde-lampada": {
+  "cat": "giorno",
+  "alt": "Soggiorno dai toni caldi con divano in velluto verde, poltrona girevole abbinata e lampada a sfere luminose",
+  "w": 1600,
+  "h": 888,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwAwCdASoYAA0APu1iqk2ppaQiMAgBMB2JYwCdACHR7xIOigAA/rxzBkH/DpiuNG1pdZt050QINEe80DsELkB3PgDQbRQRghmZfo77P4AAAA=="
+ },
+ "giorno-divano-angolare-vetrata": {
+  "cat": "giorno",
+  "alt": "Zona giorno con divano angolare grigio chiaro, tavolini neri e grande vetrata sul giardino",
+  "w": 1600,
+  "h": 888,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQBACdASoYAA0APu1kqk2ppaQiMAgBMB2JZQCdMoACRm6qFO4y2XHK4ADicr2jg71cGwB5ZzpNtRa5qhhBCsFZvwBJ0UeR0j+vruUiyfFT7dFtUOohUAAA"
+ },
+ "giorno-parete-attrezzata-geometrica": {
+  "cat": "giorno",
+  "alt": "Parete attrezzata sospesa con moduli geometrici in legno e laccato, mensole sagomate e mobile porta TV",
+  "w": 1600,
+  "h": 888,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABQAwCdASoYAA0APu1iqU2ppaOiMAgBMB2JZwC2yB4sXRAwAAD9Ib1IdJzM3+7l80SeAlSYuKh3gI9dlNIghnWdXAAAAA=="
+ },
+ "notte-armadio-bianco-maniglia-scura": {
+  "cat": "notte",
+  "alt": "Armadio a tutta altezza bianco opaco con maniglia verticale in legno scuro, accanto a un tavolino in metallo",
+  "w": 1200,
+  "h": 716,
+  "widths": [
+   480,
+   800,
+   1200
+  ],
+  "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAwCdASoYAA4APu1orU2ppqSiMAgBMB2JZQCsACHe0OakXT6yeZzAAP7grvfvZkPTxMGu05Y1ox5fw864tEbEMoOuoAe/jvgsW0IyWxoAAA=="
+ },
+ "su-misura-modulo-rovere": {
+  "cat": "misura",
+  "alt": "Render di un modulo cucina su misura in rovere e laccato opaco, con anta aperta e cassetti estratti",
+  "w": 1600,
+  "h": 900,
+  "widths": [
+   480,
+   800,
+   1200,
+   1600
+  ],
+  "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAgCdASoYAA0AA4BaJQBOmUADVAGMGkeLCeexoAD+8NF/J2Hwktk0MYVkuQ5Fj5+DxV/cTzL34XOzAneV1ZDXen2mYjLYdDBNAAAA"
+ },
+ "su-misura-dettaglio-maniglia": {
+  "cat": "misura",
+  "alt": "Render ravvicinato di un cassetto in rovere con maniglia in ottone",
+  "w": 1200,
+  "h": 800,
+  "widths": [
+   480,
+   800,
+   1200
+  ],
+  "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdMoR3AGZd78c2AAD27H3rIAcD/uNCsW0y/map87ZoIa0ZlZTAHEaZ+AAA"
+ }
+}
