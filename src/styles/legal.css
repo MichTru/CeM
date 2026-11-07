@@ -21,3 +21,8 @@
 .legal p { color: rgb(245 239 230 / 0.85); max-width: 68ch; }
 .legal__note { font-size: 0.85rem; color: var(--sabbia) !important; padding: 10px 16px; border: 1px dashed var(--line-strong); border-radius: 14px; }
 .legal-foot { text-align: center; padding: 8px 16px 32px; font-size: 0.82rem; color: var(--sabbia); }
+.crediti { display: grid; gap: 12px; margin-top: 12px; }
+.crediti li { display: grid; grid-template-columns: 120px 1fr; gap: 16px; align-items: center; padding: 10px; border: 1px solid var(--line); border-radius: 16px; }
+.crediti .pic { width: 120px; height: 80px; border-radius: 10px; aspect-ratio: auto !important; }
+.crediti p { font-size: 0.9rem; }
+.crediti__meta { color: var(--sabbia) !important; font-size: 0.8rem !important; }

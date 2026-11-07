@@ -126,5 +126,575 @@
    1200
   ],
   "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZACdMoR3AGZd78c2AAD27H3rIAcD/uNCsW0y/map87ZoIa0ZlZTAHEaZ+AAA"
+ },
+ "stock-cucina-isola": {
+  "cat": "stock",
+  "alt": "Cucina scura con isola bianca, sgabelli e lampade a sospensione in metallo",
+  "w": 1024,
+  "h": 681,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/6082607/kitchen-island"
+  },
+  "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAADQAwCdASoYABAAPu1kq04ppaQiMAgBMB2JZQAASoDZ0oHJzYpEU4AA/tHZwVe0dEtBDpL0CIlLkGc3UL5TPLa6bsVM/aM/qSVtDph5M0ueDOB9P6b7a5we4sLMcNE0AAA="
+ },
+ "stock-cucina-penisola": {
+  "cat": "stock",
+  "alt": "Cucina bianca con penisola e sgabelli alti, vista dalla zona pranzo",
+  "w": 1024,
+  "h": 681,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/6082595/view-from-dining-area"
+  },
+  "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoYABAAPu1krU6ppaSiMAgBMB2JZQCsACDZbwQtyou7b1W4AP4/J2VDT4l9tFvN6f4tArTaTG1Q5u7eaPSrKiMj1ZYh+gATtyTL2ugoAAA="
+ },
+ "stock-cucina-lineare": {
+  "cat": "stock",
+  "alt": "Cucina lineare con pensili in legno scuro e basi chiare, piante sul piano",
+  "w": 1024,
+  "h": 681,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/5947465/free-public-domain-cc0-photo"
+  },
+  "lqip": "data:image/webp;base64,UklGRnIAAABXRUJQVlA4IGYAAADQAwCdASoYABAAPu1qrU8ppiQiMAgBMB2JQBdgBCWgraxEDKWpcwAA/s87IHty0H4NSqozkPhSBKIoXLcv2686YhWYdLaqcGfHbQNNwo+yHTdlUmYlbIpipcZuZPw/vEr/ZE4AAAA="
+ },
+ "stock-cucina-classica": {
+  "cat": "stock",
+  "alt": "Cucina classica color crema con isola, piano in pietra e lampade a sospensione",
+  "w": 1024,
+  "h": 684,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/6042964/photo-image-public-domain-house-kitchen"
+  },
+  "lqip": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAADwAwCdASoYABAAPu1iqk4ppaQiMAgBMB2JYwCw7CHfXkKWbMUAcFgAAP6MQJmsQohcjk0MWkQaG6bwUDMWk1LCXLf5cJd8B+0qTw+gAAA="
+ },
+ "stock-divano-angolare": {
+  "cat": "stock",
+  "alt": "Divano angolare in pelle marrone con poggiatesta regolabili, su un tappeto chiaro",
+  "w": 1024,
+  "h": 664,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/5964046/free-public-domain-cc0-photo"
+  },
+  "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZQCw7CGVqrVqsZVX43sAAP7WmCkmRNLYnQIyYwdah0B4RQhuCC0TRUGdEo5RSIOouAE8RiF2UwAA"
+ },
+ "stock-divano-letto": {
+  "cat": "stock",
+  "alt": "Daybed imbottito in un soggiorno scuro con parete trapuntata e lampada da terra",
+  "w": 960,
+  "h": 635,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Skitter Photo",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/couch-rug-1DEA8CC2AB"
+  },
+  "lqip": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwBACdASoYABAAPu1krU2ppaSiMAgBMB2JYgCdH8AJOkl2kBAMof3CgAgA/vysuz58mz0HAFd/GnigBXB/RPeUOiW/LFmugpU76OcPaWA8VblAfESic2axcwA/oWMAAAA="
+ },
+ "stock-divano-pelle": {
+  "cat": "stock",
+  "alt": "Divano capitonné in pelle scura davanti a una parete di mattoni",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/3294087/free-photo-image-fireplace-living-room-arecaceae"
+  },
+  "lqip": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAACQAwCdASoYABAAPu1mq04ppaQiMAgBMB2JZQCsABIeAyu6XNpoAP6AkUe9Mv5yK2vdFFKv11HhPmVArYWQj73o5hcTuNYwbUOCPN4fEGAAAA=="
+ },
+ "stock-divano-due-posti": {
+  "cat": "stock",
+  "alt": "Soggiorno dai toni scuri con divano, cuscini e lampada da tavolo accesa",
+  "w": 960,
+  "h": 640,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Sasha%20%u2022%20Instagram.com/sanfrancisco",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/architecture-house-R8SYL6ROA1"
+  },
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoYABAAPu1mqk4ppaOiMAgBMB2JYwCdMoADSvXzXStV5jeoVE0gAP6IYtGHKNX4cWHiCcMmcyOFxJ/BnbvU/0dyATaBgZHFIIkYyN/sgBTw70CEAAA="
+ },
+ "stock-poltrona": {
+  "cat": "stock",
+  "alt": "Poltrona in pelle color cognac in un soggiorno con libreria",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/3301343/free-photo-image-retro-furniture-book"
+  },
+  "lqip": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAACwBACdASoYABAAPu1iqk2ppaQiMAgBMB2JZgCdMoRwAB4VjITmAUNnQnc2r3eAAP7jAdxP0eoSsKSPHTE7mW5uCRKl+vUQbtGG38T0V4Zs8evgYJrjKkOTaVmovA7NsDZitw8YnmheOx0QAAA="
+ },
+ "stock-letto-imbottito": {
+  "cat": "stock",
+  "alt": "Camera con letto dalla testiera imbottita bianca, comodini e armadio in legno chiaro",
+  "w": 960,
+  "h": 672,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Mary Whitney",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/bedroom-bed-9R85GU3I2P"
+  },
+  "lqip": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAADQBACdASoYABEAPu1uq1GppiOiqAqpMB2JYwCsIVcA/lyBmiCOqy7GZlaUx/LAQADf7+7mUd45bETqWi/86ciie6pcXGfkNAy0nn7rkkAf8+/PsX2u6Yx7JjyR7zxJDvwKDRoikgV+00YiwTU0mAAA"
+ },
+ "stock-letto-contenitore": {
+  "cat": "stock",
+  "alt": "Camera luminosa con letto matrimoniale imbottito, tende chiare e tappeto",
+  "w": 960,
+  "h": 634,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Mary Whitney",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/bedroom-bed-XWI13131WH"
+  },
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JQBadA9IFcEUv4rD7/DAA/lR4ST08kxSjgCR6dG+AemQ6ow38hNiR4VhEveDcYq32YNTCtNUy4kMyhnR0iEOYgAA="
+ },
+ "stock-letto-legno": {
+  "cat": "stock",
+  "alt": "Camera con letto in legno, panca ai piedi del letto e luce calda",
+  "w": 960,
+  "h": 641,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Travel Adventures",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/hotel-bed-XVTMPEYKEE"
+  },
+  "lqip": "data:image/webp;base64,UklGRnoAAABXRUJQVlA4IG4AAABQBACdASoYABAAPu1iqU2ppaOiMAgBMB2JaACdMoRwACXALfUnyG74YVVwAP7s0Wg/leGR1tj+/I42qnUIj/h6EANO+LmdqYmNTcT4FE+XvZhZStIKih6t9J1qAWXDrkBh9r690/2Z868vsQAAAA=="
+ },
+ "stock-letto-essenziale": {
+  "cat": "stock",
+  "alt": "Camera bianca e luminosa con letto essenziale e lampada da comodino",
+  "w": 960,
+  "h": 640,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Burst",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/bedroom-clean-OE0F9BHXJQ"
+  },
+  "lqip": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACwAwCdASoYABAAPu1iqU2ppaQiMAgBMB2JZQCdMoAEZxgmOddwAAD+7vosAI6+lNhuwezJmUrHUOTDQWxYuAAA"
+ },
+ "stock-letto-singolo": {
+  "cat": "stock",
+  "alt": "Stanza con due letti singoli bianchi affiancati",
+  "w": 960,
+  "h": 636,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Jay Mantri",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/room-beds-8B828310AC"
+  },
+  "lqip": "data:image/webp;base64,UklGRnAAAABXRUJQVlA4IGQAAACwAwCdASoYABAAPu1kqk4ppaQiMAgBMB2JYwCo9BBjFJe5jF33ngD+xDz7uq7Q1V0F6BdwISMeGFZyNynluW41BcvSkM3JAKkjx85Vp81fI4Bh8545l3M78JrWruTRaehWlYAA"
+ },
+ "stock-materasso": {
+  "cat": "stock",
+  "alt": "Letto con lenzuola bianche, un libro e un mazzo di fiori",
+  "w": 960,
+  "h": 640,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Alisa Anton",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/flowers-bouquet-CFLPQPBXN8"
+  },
+  "lqip": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQAwCdASoYABAAPu1krU6ppaSiMAgBMB2JYwAAWJR+gsD3u1J1iAAAziFSzkYQgBciEfq9mh3YGzErOIKS/SeN3MG9aVpB/X6+SuV2Ek9gCXrR3sS2/6AA"
+ },
+ "stock-armadio-scorrevole": {
+  "cat": "stock",
+  "alt": "Armadio con anta scorrevole aperta su ripiani e appenderia",
+  "w": 960,
+  "h": 1280,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Oliver Klein",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/wardrobe-closet-YISUDLOYC3"
+  },
+  "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwBACdASoYACAAPu1irVCppSQisBgIATAdiWcAvdAQhmbGhFbRJDF5flzBBQLQAN2GOSFYjURn7qrKclJ9jYjKZhnXqyWBQ+j08f0WOTCJ2+D2Q+Sd4plwRVsAAA=="
+ },
+ "stock-cabina-armadio": {
+  "cat": "stock",
+  "alt": "Appenderia aperta con abiti in tonalità di grigio",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/3284629/free-photo-image-clothes-wardrobe-fashion"
+  },
+  "lqip": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAAAQBACdASoYABAAPu1orU2ppqSiMAgBMB2JZwCADOkwOMt5iKWE/3vUAAD+jEDKtX66yLgNvgtmW1e9LaNYRW72/KF+GOfVvTbZXoduh35UNnAA"
+ },
+ "stock-cameretta": {
+  "cat": "stock",
+  "alt": "Cameretta luminosa con tenda gioco, divano e cassettiera bianca",
+  "w": 960,
+  "h": 640,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Family First",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/child-camping-T5BPPUIGTU"
+  },
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAwCdASoYABAAPu1mqk4ppaOiMAgBMB2JYwC7ACHSv7rSxIl3DAAA/c7FbigQLifi1efypDk1IB5Og8sITM0n6ZNkV7WSrmn31gIIM4xRxIHOf+O51dgAAAA="
+ },
+ "stock-cameretta-ragazzi": {
+  "cat": "stock",
+  "alt": "Stanza per ragazzi con scrivania, mensole e parete arancione",
+  "w": 1024,
+  "h": 576,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/3301987/free-photo-image-workspace-furniture-dorm-room"
+  },
+  "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAABwAgCdASoYAA4AA4BaJbACdMoAGmIl23f8WKRAAP7nG6eOp03DLLoZ9JCp7unmkmpywyYNFDrwVYFEqxtXkxZjw2LsvKwY+VycAAAA"
+ },
+ "stock-letto-castello": {
+  "cat": "stock",
+  "alt": "Cameretta con letto, scrivania e pensili a parete",
+  "w": 960,
+  "h": 540,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Medhat Ayad",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/apartment-bed-EGXWIV409M"
+  },
+  "lqip": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAABwAwCdASoYAA0APu1mq04ppaQiMAgBMB2JZQC7ABhgsfDtIAAA/sc8s071FIFJSV+zAEioz2LXpoqVGOdg2y5PTe2voGjlxzAAAA=="
+ },
+ "stock-tavolo-pranzo": {
+  "cat": "stock",
+  "alt": "Zona pranzo con tavolo, sedie e lampada a sospensione nera su parete scura",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/5904672/photo-image-flower-public-domain-minimal"
+  },
+  "lqip": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACQAwCdASoYABAAPu1kqk4ppaQiMAgBMB2JYwC06CEdpGgSYVZAAP7pFuKMPg+mxu/D2jsKn50aoP3/7FRk7Ge51pjfxIAA"
+ },
+ "stock-sedie": {
+  "cat": "stock",
+  "alt": "Sala da pranzo con tavolo e sedie in legno scuro, luce da una portafinestra",
+  "w": 960,
+  "h": 640,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Kelly Ishmael",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/dining-room-DYTXNUKGP2"
+  },
+  "lqip": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQBACdASoYABAAPu1mqk4ppaOiMAgBMB2JYwCdMoAC9eHEaHHxvtRUAAD9//yFuZ/7E3lxSNznCpwaUPNPrdfKZAZuGotBOwRSlVXTQsBcQDRXdj0AAA=="
+ },
+ "stock-madia": {
+  "cat": "stock",
+  "alt": "Sala da pranzo con tavolo, sedie e credenza con vetrina",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/6035268/photo-image-public-domain-house-table"
+  },
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAADQAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZQCsAB0+PNSgAZdm9jgA/gZEmuGphRfmxdSgEe7mycoH3PJTvWVUiHirkX3bO/5ZVk3Cp5EjJ0pYC+BTZRFgAAA="
+ },
+ "stock-libreria": {
+  "cat": "stock",
+  "alt": "Libreria a parete piena di libri accanto a un muro di mattoni",
+  "w": 960,
+  "h": 640,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Startup Stock Photos",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/books-bookshelf-0SP70JWWOK"
+  },
+  "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAACwAwCdASoYABAAPu1iqk2ppaQiMAgBMB2JYwCdMoACgWa1JS+wYAD+qCoAKKQ3+g9CDneuWSnNdrX/NJm0SnZMNgBYrRxJey16nuEqInEYbnkPWAA="
+ },
+ "stock-mobile-tv": {
+  "cat": "stock",
+  "alt": "Soggiorno con parete attrezzata, mobile TV e divano bianco",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/5924880/photo-image-public-domain-living-room"
+  },
+  "lqip": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAADwAwCdASoYABAAPu1iqU2ppaQiMAgBMB2JYwC06B6We/NlqJAKaEjgAP7TmzW9aVAiAeLK1ME4A/n+LaaoPD3AkjRJKFmvnN2Ks6qICvTkLvAQAAA="
+ },
+ "stock-elettrodomestici": {
+  "cat": "stock",
+  "alt": "Dettaglio di un forno da incasso in acciaio con manopola",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Jakub Kapusnak",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/447827/knobs-the-domestic-oven"
+  },
+  "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAAAwBACdASoYABAAPu1kqU2ppaQiMAgBMB2JZQDE2CB/szmxsK6r3loeDQAA/qzobZGnKYe9oCpRCI8X8ajX/5kmu6bMdwMjxvipVA1oS0gG6N1p5t01tEbYJmqAAA=="
+ },
+ "stock-complementi": {
+  "cat": "stock",
+  "alt": "Lampade da tavolo accese in un angolo caldo della casa",
+  "w": 960,
+  "h": 1200,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "Kelly Ishmael",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/lamp-home-CXH58XHXTI"
+  },
+  "lqip": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAwBQCdASoYAB4APu1mq08ppaOiKA1RMB2JQBTighr/P2D5fj5NShAB8K6Ec7VqHedtQAD+2RFIdoGpGBE6xeehLMn0g4A4c9QEJyNM9qRKM3hwOS3J2e5gOo8+x1s4LjOk1RQK1pwutiSwpOPg2aHqmV01s7wPPD3gAA=="
+ },
+ "stock-legno-progetto": {
+  "cat": "stock",
+  "alt": "Mani che misurano un pezzo di legno con un calibro",
+  "w": 960,
+  "h": 640,
+  "widths": [
+   480,
+   800,
+   960
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "James Frid",
+   "fonte": "stocksnap",
+   "licenza": "CC0",
+   "link": "https://stocksnap.io/photo/calipers-carpenter-GWIDWSKJJJ"
+  },
+  "lqip": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAABwBACdASoYABAAPu1oqk6ppiQiMAgBMB2JagCdMoRwABTBFd15xRPkCxP8AAD+QKHsKyPOMY4bADVDeUiMddboA92mkNa47ARmUI4Xoc/Si2wurzqRrxD8yr2oo96ApBXQvWKkSxE/2AAA"
+ },
+ "stock-legno-lavorazione": {
+  "cat": "stock",
+  "alt": "Mani che piallano una tavola di legno",
+  "w": 1024,
+  "h": 683,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/6021928/photo-image-public-domain-hand-wood"
+  },
+  "lqip": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACQAwCdASoYABAAPu1kq04ppaQiMAgBMB2JZQCw7AxDzsYR9+FAAP6rZ39RY7Mk9IIX56jeZmvTKKc97auZFEf4YroXrIJSnTZsP/VYLHcOlfWwZNW6tJdCHAAAAA=="
+ },
+ "stock-legno-tavole": {
+  "cat": "stock",
+  "alt": "Pialle in legno su un banco da lavoro",
+  "w": 1024,
+  "h": 685,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/5939095/wood-plan"
+  },
+  "lqip": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQAwCdASoYABAAPu1mqk2ppaQiMAgBMB2JZQCdAA085cBC6AD+7xR6PFyWfLkeSlCAywqg3SR+AQOS8s4RfUj5yjduRX073yNH1q72Fxeie353EzIl5czRoAA="
  }
 }

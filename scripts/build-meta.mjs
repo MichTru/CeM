@@ -29,7 +29,7 @@ await sharp('public/img/giorno-divano-velluto-verde-lampada-1600.webp')
 
 fs.writeFileSync('public/robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE}sitemap.xml\n`);
 const today = new Date().toISOString().slice(0, 10);
-const pages = JSON.parse(fs.readFileSync('src/data/ambienti.json', 'utf8'));
+const pages = JSON.parse(fs.readFileSync('src/data/categorie.json', 'utf8'));
 fs.writeFileSync('public/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>${SITE}</loc><lastmod>${today}</lastmod><priority>1.0</priority></url>

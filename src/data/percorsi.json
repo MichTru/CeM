@@ -1,0 +1,82 @@
+{
+  "_come_si_usa": "I percorsi guidati. Ogni domanda ha un 'id' che corrisponde a una chiave di 'tag' nelle proposte. 'peso' dice quanto conta la risposta nella scelta delle proposte. Una risposta con 'jolly: true' (es. Consigliatemi voi) va bene per tutte.",
+  "cucine": {
+    "titolo": "Trova la tua cucina",
+    "intro": "Quattro domande, poi ti mostriamo le proposte più adatte e prenoti la visita con le tue risposte già scritte.",
+    "domande": [
+      { "id": "spazio", "testo": "Com'è lo spazio?", "peso": 2, "opzioni": [
+        { "v": "open", "label": "Aperto sul soggiorno", "nota": "Open space o living con cucina" },
+        { "v": "chiusa", "label": "Una stanza a sé", "nota": "Cucina abitabile, con la porta" },
+        { "v": "piccola", "label": "Piccolo o stretto", "nota": "Ogni centimetro conta" }
+      ] },
+      { "id": "forma", "testo": "Che forma immagini?", "peso": 3, "opzioni": [
+        { "v": "isola", "label": "Con isola" },
+        { "v": "penisola", "label": "A penisola" },
+        { "v": "lineare", "label": "Lineare" },
+        { "v": "angolo", "label": "Ad angolo" },
+        { "v": "boh", "label": "Consigliatemi voi", "jolly": true }
+      ] },
+      { "id": "stile", "testo": "Che stile ti somiglia?", "peso": 2, "opzioni": [
+        { "v": "moderno", "label": "Essenziale e moderno" },
+        { "v": "caldo", "label": "Caldo, con il legno" },
+        { "v": "industriale", "label": "Industriale, materico" },
+        { "v": "classico", "label": "Classico contemporaneo" }
+      ] },
+      { "id": "elettrodomestici", "testo": "E gli elettrodomestici?", "peso": 0, "opzioni": [
+        { "v": "si", "label": "Li scegliamo insieme", "nota": "Forni, piani, frigo, lavastoviglie" },
+        { "v": "no", "label": "Ho già i miei" }
+      ] }
+    ]
+  },
+  "divani": {
+    "titolo": "Trova il tuo divano",
+    "intro": "Quattro domande per capire che divano ti serve, poi le proposte e la prenotazione per provarlo.",
+    "domande": [
+      { "id": "posti", "testo": "Quanti siete sul divano?", "peso": 2, "opzioni": [
+        { "v": "due", "label": "In due" },
+        { "v": "tre", "label": "Tre o quattro" },
+        { "v": "famiglia", "label": "Tutta la famiglia, e gli amici" }
+      ] },
+      { "id": "forma", "testo": "Che forma preferisci?", "peso": 2, "opzioni": [
+        { "v": "lineare", "label": "Lineare" },
+        { "v": "angolare", "label": "Angolare o con penisola" },
+        { "v": "boh", "label": "Consigliatemi voi", "jolly": true }
+      ] },
+      { "id": "funzione", "testo": "Cosa deve saper fare?", "peso": 3, "opzioni": [
+        { "v": "relax", "label": "Solo farmi rilassare" },
+        { "v": "letto", "label": "Diventare un letto per gli ospiti" },
+        { "v": "reclinabile", "label": "Schienali e poggiapiedi relax" }
+      ] },
+      { "id": "rivestimento", "testo": "Che rivestimento ti piace?", "peso": 1, "opzioni": [
+        { "v": "tessuto", "label": "Tessuto" },
+        { "v": "velluto", "label": "Velluto" },
+        { "v": "pelle", "label": "Pelle" },
+        { "v": "sfoderabile", "label": "Sfoderabile", "nota": "Con bambini o animali in casa" }
+      ] }
+    ]
+  },
+  "letti": {
+    "titolo": "Trova il tuo letto",
+    "intro": "Quattro domande, poi le proposte e la prenotazione per provare letti e materassi in showroom.",
+    "domande": [
+      { "id": "misura", "testo": "Per quante persone?", "peso": 2, "opzioni": [
+        { "v": "matrimoniale", "label": "Matrimoniale" },
+        { "v": "piazza", "label": "Una piazza e mezza" },
+        { "v": "singolo", "label": "Singolo" }
+      ] },
+      { "id": "contenitore", "testo": "Ti serve il contenitore?", "peso": 2, "opzioni": [
+        { "v": "si", "label": "Sì, mi serve spazio" },
+        { "v": "no", "label": "No, lo preferisco leggero" }
+      ] },
+      { "id": "stile", "testo": "Che letto immagini?", "peso": 3, "opzioni": [
+        { "v": "imbottito", "label": "Morbido, imbottito" },
+        { "v": "legno", "label": "In legno" },
+        { "v": "essenziale", "label": "Essenziale, laccato o metallo" }
+      ] },
+      { "id": "materasso", "testo": "Vuoi provare anche i materassi?", "peso": 1, "opzioni": [
+        { "v": "si", "label": "Sì, voglio provarli" },
+        { "v": "no", "label": "Ho già il mio" }
+      ] }
+    ]
+  }
+}

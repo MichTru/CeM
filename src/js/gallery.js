@@ -97,7 +97,7 @@ function initLightbox(tiles) {
   const items = () => tiles.filter((t) => !t.classList.contains('is-hidden')).map((t) => t.querySelector('.tile__btn')).filter(Boolean);
 
   function setCaption(btn) {
-    caption.innerHTML = `<span>${btn.dataset.catLabel || ''}</span><b>${btn.dataset.title || ''}</b><span>${index + 1} di ${list.length}</span>`;
+    caption.innerHTML = `<span>${btn.dataset.catLabel || ''}</span><b>${btn.dataset.title || ''}</b><span>${btn.hasAttribute('data-stock') ? "Foto d'ispirazione · " : ''}${index + 1} di ${list.length}</span>`;
   }
 
   // Cambio immagine: la nuova si apre a sipario dal centro

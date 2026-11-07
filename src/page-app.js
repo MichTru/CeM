@@ -4,6 +4,7 @@ import { initCursor } from './js/cursor.js';
 import { initConsent } from './js/consent.js';
 import { initContacts } from './js/contacts.js';
 import { initReveals } from './js/reveal.js';
+import { initGuida, initProposte } from './js/guida.js';
 
 document.querySelectorAll('[data-year]').forEach((el) => (el.textContent = new Date().getFullYear()));
 
@@ -13,6 +14,8 @@ initConsent();
 initCursor();
 initContacts();
 initReveals();
+initGuida();
+initProposte();
 
 // Hero della pagina: entrata del titolo e parallasse leggera
 const title = document.querySelector('.phero__title');

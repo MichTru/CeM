@@ -98,7 +98,7 @@
         <nav class="topbar__nav" aria-label="Principale">
           <ul>
             <li><a href="#chi-siamo">Chi siamo</a></li>
-            <li><a href="#ambienti">Ambienti</a></li>
+            <li><a href="#categorie">Prodotti</a></li>
             <li><a href="#su-misura">Su misura</a></li>
             <li><a href="#galleria">Galleria</a></li>
           </ul>
@@ -111,8 +111,8 @@
         <div class="hero__tabs" role="tablist" aria-label="Ambienti in primo piano">
           <span class="hero__pill" aria-hidden="true"><i class="hero__progress"></i></span>
           <button class="hero__tab" role="tab" id="tab-cucine" aria-selected="true" aria-controls="hero-panel" data-i="0">Cucine</button>
-          <button class="hero__tab" role="tab" id="tab-giorno" aria-selected="false" aria-controls="hero-panel" tabindex="-1" data-i="1">Giorno</button>
-          <button class="hero__tab" role="tab" id="tab-notte" aria-selected="false" aria-controls="hero-panel" tabindex="-1" data-i="2">Notte</button>
+          <button class="hero__tab" role="tab" id="tab-divani" aria-selected="false" aria-controls="hero-panel" tabindex="-1" data-i="1">Divani</button>
+          <button class="hero__tab" role="tab" id="tab-letti" aria-selected="false" aria-controls="hero-panel" tabindex="-1" data-i="2">Letti</button>
           <button class="hero__tab" role="tab" id="tab-misura" aria-selected="false" aria-controls="hero-panel" tabindex="-1" data-i="3">Su misura</button>
         </div>
 
@@ -122,13 +122,13 @@
               <cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="(max-width: 860px) 100vw, 76vw" loading="eager" fetchpriority="high"></cm-img>
             </div>
             <div class="hero__slide" data-i="1">
-              <cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 860px) 100vw, 76vw"></cm-img>
+              <cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 860px) 100vw, 76vw" fetchpriority="low"></cm-img>
             </div>
             <div class="hero__slide" data-i="2">
-              <cm-img name="notte-armadio-bianco-maniglia-scura" sizes="(max-width: 860px) 100vw, 76vw"></cm-img>
+              <cm-img name="stock-letto-imbottito" sizes="(max-width: 860px) 100vw, 76vw" fetchpriority="low"></cm-img>
             </div>
             <div class="hero__slide" data-i="3">
-              <cm-img name="su-misura-modulo-rovere" sizes="(max-width: 860px) 100vw, 76vw"></cm-img>
+              <cm-img name="su-misura-modulo-rovere" sizes="(max-width: 860px) 100vw, 76vw" fetchpriority="low"></cm-img>
             </div>
           </div>
           <div class="hero__shade" aria-hidden="true"></div>
@@ -183,90 +183,13 @@
       </div>
     </section>
 
-    <!-- Ambienti -->
-    <section class="section ambienti" id="ambienti" aria-labelledby="ambienti-title">
+    <!-- Cosa stai cercando? -->
+    <section class="section categorie" id="categorie" aria-labelledby="categorie-title">
       <div class="section__head">
-        <h2 class="h-display" id="ambienti-title">Ambienti</h2>
-        <p class="lead">Dalla cucina alla camera da letto, una casa pensata stanza per stanza. In showroom a Lugo trovi i marchi che scegliamo ogni giorno per i nostri clienti.</p>
+        <h2 class="h-display" id="categorie-title">Cosa stai<br>cercando?</h2>
+        <p class="lead">Scegli da dove partire. Per cucine, divani e letti c'è anche un percorso guidato che ti porta alle proposte giuste.</p>
       </div>
-
-      <div class="stack">
-        <article class="room" id="ambiente-cucine">
-          <div class="room__media">
-            <video class="loop" muted loop playsinline preload="none" data-poster="@base/video/loop-cucina-isola-salvia-poster.webp" aria-label="Cucina con isola verde salvia e rovere">
-              <source src="@base/video/loop-cucina-isola-salvia.webm" type="video/webm">
-              <source src="@base/video/loop-cucina-isola-salvia.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="room__body">
-            <h3 class="room__title">Cucine</h3>
-            <p>Il centro della casa, disegnato al centimetro: rilievo delle misure, scelta delle finiture ed elettrodomestici, montaggio.</p>
-            <ul class="brands" aria-label="Marchi cucine">
-              <li>Doimo Cucine</li><li>Cucinesse</li><li>Gicinque</li><li>Prima Cucine</li><li>Paganelli Cucine</li>
-            </ul>
-            <a class="room__link" href="@base/cucine/">Scopri cucine <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
-          </div>
-        </article>
-
-        <article class="room" id="ambiente-giorno">
-          <div class="room__media">
-            <video class="loop" muted loop playsinline preload="none" data-poster="@base/video/loop-giorno-velluto-verde-poster.webp" aria-label="Soggiorno con divano in velluto verde">
-              <source src="@base/video/loop-giorno-velluto-verde.webm" type="video/webm">
-              <source src="@base/video/loop-giorno-velluto-verde.mp4" type="video/mp4">
-            </video>
-          </div>
-          <div class="room__body">
-            <h3 class="room__title">Zona giorno</h3>
-            <p>Divani, librerie e pareti attrezzate per un soggiorno dove ritrovarsi, da soli o in compagnia.</p>
-            <ul class="brands" aria-label="Marchi zona giorno">
-              <li>Voltan</li><li>Cinquanta3</li><li>Felis</li><li>Samoa</li><li>Zamagna</li>
-            </ul>
-            <a class="room__link" href="@base/zona-giorno/">Scopri zona giorno <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
-          </div>
-        </article>
-
-        <article class="room" id="ambiente-notte">
-          <div class="room__media">
-            <cm-img name="notte-armadio-bianco-maniglia-scura" sizes="(max-width: 860px) 100vw, 58vw"></cm-img>
-          </div>
-          <div class="room__body">
-            <h3 class="room__title">Zona notte</h3>
-            <p>Camere da letto, armadi, cabine e camerette pensati per riposare davvero, con il letto e il materasso giusti.</p>
-            <ul class="brands" aria-label="Marchi zona notte">
-              <li>Voltan</li><li>Cinquanta3</li><li>Albamobili</li><li>Bside Letti</li><li>Felis</li><li>Nidi</li><li>Castiflex</li>
-            </ul>
-            <a class="room__link" href="@base/zona-notte/">Scopri zona notte <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
-          </div>
-        </article>
-
-        <article class="room" id="ambiente-complementi">
-          <div class="room__media">
-            <div class="ph" data-ph="Complementi"><span>Foto da inserire · Complementi</span></div>
-          </div>
-          <div class="room__body">
-            <h3 class="room__title">Complementi</h3>
-            <p>Carte da parati, specchi e dettagli che completano una stanza e la rendono vostra.</p>
-            <ul class="brands" aria-label="Marchi complementi">
-              <li>LondonArt</li><li>Pezzani</li>
-            </ul>
-            <a class="room__link" href="@base/complementi/">Scopri complementi <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
-          </div>
-        </article>
-
-        <article class="room" id="ambiente-elettrodomestici">
-          <div class="room__media">
-            <div class="ph" data-ph="Elettrodomestici"><span>Foto da inserire · Elettrodomestici</span></div>
-          </div>
-          <div class="room__body">
-            <h3 class="room__title">Elettrodomestici</h3>
-            <p>Forni, piani cottura, frigoriferi e lavelli dei grandi marchi, scelti e installati insieme alla cucina.</p>
-            <ul class="brands" aria-label="Marchi elettrodomestici">
-              <li>AEG</li><li>Electrolux</li><li>Siemens</li><li>Bosch</li><li>Whirlpool</li><li>Beko</li><li>Grundig</li><li>Miele</li><li>Franke</li><li>Foster</li>
-            </ul>
-            <a class="room__link" href="@base/elettrodomestici/">Scopri elettrodomestici <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
-          </div>
-        </article>
-      </div>
+      <!--PARTIAL:categorie-->
     </section>
 
     <!-- Su misura, con il 3D -->

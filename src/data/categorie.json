@@ -1,0 +1,389 @@
+[
+ {
+  "slug": "cucine",
+  "nome": "Cucine",
+  "breve": "Cucine",
+  "form": "Cucina",
+  "title": "Cucine su misura a Lugo · Cassani & Martignani",
+  "description": "Cucine con isola, a penisola, lineari e ad angolo nello showroom di Lugo (RA). Progetto, elettrodomestici da incasso e montaggio della nostra squadra.",
+  "h1": [
+   "Cucine",
+   "a Lugo"
+  ],
+  "sub": "Con isola, a penisola, lineari o ad angolo: progettate sulle tue misure.",
+  "hero": "cucina-nera-penisola-legno",
+  "tile": "cucina-isola-salvia-rovere-vetrine",
+  "video": "loop-cucina-isola-salvia",
+  "lead": "La cucina è la stanza in cui si passa più tempo, e la scelta che si fa una volta sola. Nel nostro showroom di Lugo la vedi dal vero, apri le ante, tocchi i piani e capisci come si muove la luce sulle finiture.",
+  "testo": [
+   "Partiamo dal rilievo delle misure a casa tua e dalle tue abitudini: chi cucina, quanto spazio serve, come si apre la stanza sul soggiorno. Poi scegliamo insieme composizione, finiture ed elettrodomestici, e prepariamo il progetto con il preventivo.",
+   "Consegna e montaggio li segue la nostra squadra, e restiamo il tuo riferimento anche dopo, per l'assistenza post-vendita."
+  ],
+  "marchiLabel": "I marchi di cucine in showroom",
+  "marchi": [
+   "Doimo Cucine",
+   "Cucinesse",
+   "Gicinque",
+   "Prima Cucine",
+   "Paganelli Cucine"
+  ],
+  "tipiTitolo": "Che cucina cerchi?",
+  "tipi": [
+   {
+    "id": "isola",
+    "nome": "Con isola",
+    "testo": "Per gli open space: si cucina guardando il soggiorno.",
+    "img": "stock-cucina-isola"
+   },
+   {
+    "id": "penisola",
+    "nome": "A penisola",
+    "testo": "Divide gli spazi senza chiuderli, con il piano snack.",
+    "img": "stock-cucina-penisola"
+   },
+   {
+    "id": "lineare",
+    "nome": "Lineari",
+    "testo": "Tutto su una parete: ordinate, perfette anche per gli spazi stretti.",
+    "img": "stock-cucina-lineare"
+   },
+   {
+    "id": "angolo",
+    "nome": "Ad angolo",
+    "testo": "A L o a U, con tanto piano di lavoro e tutto a portata di mano.",
+    "img": "cucina-bianca-angolo-legno-scuro"
+   }
+  ],
+  "percorso": "cucine",
+  "extra": "elettrodomestici"
+ },
+ {
+  "slug": "divani-e-poltrone",
+  "nome": "Divani e poltrone",
+  "breve": "Divani",
+  "form": "Zona giorno",
+  "title": "Divani e poltrone a Lugo · Cassani & Martignani",
+  "description": "Divani angolari, lineari, divani letto, poltrone e relax nello showroom di Lugo (RA): provali dal vero e scegli tessuti, pelli e misure.",
+  "h1": [
+   "Divani",
+   "e poltrone"
+  ],
+  "sub": "Angolari, lineari, letto o relax: provali in showroom prima di scegliere.",
+  "hero": "giorno-divano-angolare-vetrata",
+  "tile": "giorno-divano-velluto-verde-lampada",
+  "video": "loop-giorno-velluto-verde",
+  "lead": "Un divano si sceglie sedendosi. In showroom provi sedute e schienali, tocchi tessuti, pelli e velluti, e capisci quale misura sta davvero nel tuo soggiorno.",
+  "testo": [
+   "Ti aiutiamo a scegliere forma, profondità e rivestimento, a valutare se serve un letto per gli ospiti o un meccanismo relax, e a tenere il divano coerente con il resto della zona giorno."
+  ],
+  "marchiLabel": "I marchi della zona giorno in showroom",
+  "marchi": [
+   "Voltan",
+   "Cinquanta3",
+   "Felis",
+   "Samoa",
+   "Zamagna"
+  ],
+  "tipiTitolo": "Che divano cerchi?",
+  "tipi": [
+   {
+    "id": "angolare",
+    "nome": "Angolari",
+    "testo": "Per chi è in tanti, o ama allungarsi: con penisola o ad angolo.",
+    "img": "stock-divano-angolare"
+   },
+   {
+    "id": "lineare",
+    "nome": "Lineari",
+    "testo": "Due, tre o quattro posti, da centrare sulla parete giusta.",
+    "img": "giorno-divano-velluto-verde-lampada"
+   },
+   {
+    "id": "letto",
+    "nome": "Divani letto",
+    "testo": "Un divano di giorno, un letto vero per gli ospiti di notte.",
+    "img": "stock-divano-letto"
+   },
+   {
+    "id": "poltrona",
+    "nome": "Poltrone e relax",
+    "testo": "La poltrona da lettura o quella con il movimento relax.",
+    "img": "stock-poltrona"
+   }
+  ],
+  "percorso": "divani",
+  "extra": "complementi"
+ },
+ {
+  "slug": "letti",
+  "nome": "Letti",
+  "breve": "Letti",
+  "form": "Zona notte",
+  "title": "Letti e materassi a Lugo · Cassani & Martignani",
+  "description": "Letti imbottiti, contenitore e in legno, materassi e reti nello showroom di Lugo (RA): Albamobili, Bside Letti, Castiflex e gli altri marchi della zona notte.",
+  "h1": [
+   "Letti",
+   "e materassi"
+  ],
+  "sub": "Imbottiti, contenitore o in legno, con il materasso giusto per te.",
+  "hero": "stock-letto-imbottito",
+  "tile": "stock-letto-imbottito",
+  "lead": "Su un letto passiamo un terzo della vita. In showroom puoi provare i materassi, scegliere la testiera e decidere se ti serve il contenitore, con calma e senza fretta.",
+  "testo": [
+   "Ti aiutiamo a scegliere misura, struttura e rivestimento, e ad abbinare materasso e rete al tuo modo di dormire. La consegna e il montaggio li segue la nostra squadra."
+  ],
+  "marchiLabel": "I marchi della zona notte in showroom",
+  "marchi": [
+   "Albamobili",
+   "Bside Letti",
+   "Castiflex",
+   "Voltan",
+   "Cinquanta3",
+   "Felis",
+   "Nidi"
+  ],
+  "tipiTitolo": "Che letto cerchi?",
+  "tipi": [
+   {
+    "id": "imbottito",
+    "nome": "Imbottiti",
+    "testo": "Testiera morbida in tessuto, velluto o pelle.",
+    "img": "stock-letto-imbottito"
+   },
+   {
+    "id": "contenitore",
+    "nome": "Contenitore",
+    "testo": "La rete si alza e sotto c'è spazio per tutto.",
+    "img": "stock-letto-contenitore"
+   },
+   {
+    "id": "legno",
+    "nome": "In legno",
+    "testo": "Linee pulite e il calore del legno vero.",
+    "img": "stock-letto-legno"
+   },
+   {
+    "id": "materasso",
+    "nome": "Materassi e reti",
+    "testo": "Da provare in showroom, per scegliere il sostegno giusto.",
+    "img": "stock-materasso"
+   }
+  ],
+  "percorso": "letti",
+  "extra": "complementi"
+ },
+ {
+  "slug": "armadi",
+  "nome": "Armadi e cabine",
+  "breve": "Armadi",
+  "form": "Zona notte",
+  "title": "Armadi e cabine armadio a Lugo · Cassani & Martignani",
+  "description": "Armadi a battente, scorrevoli e cabine armadio su misura nello showroom di Lugo (RA), con la nostra falegnameria di Massa Lombarda per nicchie e mansarde.",
+  "h1": [
+   "Armadi",
+   "e cabine"
+  ],
+  "sub": "A battente, scorrevoli o cabine armadio, anche su misura.",
+  "hero": "notte-armadio-bianco-maniglia-scura",
+  "tile": "notte-armadio-bianco-maniglia-scura",
+  "lead": "Un buon armadio non si nota: contiene tutto e lascia respirare la stanza. Lo progettiamo partendo da quello che ci devi mettere dentro.",
+  "testo": [
+   "Misuriamo la stanza, scegliamo apertura, finiture e interni, e dove serve la nostra falegnameria di Massa Lombarda adatta l'armadio a nicchie, travi e pareti fuori squadra."
+  ],
+  "marchiLabel": "I marchi della zona notte in showroom",
+  "marchi": [
+   "Voltan",
+   "Cinquanta3",
+   "Albamobili",
+   "Felis",
+   "Nidi"
+  ],
+  "tipiTitolo": "Che armadio cerchi?",
+  "tipi": [
+   {
+    "id": "battente",
+    "nome": "A battente",
+    "testo": "Ante che si aprono del tutto, per vedere ogni cosa.",
+    "img": "notte-armadio-bianco-maniglia-scura"
+   },
+   {
+    "id": "scorrevole",
+    "nome": "Scorrevoli",
+    "testo": "Quando davanti all'armadio lo spazio è poco.",
+    "img": "stock-armadio-scorrevole"
+   },
+   {
+    "id": "cabina",
+    "nome": "Cabine armadio",
+    "testo": "Una stanza solo per abiti, scarpe e valigie.",
+    "img": "stock-cabina-armadio"
+   }
+  ]
+ },
+ {
+  "slug": "camerette",
+  "nome": "Camerette",
+  "breve": "Camerette",
+  "form": "Zona notte",
+  "title": "Camerette per bambini e ragazzi a Lugo · Cassani & Martignani",
+  "description": "Camerette per bambini e ragazzi, letti a castello e soppalchi nello showroom di Lugo (RA): soluzioni che crescono insieme a chi le usa.",
+  "h1": [
+   "Camerette",
+   "che crescono"
+  ],
+  "sub": "Per bambini e ragazzi, con letti a castello, soppalchi e scrivanie.",
+  "hero": "stock-cameretta",
+  "tile": "stock-cameretta",
+  "lead": "Una cameretta deve fare tante cose in poco spazio: dormire, studiare, giocare, ospitare un amico. E deve poter cambiare quando i bambini diventano ragazzi.",
+  "testo": [
+   "Progettiamo con te letti, contenitori e scrivanie, valutiamo castelli e soppalchi per guadagnare spazio, e scegliamo finiture resistenti e facili da pulire."
+  ],
+  "marchiLabel": "I marchi della zona notte in showroom",
+  "marchi": [
+   "Nidi",
+   "Albamobili",
+   "Cinquanta3",
+   "Voltan"
+  ],
+  "tipiTitolo": "Che cameretta cerchi?",
+  "tipi": [
+   {
+    "id": "bambini",
+    "nome": "Per bambini",
+    "testo": "Colori, contenitori bassi e tanto spazio per giocare.",
+    "img": "stock-cameretta"
+   },
+   {
+    "id": "ragazzi",
+    "nome": "Per ragazzi",
+    "testo": "Una scrivania vera, più ordine e un letto da grandi.",
+    "img": "stock-cameretta-ragazzi"
+   },
+   {
+    "id": "castello",
+    "nome": "Castelli e soppalchi",
+    "testo": "Due letti nello spazio di uno, o un letto in alto.",
+    "img": "stock-letto-castello"
+   }
+  ]
+ },
+ {
+  "slug": "zona-pranzo",
+  "nome": "Zona pranzo",
+  "breve": "Pranzo",
+  "form": "Zona giorno",
+  "title": "Tavoli, sedie e madie a Lugo · Cassani & Martignani",
+  "description": "Tavoli allungabili, sedie, madie e credenze per la zona pranzo nello showroom di Lugo (RA).",
+  "h1": [
+   "Zona",
+   "pranzo"
+  ],
+  "sub": "Tavoli, sedie e madie per stare a tavola, tutti i giorni e nelle feste.",
+  "hero": "stock-tavolo-pranzo",
+  "tile": "stock-tavolo-pranzo",
+  "lead": "Il tavolo è dove si mangia, si fanno i compiti e si resta a parlare dopo cena. Lo scegliamo in base a quante persone ci si siedono di solito, e a quante nelle feste.",
+  "testo": [
+   "Ti aiutiamo ad abbinare tavolo, sedie e madia, a scegliere un allungabile se serve, e a legare la zona pranzo alla cucina e al soggiorno."
+  ],
+  "marchiLabel": "I marchi della zona giorno in showroom",
+  "marchi": [
+   "Voltan",
+   "Cinquanta3",
+   "Zamagna",
+   "Felis",
+   "Samoa"
+  ],
+  "tipiTitolo": "Cosa cerchi per la zona pranzo?",
+  "tipi": [
+   {
+    "id": "tavoli",
+    "nome": "Tavoli",
+    "testo": "Fissi o allungabili, in legno, vetro o ceramica.",
+    "img": "stock-tavolo-pranzo"
+   },
+   {
+    "id": "sedie",
+    "nome": "Sedie",
+    "testo": "Comode a lungo, da abbinare o da mescolare.",
+    "img": "stock-sedie"
+   },
+   {
+    "id": "madie",
+    "nome": "Madie e credenze",
+    "testo": "Per piatti, bicchieri e tutto quello che serve a tavola.",
+    "img": "stock-madia"
+   }
+  ],
+  "extra": "complementi"
+ },
+ {
+  "slug": "soggiorno",
+  "nome": "Soggiorno",
+  "breve": "Soggiorno",
+  "form": "Zona giorno",
+  "title": "Pareti attrezzate e librerie a Lugo · Cassani & Martignani",
+  "description": "Pareti attrezzate, librerie e mobili porta TV nello showroom di Lugo (RA): Voltan, Cinquanta3, Zamagna e gli altri marchi della zona giorno.",
+  "h1": [
+   "Soggiorno",
+   "su misura"
+  ],
+  "sub": "Pareti attrezzate, librerie e mobili porta TV per la tua zona giorno.",
+  "hero": "giorno-parete-attrezzata-geometrica",
+  "tile": "giorno-parete-attrezzata-geometrica",
+  "lead": "La parete del soggiorno tiene insieme tutto: televisione, libri, ricordi, quello che non vuoi vedere. La progettiamo perché sia ordinata e leggera, non un muro di ante.",
+  "testo": [
+   "Scegliamo con te moduli, mensole e finiture, misuriamo la parete e, quando serve, la falegnameria di Massa Lombarda realizza il pezzo che il catalogo non prevede."
+  ],
+  "marchiLabel": "I marchi della zona giorno in showroom",
+  "marchi": [
+   "Voltan",
+   "Cinquanta3",
+   "Zamagna",
+   "Felis",
+   "Samoa"
+  ],
+  "tipiTitolo": "Cosa cerchi per il soggiorno?",
+  "tipi": [
+   {
+    "id": "parete",
+    "nome": "Pareti attrezzate",
+    "testo": "Moduli sospesi, a terra o a tutta altezza.",
+    "img": "giorno-parete-attrezzata-geometrica"
+   },
+   {
+    "id": "libreria",
+    "nome": "Librerie",
+    "testo": "Per i libri, gli oggetti e un po' di ordine.",
+    "img": "stock-libreria"
+   },
+   {
+    "id": "tv",
+    "nome": "Mobili porta TV",
+    "testo": "Bassi e puliti, con i cavi che non si vedono.",
+    "img": "stock-mobile-tv"
+   }
+  ],
+  "extra": "complementi"
+ },
+ {
+  "slug": "su-misura",
+  "nome": "Su misura",
+  "breve": "Su misura",
+  "form": "Su misura",
+  "title": "Arredamento su misura in Romagna · Cassani & Martignani",
+  "description": "Arredamento su misura dalla nostra falegnameria di Massa Lombarda: adattiamo e realizziamo cucine, armadi, librerie e mobili per Lugo e la Romagna.",
+  "h1": [
+   "Su misura,",
+   "dalla falegnameria"
+  ],
+  "sub": "Quello che il catalogo non risolve, lo costruiamo a Massa Lombarda.",
+  "hero": "su-misura-modulo-rovere",
+  "tile": "su-misura-dettaglio-maniglia",
+  "lead": "Una nicchia, una mansarda, una parete fuori squadra: a volte il prodotto giusto ha bisogno di un pezzo in più. La nostra falegnameria di Massa Lombarda adatta e completa i mobili dei marchi che trattiamo, o realizza da zero quello che serve.",
+  "testo": [
+   "Si parte dal rilievo delle misure e dal progetto, poi scegliamo insieme legni, laccature e ferramenta. In falegnameria il progetto diventa mobile, pezzo per pezzo, e il montaggio lo seguiamo noi, fino all'assistenza dopo la consegna."
+  ],
+  "marchi": [],
+  "tipi": []
+ }
+]

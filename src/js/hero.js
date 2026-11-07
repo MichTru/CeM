@@ -2,8 +2,8 @@ import { gsap, ScrollTrigger, reduced, finePointer, EASE_MOVE } from './motion.j
 
 const SLIDES = [
   { title: ['Cucine su misura', 'a Lugo'], sub: 'Progettate con te e montate dalla nostra squadra.' },
-  { title: ['Zona giorno', 'da vivere'], sub: 'Divani, pareti attrezzate e luci per stare bene in casa.' },
-  { title: ['Camere da letto', 'su misura'], sub: 'Armadi, letti e cabine pensati per il riposo.' },
+  { title: ['Divani', 'da provare'], sub: 'Angolari, lineari, letto o relax: siediti prima di scegliere.' },
+  { title: ['Letti', 'e materassi'], sub: 'Imbottiti, contenitore o in legno, con il materasso giusto.' },
   { title: ['Falegnameria', 'propria'], sub: 'Mobili su misura costruiti a Massa Lombarda.' },
 ];
 const AUTOPLAY = 6;

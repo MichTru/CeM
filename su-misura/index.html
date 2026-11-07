@@ -40,7 +40,7 @@
         <nav class="topbar__nav" aria-label="Principale">
           <ul>
             <li><a href="@base/#chi-siamo">Chi siamo</a></li>
-            <li><a href="@base/#ambienti">Ambienti</a></li>
+            <li><a href="@base/#categorie">Prodotti</a></li>
             <li><a href="@base/su-misura/" aria-current="page">Su misura</a></li>
             <li><a href="@base/#galleria">Galleria</a></li>
           </ul>
@@ -82,7 +82,7 @@
       </div>
       <ol class="percorso__list">
         <li class="percorso__step reveal-card">
-          <div class="percorso__media"><div class="ph" data-ph="Idea e sopralluogo"><span>Foto da inserire · Idea e sopralluogo</span></div></div>
+          <div class="percorso__media"><cm-img name="stock-legno-progetto" sizes="(max-width: 860px) 100vw, 25vw" alt=""></cm-img></div>
           <h3>L'idea</h3>
           <p>Si parte da te: come vivi la casa, che cosa ti serve, che cosa ti piace.</p>
         </li>
@@ -92,12 +92,12 @@
           <p>Rilievo delle misure, disegno e scelta di legni, laccature e ferramenta.</p>
         </li>
         <li class="percorso__step reveal-card">
-          <div class="percorso__media"><div class="ph" data-ph="Falegnameria di Massa Lombarda"><span>Foto da inserire · Falegnameria di Massa Lombarda</span></div></div>
+          <div class="percorso__media"><cm-img name="stock-legno-lavorazione" sizes="(max-width: 860px) 100vw, 25vw" alt=""></cm-img></div>
           <h3>La falegnameria</h3>
           <p>A Massa Lombarda il progetto diventa mobile, pezzo per pezzo.</p>
         </li>
         <li class="percorso__step reveal-card">
-          <div class="percorso__media"><div class="ph" data-ph="Montaggio"><span>Foto da inserire · Montaggio</span></div></div>
+          <div class="percorso__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 860px) 100vw, 25vw" alt=""></cm-img></div>
           <h3>Il montaggio</h3>
           <p>Marco e Mauro seguono consegna e montaggio, e restano al tuo fianco anche dopo.</p>
         </li>
@@ -107,66 +107,62 @@
       <div class="officina__grid">
         <div class="officina__big"><div class="ph" data-ph="Falegnameria di Massa Lombarda"><span>Foto da inserire · Falegnameria di Massa Lombarda</span></div></div>
         <div class="officina__small"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 860px) 100vw, 30vw"></cm-img></div>
-        <div class="officina__small"><div class="ph" data-ph="Legni e finiture"><span>Foto da inserire · Legni e finiture</span></div></div>
+        <div class="officina__small"><cm-img name="stock-legno-tavole" sizes="(max-width: 860px) 100vw, 30vw" alt=""></cm-img></div>
         <div class="officina__text">
           <h2 class="h-display" id="officina-title">La nostra<br>falegnameria</h2>
           <p>Un laboratorio vero, a pochi chilometri dallo showroom: per questo possiamo adattare un mobile di serie o costruirne uno nuovo, e seguirlo fino a casa tua.</p>
         </div>
       </div>
     </section>
-    <section class="section storie" aria-labelledby="storie-title">
-      <div class="section__head">
-        <h2 class="h-display" id="storie-title">Dal progetto<br>alla casa</h2>
-      </div>
-      <div class="storie__list">
-        <article class="story story--ph reveal-card">
-          <div class="story__media"><div class="ph" data-ph="Storia di progetto"><span>Foto da inserire · Storia di progetto</span></div></div>
-          <div class="story__body">
-            <h3 class="story__title">Storie di progetto</h3>
-            <dl class="story__steps">
-              <div><dt>La richiesta</dt><dd>Che cosa ci ha chiesto il cliente.</dd></div>
-              <div><dt>Il progetto</dt><dd>Come l'abbiamo pensata, tra showroom e falegnameria.</dd></div>
-              <div><dt>Il risultato</dt><dd>Le foto del lavoro finito, a casa sua.</dd></div>
-            </dl>
-          </div>
-        </article>
-      </div>
-    </section>
     <section class="section altri" aria-labelledby="altri-title">
-      <h2 class="h-display altri__title" id="altri-title">Altri ambienti</h2>
+      <h2 class="h-display altri__title" id="altri-title">Cos'altro cerchi?</h2>
       <ul class="altri__list">
         <li>
           <a class="altri__card" href="@base/cucine/">
-            <div class="altri__media"><cm-img name="cucina-nera-penisola-legno" sizes="(max-width: 600px) 50vw, 20vw"></cm-img></div>
+            <div class="altri__media"><cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
             <span class="altri__name">Cucine</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
         <li>
-          <a class="altri__card" href="@base/zona-giorno/">
-            <div class="altri__media"><cm-img name="giorno-divano-angolare-vetrata" sizes="(max-width: 600px) 50vw, 20vw"></cm-img></div>
-            <span class="altri__name">Zona giorno</span>
+          <a class="altri__card" href="@base/divani-e-poltrone/">
+            <div class="altri__media"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <span class="altri__name">Divani e poltrone</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
         <li>
-          <a class="altri__card" href="@base/zona-notte/">
-            <div class="altri__media"><cm-img name="notte-armadio-bianco-maniglia-scura" sizes="(max-width: 600px) 50vw, 20vw"></cm-img></div>
-            <span class="altri__name">Zona notte</span>
+          <a class="altri__card" href="@base/letti/">
+            <div class="altri__media"><cm-img name="stock-letto-imbottito" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <span class="altri__name">Letti</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
         <li>
-          <a class="altri__card" href="@base/complementi/">
-            <div class="altri__media"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 600px) 50vw, 20vw"></cm-img></div>
-            <span class="altri__name">Complementi</span>
+          <a class="altri__card" href="@base/armadi/">
+            <div class="altri__media"><cm-img name="notte-armadio-bianco-maniglia-scura" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <span class="altri__name">Armadi e cabine</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
         <li>
-          <a class="altri__card" href="@base/elettrodomestici/">
-            <div class="altri__media"><cm-img name="cucina-loft-isola-cemento" sizes="(max-width: 600px) 50vw, 20vw"></cm-img></div>
-            <span class="altri__name">Elettrodomestici</span>
+          <a class="altri__card" href="@base/camerette/">
+            <div class="altri__media"><cm-img name="stock-cameretta" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <span class="altri__name">Camerette</span>
+            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="altri__card" href="@base/zona-pranzo/">
+            <div class="altri__media"><cm-img name="stock-tavolo-pranzo" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <span class="altri__name">Zona pranzo</span>
+            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
+          </a>
+        </li>
+        <li>
+          <a class="altri__card" href="@base/soggiorno/">
+            <div class="altri__media"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <span class="altri__name">Soggiorno</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>

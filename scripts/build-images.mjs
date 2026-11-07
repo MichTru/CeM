@@ -145,6 +145,30 @@ async function run() {
     manifest[r.name] = { cat: r.cat, alt: r.alt, w: meta.width, h: meta.height, widths, lqip: `data:image/webp;base64,${lqip.toString('base64')}` };
     console.log('ok', r.name);
   }
+  // Foto stock CC0 (Openverse) usate come foto d'ispirazione finché mancano quelle vere
+  const STOCK = 'assets-src/stock';
+  const alts = JSON.parse(await fs.readFile(`${STOCK}/alt.json`, 'utf8'));
+  const credits = JSON.parse(await fs.readFile(`${STOCK}/credits.json`, 'utf8'));
+  for (const [name, alt] of Object.entries(alts)) {
+    const file = path.join(STOCK, `${name}.jpg`);
+    const meta = await sharp(file).metadata();
+    const widths = WIDTHS.filter((w) => w < meta.width);
+    widths.push(meta.width);
+    for (const w of widths) {
+      const base = grade(sharp(file).resize({ width: w }));
+      await base.clone().avif({ quality: 52, effort: 4 }).toFile(`${OUT}/${name}-${w}.avif`);
+      await base.clone().webp({ quality: 76 }).toFile(`${OUT}/${name}-${w}.webp`);
+    }
+    const lqip = await grade(sharp(file).resize({ width: 24 })).blur(1.2).webp({ quality: 40 }).toBuffer();
+    const c = credits[name] || {};
+    manifest[name] = {
+      cat: 'stock', alt, w: meta.width, h: meta.height, widths, stock: true,
+      credit: { autore: c.creator || '', fonte: c.source || '', licenza: (c.license || '').toUpperCase(), link: c.foreign_landing_url || '' },
+      lqip: `data:image/webp;base64,${lqip.toString('base64')}`,
+    };
+    console.log('ok', name, widths.join(','));
+  }
+
   // Fallback statico della scena 3D: quattro fasi su fondo trasparente
   await fs.mkdir(`${OUT}/3d`, { recursive: true });
   for (let i = 1; i <= 4; i++) {

@@ -5,7 +5,7 @@ import { resolve } from 'node:path';
 const BASE = '/CeM/';
 const images = JSON.parse(fs.readFileSync('src/data/images.json', 'utf8'));
 const logoInline = fs.readFileSync('src/assets/logo-inline.svg', 'utf8');
-const ambienti = JSON.parse(fs.readFileSync('src/data/ambienti.json', 'utf8'));
+const categorie = JSON.parse(fs.readFileSync('src/data/categorie.json', 'utf8'));
 const partial = (name) => fs.readFileSync(`src/partials/${name}.html`, 'utf8');
 
 // <cm-img name="..." sizes="..." class="..." loading="lazy" fetchpriority="high" alt="...">
@@ -26,7 +26,8 @@ function picture(attrs) {
     `<source type="image/avif" srcset="${set('avif')}" sizes="${sizes}">` +
     `<source type="image/webp" srcset="${set('webp')}" sizes="${sizes}">` +
     `<img src="@base/img/${name}-${mid}.webp" width="${img.w}" height="${img.h}" alt="${alt}" loading="${loading}" decoding="async"${prio ? ` fetchpriority="${prio}"` : ''}>` +
-    `</picture>`;
+    `</picture>` +
+    (img.stock && !/\bnobadge\b/.test(attrs) ? `<span class="ispirazione">Foto d'ispirazione</span>` : '');
 }
 
 function cmHtml() {
@@ -64,7 +65,8 @@ export default defineConfig({
         main: resolve(import.meta.dirname, 'index.html'),
         privacy: resolve(import.meta.dirname, 'privacy.html'),
         cookie: resolve(import.meta.dirname, 'cookie.html'),
-        ...Object.fromEntries(ambienti.map((a) => [a.slug, resolve(import.meta.dirname, `${a.slug}/index.html`)])),
+        ...Object.fromEntries(categorie.map((a) => [a.slug, resolve(import.meta.dirname, `${a.slug}/index.html`)])),
+        crediti: resolve(import.meta.dirname, 'crediti.html'),
       },
     },
   },
