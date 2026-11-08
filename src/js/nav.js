@@ -72,6 +72,7 @@ export function initNav() {
   }
   burgers.forEach((b) => b.addEventListener('click', () => (isOpen ? closeMenu() : openMenu())));
   closeBtn.addEventListener('click', () => closeMenu());
+  document.addEventListener('cm:close-menu', () => closeMenu(false));
   menu.addEventListener('click', (e) => e.target.closest('a') && closeMenu(false));
   document.addEventListener('keydown', (e) => {
     if (!isOpen) return;

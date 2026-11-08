@@ -848,5 +848,24 @@
    "link": "https://stocksnap.io/photo/living-room-BI0P6D3WL9"
   },
   "lqip": "data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAACQAwCdASoYAA0APu1kqU2ppaQiMAgBMB2JZQAAWW7y7KAGwvQAAP7FRgXrC2qITzGMdMXMWn7G/09mE3H2XRt4oOH73zx9DRNYAAAA"
+ },
+ "stock-cucina-lineare-progetto": {
+  "cat": "stock",
+  "alt": "La stessa cucina lineare ridisegnata a matita, come uno schizzo di progetto",
+  "w": 1024,
+  "h": 681,
+  "widths": [
+   480,
+   800,
+   1024
+  ],
+  "stock": true,
+  "credit": {
+   "autore": "",
+   "fonte": "rawpixel",
+   "licenza": "CC0",
+   "link": "https://www.rawpixel.com/image/5947465/free-public-domain-cc0-photo"
+  },
+  "lqip": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAAAwAwCdASoYABAAPu1iqU2ppaOiMAgBMB2JZQAAeeR4xNwAAP7lvRVKGzM8S+3+g+MrnWiCKl/uFsN1jfj4+ChKw/AAAA=="
  }
 }

@@ -54,7 +54,7 @@
         <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
       </header>
 
-      <div class="phero" id="hero">
+      <div class="phero" id="hero" data-scheda-host>
         <div class="phero__frame">
           <div class="phero__media"><cm-img name="stock-ristr-lavori" sizes="(max-width: 860px) 100vw, 96vw" loading="eager" fetchpriority="high"></cm-img></div>
           <div class="hero__shade" aria-hidden="true"></div>
@@ -125,7 +125,23 @@
             </div>
           </li>
         </ol>
+        <p class="isp-nota tappe__nota">Alcune foto sono d'ispirazione: mostrano lo stile, non sono lavori realizzati da noi.</p>
       </div>
+    </section>
+    <section class="section primadopo" aria-labelledby="pd-title">
+      <div class="section__head section__head--row">
+        <h2 class="h-display" id="pd-title">Dal disegno<br>alla stanza</h2>
+        <p class="lead">Prima il progetto, poi la stanza finita. Trascina per confrontare.</p>
+      </div>
+      <div class="pd" style="--pos:50%">
+        <div class="pd__img pd__img--dopo"><cm-img name="stock-cucina-lineare" sizes="(max-width: 860px) 100vw, 90vw" alt="La cucina finita" nobadge></cm-img></div>
+        <div class="pd__img pd__img--prima" aria-hidden="true"><cm-img name="stock-cucina-lineare-progetto" sizes="(max-width: 860px) 100vw, 90vw" alt="" nobadge></cm-img></div>
+        <span class="pd__tag pd__tag--l" aria-hidden="true">Il progetto</span>
+        <span class="pd__tag pd__tag--r" aria-hidden="true">La stanza finita</span>
+        <span class="pd__handle" aria-hidden="true"><svg class="ico"><use href="#i-chev"/></svg></span>
+        <input class="pd__range" type="range" min="0" max="100" value="50" aria-label="Confronta il progetto con la stanza finita">
+      </div>
+      <p class="isp-nota">Esempio con una foto d'ispirazione e il suo schizzo: qui andranno il progetto e la foto di un vostro lavoro.</p>
     </section>
     <section class="section servizi" aria-labelledby="servizi-title">
       <div class="servizi__grid">

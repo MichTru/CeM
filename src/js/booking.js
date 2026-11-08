@@ -98,6 +98,7 @@ export function initBooking() {
   const sheet = document.getElementById('sheet');
   const openSheet = () => {
     if (!sheet || sheet.open) return;
+    document.dispatchEvent(new Event('cm:close-menu'));
     lenis?.stop();
     sheet.showModal();
     document.documentElement.classList.add('sheet-open');

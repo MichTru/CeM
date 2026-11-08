@@ -146,7 +146,7 @@
 .altri__media img { transition: transform 1.2s var(--ease-out); }
 .altri__card:hover .altri__media img { transform: scale(1.07); }
 .altri__card::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgb(22 17 13 / 0.85), transparent 55%); }
-.altri__name { position: absolute; z-index: 1; left: 14px; right: 14px; bottom: 16px; font-family: var(--f-display); font-stretch: 125%; font-weight: 600; text-transform: uppercase; font-size: clamp(0.78rem, 0.55rem + 0.55vw, 1.15rem); line-height: 1.05; overflow-wrap: anywhere; }
+.altri__name { position: absolute; z-index: 1; left: 14px; right: 14px; bottom: 16px; font-family: var(--f-display); font-stretch: 125%; font-weight: 600; text-transform: uppercase; font-size: clamp(0.78rem, 0.55rem + 0.55vw, 1.15rem); line-height: 1.05; hyphens: manual; overflow-wrap: normal; }
 .altri__card .round-arrow { position: absolute; z-index: 1; top: 12px; right: 12px; width: 38px; height: 38px; }
 .altri__card:hover .round-arrow { transform: rotate(45deg); background: var(--avorio); color: var(--espresso); }
 
@@ -258,8 +258,10 @@
 .guida__opt-label { font-size: clamp(1rem, 0.95rem + 0.3vw, 1.2rem); font-weight: 400; line-height: 1.2; padding-right: 22px; }
 .guida__opt-note { font-size: 0.8rem; color: var(--sabbia); }
 .guida__opt.is-on .guida__opt-note { color: rgb(22 17 13 / 0.65); }
-.guida__opt-dot { position: absolute; top: 16px; right: 16px; width: 14px; height: 14px; border-radius: 50%; border: 1px solid currentColor; opacity: 0.5; }
-.guida__opt.is-on .guida__opt-dot { background: var(--cognac); border-color: var(--cognac); opacity: 1; }
+.guida__opt-dot { position: absolute; top: 16px; right: 16px; width: 16px; height: 16px; border-radius: 50%; border: 1.5px solid currentColor; opacity: 0.45; transition: opacity 0.3s, border-color 0.3s; }
+.guida__opt-dot::after { content: ''; position: absolute; inset: 3px; border-radius: 50%; background: var(--cognac); transform: scale(0); transition: transform 0.4s var(--ease-out); }
+.guida__opt.is-on .guida__opt-dot { border-color: var(--cognac); opacity: 1; }
+.guida__opt.is-on .guida__opt-dot::after { transform: scale(1); }
 .guida__nav { min-height: 24px; }
 .guida__back { color: var(--sabbia); }
 .guida__summary { display: flex; flex-wrap: wrap; gap: 6px; }
@@ -298,11 +300,16 @@
   .tipi__list--3 { grid-template-columns: 1fr 1fr; }
   .extra__card { grid-template-columns: 1fr; }
   .guida__opts, .guida__opts--3, .guida__opts--5 { grid-template-columns: 1fr 1fr; }
-  .guida__opt { min-height: 96px; padding: 14px 16px; }
+  .guida__opt { min-height: 72px; padding: 12px 14px; align-content: center; border-radius: 14px; }
+  .guida__opt-label { font-size: 0.98rem; padding-right: 20px; }
+  .guida__opt-note { font-size: 0.74rem; line-height: 1.3; }
+  .guida__opt-dot { top: 12px; right: 12px; width: 14px; height: 14px; }
   .guida__res { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
   .tipo__media { aspect-ratio: 1; }
+  .altri__name { left: 10px; right: 10px; bottom: 12px; font-stretch: 100%; font-size: 0.74rem; letter-spacing: 0.01em; }
+  .altri__card .round-arrow { top: 8px; right: 8px; width: 30px; height: 30px; }
 }
 
 /* Ristrutturi: linea del tempo */
@@ -380,3 +387,87 @@
 @media (max-width: 600px) {
   .phero__title { font-size: min(2.6rem, 8.6vw); }
 }
+
+/* "+" sulla foto della hero: lo strato segue la foto (stessa misura e parallasse) */
+.phero .hotspots { position: absolute; inset: -4% 0; z-index: 4; pointer-events: none; }
+.phero .hotspot { pointer-events: auto; }
+.hotspot[data-x]:not(.is-placed) { visibility: hidden; }
+.hotspot[hidden] { display: none; }
+.phero .hotspot__label { max-width: 210px; }
+.phero__pezzi { display: none; }
+@media (max-width: 860px) {
+  .phero__pezzi { display: grid; gap: 8px; margin-top: 12px; }
+  .phero__pezzi > span { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--sabbia); padding-left: 4px; }
+  .phero__pezzi ul { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px 2px; scroll-snap-type: x mandatory; }
+  .phero__pezzi ul::-webkit-scrollbar { display: none; }
+  .phero__pezzi li { flex: none; scroll-snap-align: start; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 16px 0 10px;
+    border-radius: var(--r-pill); border: 1px solid var(--line-strong); background: rgb(36 27 21 / 0.7);
+    color: var(--avorio); font: inherit; font-size: 0.86rem; white-space: nowrap; cursor: pointer;
+  }
+  .chip .ico { width: 22px; height: 22px; padding: 4px; border-radius: 50%; background: var(--avorio); color: var(--espresso); }
+}
+
+/* --- Campionario finiture (Su misura) ------------------------------------------- */
+.fin { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(20px, 3vw, 40px) var(--gap); }
+.fin__title { font-weight: 400; font-size: 1.15rem; margin-bottom: 12px; }
+.fin__title span { display: block; font-size: 0.8rem; color: var(--sabbia); margin-top: 2px; }
+.fin__list { display: flex; flex-wrap: wrap; gap: 10px; }
+.fin__item {
+  display: grid; justify-items: center; gap: 8px; width: 92px; padding: 8px 4px 10px;
+  border-radius: 16px; border: 1px solid transparent; background: none; color: var(--avorio);
+  font: inherit; cursor: pointer; transition: border-color 0.3s, background-color 0.3s;
+}
+.fin__item:hover { border-color: var(--line-strong); }
+.fin__sw {
+  position: relative; width: 64px; height: 64px; border-radius: 50%;
+  box-shadow: inset 0 0 0 1px rgb(245 239 230 / 0.15), 0 8px 20px -8px rgb(0 0 0 / 0.6);
+  transition: transform 0.5s var(--ease-out);
+}
+.fin__item:hover .fin__sw { transform: scale(1.06); }
+.fin__item[aria-pressed="true"] { border-color: rgb(245 239 230 / 0.5); background: rgb(245 239 230 / 0.06); }
+.fin__item[aria-pressed="true"] .fin__sw::after {
+  content: ''; position: absolute; inset: -5px; border-radius: 50%; border: 2px solid var(--avorio);
+}
+.fin__name { font-size: 0.78rem; line-height: 1.2; text-align: center; color: rgb(245 239 230 / 0.86); }
+.fin__bar {
+  position: sticky; bottom: calc(12px + env(safe-area-inset-bottom, 0px)); z-index: 5;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px;
+  margin-top: 28px; padding: 12px 12px 12px 20px; border-radius: 22px;
+  border: 1px solid var(--line-strong); background: rgb(36 27 21 / 0.88);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+}
+.fin__sel { font-size: 0.9rem; color: var(--sabbia); flex: 1 1 220px; }
+.fin__sel b { color: var(--avorio); font-weight: 500; }
+#fin-go:disabled { opacity: 0.45; cursor: not-allowed; }
+@media (max-width: 860px) {
+  .fin { grid-template-columns: 1fr; }
+  .fin__list { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 -16px; padding: 0 16px; }
+  .fin__list::-webkit-scrollbar { display: none; }
+  .fin__item { flex: none; width: 84px; }
+  .fin__bar { padding: 10px 10px 10px 16px; }
+  .fin__bar .btn { width: 100%; justify-content: center; }
+}
+
+/* --- Prima e dopo (Ristrutturi) -------------------------------------------------- */
+.pd { position: relative; aspect-ratio: 16 / 9; border-radius: var(--r-card); overflow: hidden; border: 1px solid var(--line); background: var(--noce); user-select: none; }
+.pd__img { position: absolute; inset: 0; }
+.pd__img .pic { position: absolute; inset: 0; width: 100%; height: 100%; aspect-ratio: auto !important; }
+.pd__img--prima { clip-path: inset(0 calc(100% - var(--pos)) 0 0); }
+.pd__tag { position: absolute; z-index: 2; top: 14px; padding: 5px 12px; border-radius: var(--r-pill); background: rgb(22 17 13 / 0.6); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font-size: 0.78rem; pointer-events: none; }
+.pd__tag--l { left: 14px; }
+.pd__tag--r { right: 14px; }
+.pd::after { content: ''; position: absolute; z-index: 2; top: 0; bottom: 0; left: var(--pos); width: 2px; margin-left: -1px; background: var(--avorio); pointer-events: none; }
+.pd__handle {
+  position: absolute; z-index: 3; top: 50%; left: var(--pos); width: 52px; height: 52px; margin: -26px 0 0 -26px;
+  display: grid; place-items: center; border-radius: 50%; background: var(--avorio); color: var(--espresso);
+  box-shadow: 0 10px 30px -8px rgb(0 0 0 / 0.6); pointer-events: none;
+}
+.pd__handle .ico { width: 18px; height: 18px; }
+.pd__handle::before { content: ''; position: absolute; width: 18px; height: 18px; left: 9px; background: currentColor; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m15 5-7 7 7 7' fill='none' stroke='black' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat; }
+.pd__handle .ico { margin-left: 18px; }
+.pd__range { position: absolute; inset: 0; z-index: 4; width: 100%; height: 100%; margin: 0; opacity: 0; cursor: ew-resize; touch-action: pan-y; }
+.pd__range:focus-visible ~ .pd__handle, .pd:has(.pd__range:focus-visible) .pd__handle { outline: 2px solid var(--cognac-chiaro); outline-offset: 3px; }
+.pd .ispirazione { display: none; }
+@media (max-width: 600px) { .pd { aspect-ratio: 4 / 5; } }

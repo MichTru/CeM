@@ -1,5 +1,6 @@
 import { hasConsent, onConsent, askConsent } from './consent.js';
 import { initBooking, bookingIncomplete } from './booking.js';
+import { initLikes, likesText } from './likes.js';
 
 // Orari: mar–sab 9:30–12:30 e 15:00–19:00, lunedì solo pomeriggio, domenica chiuso.
 const MORNING = [9 * 60 + 30, 12 * 60 + 30];
@@ -107,6 +108,7 @@ function initForm() {
       `Ambiente: ${data.get('ambiente')}`,
       '',
       data.get('messaggio') || '',
+      ...(likesText() ? ['', likesText()] : []),
     ].join('\n');
     const subject = `${data.get('richiesta')} · ${data.get('nome')}`;
     location.href = `mailto:cassaniemartignani@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -139,16 +141,41 @@ function initMap() {
 }
 
 export function initContacts() {
+  initLikes();
   initStatus();
   initBooking();
   initForm();
   initMap();
-  // [NUMERO WHATSAPP] è ancora da completare con il cliente
-  const wa = document.querySelector('[data-whatsapp]');
-  if (wa && wa.getAttribute('href').includes('[')) {
-    wa.addEventListener('click', (e) => {
-      e.preventDefault();
-      wa.setAttribute('title', 'Numero WhatsApp da completare');
-    });
-  }
+  initWhatsApp();
+}
+
+// WhatsApp con il messaggio già scritto: ambiente, giorno scelto e Mi piace
+const WA_NUMBER = '[NUMERO WHATSAPP]'; // da completare con il cliente, solo cifre con prefisso (es. 39333…)
+export function waMessage() {
+  const form = document.getElementById('form');
+  const get = (n) => form?.querySelector(`[name="${n}"]`)?.value || '';
+  const quando = !document.getElementById('when')?.hidden && get('appuntamento');
+  const righe = [
+    'Buongiorno, vi scrivo dal sito.',
+    `Vorrei ${quando ? `venire in showroom ${quando.replace(/^./, (c) => c.toLowerCase())}` : 'prenotare una visita in showroom'}${form ? ` per: ${get('ambiente').toLowerCase()}` : ''}.`,
+    get('messaggio'),
+    likesText(),
+  ].filter(Boolean);
+  return righe.join('\n\n');
+}
+function initWhatsApp() {
+  document.addEventListener('click', (e) => {
+    const wa = e.target.closest('[data-whatsapp]');
+    if (!wa) return;
+    const text = encodeURIComponent(waMessage());
+    if (/^\d{8,15}$/.test(WA_NUMBER)) {
+      wa.href = `https://wa.me/${WA_NUMBER}?text=${text}`;
+      return;
+    }
+    // demo: il numero non c'è ancora, mostriamo il messaggio che partirebbe
+    e.preventDefault();
+    const note = wa.parentElement.querySelector('.wa-demo') || wa.insertAdjacentElement('afterend', Object.assign(document.createElement('p'), { className: 'wa-demo' }));
+    note.setAttribute('role', 'status');
+    note.textContent = `Demo: manca il numero WhatsApp del negozio. Partirebbe questo messaggio: «${waMessage().replace(/\n+/g, ' ')}»`;
+  });
 }

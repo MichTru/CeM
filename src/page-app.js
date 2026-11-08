@@ -6,6 +6,8 @@ import { initContacts } from './js/contacts.js';
 import { initReveals } from './js/reveal.js';
 import { initGuida, initProposte } from './js/guida.js';
 import { initLoops } from './js/rooms.js';
+import { initHotspots, initSchede } from './js/bento.js';
+import { initFiniture, initPrimaDopo } from './js/extra.js';
 
 document.querySelectorAll('[data-year]').forEach((el) => (el.textContent = new Date().getFullYear()));
 
@@ -17,13 +19,17 @@ initContacts();
 initReveals();
 initGuida();
 initProposte();
+initHotspots();
+initSchede();
+initFiniture();
+initPrimaDopo();
 // la galleria (con l'elenco delle immagini) si carica solo dove c'è
 if (document.getElementById('grid')) import('./js/gallery.js').then((m) => m.initGallery());
 initLoops();
 
 // Hero della pagina: entrata del titolo e parallasse leggera
 const title = document.querySelector('.phero__title');
-const media = document.querySelector('.phero__media');
+const media = document.querySelectorAll('.phero__media, .phero .hotspots');
 if (!reduced) {
   gsap.from('.phero__frame', { clipPath: 'inset(6% 6% 6% 6% round 20px)', duration: 1.4 });
   gsap.from(media, { scale: 1.12, duration: 1.8 });

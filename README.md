@@ -30,7 +30,13 @@ La pubblicazione su GitHub Pages parte da `.github/workflows/deploy.yml` a ogni 
 - `proposte.json`: le proposte di ogni categoria, con i tag usati dai percorsi guidati
 - `percorsi.json`: le domande dei percorsi guidati di cucine, divani e letti
 - `galleria.json`: la galleria della home
-- `occasioni.json`, `storie.json`: compaiono solo quando contengono voci
+- `occasioni.json`: pezzi d'esposizione; con `home: true` vanno anche in home. Ora ci sono 3 voci d'esempio (`esempio: true`, etichetta "Esempio") da sostituire
+- `storie.json`: compare solo quando contiene voci
+- `schede.json`: le schede dei pezzi aperte dai "+" sulle foto; `foto` collega una foto ai suoi "+" (punto sulla foto intera, il sito lo riporta sul ritaglio visibile e lo nasconde se cade sotto i testi). Su telefono gli stessi pezzi compaiono anche come riga sotto la hero
+- `finiture.json`: il campionario della pagina Su misura (colori indicativi in CSS)
+- `recensioni.json`: la sezione compare solo quando contiene recensioni vere
+
+Lista "Mi piace": il cuore su proposte, occasioni e schede salva i pezzi sul dispositivo (localStorage); la lista compare nel modulo di prenotazione e nel messaggio email e WhatsApp.
 
 Le pagine si rigenerano da sole a ogni build (`npm run build` lancia prima `scripts/build-pages.mjs`).
 
@@ -40,7 +46,7 @@ In attesa delle foto vere, 30 immagini sono foto CC0 (pubblico dominio) trovate 
 
 ## Da completare con il cliente
 
-- `[NUMERO WHATSAPP]` in `index.html`
+- `[NUMERO WHATSAPP]` in `src/partials/contatti.html`, `src/partials/form.html` e `WA_NUMBER` in `src/js/contacts.js`: finché manca, il pulsante mostra il messaggio che partirebbe
 - `[ENDPOINT FORM]` (Formspree) in `index.html`: finché manca, il modulo apre l'app di posta
 - Logo vettoriale originale (l'SVG attuale è ricostruito da un PNG di 350 px)
 - Foto vere al posto delle foto d'ispirazione; in particolare falegnameria, showroom, Marco e Mauro e lavori realizzati

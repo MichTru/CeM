@@ -1,0 +1,49 @@
+{
+  "_come_si_usa": "Campionario della pagina Su misura. I colori sono indicativi e disegnati in CSS ('css' è uno sfondo CSS): sostituiscili con le foto dei campioni veri quando ci sono. Nomi e gamme vanno confermati con i titolari.",
+  "gruppi": [
+    {
+      "id": "legni",
+      "nome": "Legni",
+      "nota": "Essenze per ante, piani e strutture",
+      "items": [
+        { "id": "rovere-naturale", "nome": "Rovere naturale", "css": "repeating-linear-gradient(96deg, #c7a77c 0 3px, #b8966a 3px 5px, #cdb08a 5px 11px, #ba9a70 11px 13px)" },
+        { "id": "rovere-fume", "nome": "Rovere fumé", "css": "repeating-linear-gradient(96deg, #7a5c44 0 3px, #6a4f3a 3px 6px, #82634a 6px 12px, #6f533e 12px 14px)" },
+        { "id": "noce-canaletto", "nome": "Noce canaletto", "css": "repeating-linear-gradient(94deg, #5b3b28 0 4px, #4c3020 4px 6px, #644331 6px 12px, #523524 12px 15px)" },
+        { "id": "frassino-nero", "nome": "Frassino tinto nero", "css": "repeating-linear-gradient(97deg, #2a2420 0 3px, #1d1916 3px 5px, #322b26 5px 11px, #221d1a 11px 13px)" }
+      ]
+    },
+    {
+      "id": "laccati",
+      "nome": "Laccati opachi",
+      "nota": "Ante lisce, anche fuori standard",
+      "items": [
+        { "id": "bianco-seta", "nome": "Bianco seta", "css": "#ece6dc" },
+        { "id": "grigio-talpa", "nome": "Grigio talpa", "css": "#8a7f74" },
+        { "id": "salvia", "nome": "Salvia", "css": "#9aa48d" },
+        { "id": "blu-notte", "nome": "Blu notte", "css": "#2b3442" },
+        { "id": "terracotta", "nome": "Terracotta", "css": "#a8603f" }
+      ]
+    },
+    {
+      "id": "tessuti",
+      "nome": "Tessuti",
+      "nota": "Per divani, testate e sedute",
+      "items": [
+        { "id": "lino-naturale", "nome": "Lino naturale", "css": "repeating-linear-gradient(0deg, #cfc2ad 0 1px, #c4b6a0 1px 2px), #cbbda7" },
+        { "id": "boucle-avorio", "nome": "Bouclé avorio", "css": "radial-gradient(circle at 30% 30%, #f1ebe0 0 2px, transparent 2.5px) 0 0 / 6px 6px, radial-gradient(circle at 70% 70%, #ddd3c4 0 2px, transparent 2.5px) 0 0 / 6px 6px, #e7dfd2" },
+        { "id": "velluto-verde", "nome": "Velluto verde", "css": "linear-gradient(135deg, #3f5a46, #2c4232 60%, #4a6852)" },
+        { "id": "velluto-ruggine", "nome": "Velluto ruggine", "css": "linear-gradient(135deg, #a5583a, #7d3f27 60%, #b0664a)" }
+      ]
+    },
+    {
+      "id": "pelli",
+      "nome": "Pelli",
+      "nota": "Per sedute, poltrone e dettagli",
+      "items": [
+        { "id": "cognac", "nome": "Cognac", "css": "radial-gradient(circle at 30% 20%, #b47a4c, #8c5530 70%)" },
+        { "id": "testa-di-moro", "nome": "Testa di moro", "css": "radial-gradient(circle at 30% 20%, #5a3b2b, #3a2419 70%)" },
+        { "id": "nero", "nome": "Nero", "css": "radial-gradient(circle at 30% 20%, #3a3532, #171412 70%)" }
+      ]
+    }
+  ]
+}

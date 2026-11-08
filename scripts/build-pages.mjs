@@ -11,11 +11,37 @@ const percorsi = read('percorsi.json');
 const occasioni = read('occasioni.json').items;
 const storie = read('storie.json').items;
 const ristr = read('ristrutturi.json');
+const schedeData = read('schede.json');
+
+// "+" sulla foto: posizione sulla foto intera, riportata sul ritaglio visibile da bento.js
+// su telefono il ritaglio verticale nasconde quasi tutti i "+": i pezzi in foto diventano una riga sotto
+function pezziHTML(foto) {
+  const spots = schedeData.foto?.[foto];
+  if (!spots) return '';
+  return `
+        <div class="phero__pezzi"><span>In questa foto</span><ul>${spots.map((s) => `<li><button type="button" class="chip" data-scheda="${s.id}"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg> ${esc(s.label)}</button></li>`).join('')}</ul></div>`;
+}
+function hotspotsHTML(foto, pre) {
+  const spots = schedeData.foto?.[foto];
+  if (!spots || !images[foto]) return '';
+  const { w, h } = images[foto];
+  return `
+          <div class="hotspots" data-w="${w}" data-h="${h}">${spots.map((s, i) => `
+            <div class="hotspot" data-x="${s.pos[0]}" data-y="${s.pos[1]}">
+              <button type="button" aria-expanded="false" aria-controls="${pre}-hs-${i}" aria-label="Dettaglio: ${esc(s.label.toLowerCase())}"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
+              <button type="button" class="hotspot__label${s.pos[0] > 55 ? ' hotspot__label--left' : ''}" id="${pre}-hs-${i}" data-scheda="${s.id}"><span>${esc(s.label)}</span><span class="hotspot__more">Scheda <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+            </div>`).join('')}
+          </div>`;
+}
 
 const esc = (s = '') => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const img = (name, sizes, extra = '') => (images[name] ? `<cm-img name="${name}" sizes="${sizes}"${extra}></cm-img>` : '');
 const ph = (label) => `<div class="ph" data-ph="${esc(label)}"><span>Foto da inserire · ${esc(label)}</span></div>`;
 const media = (name, label, sizes, extra = '') => img(name, sizes, extra) || ph(label);
+const likeBtn = (id, nome, amb) => `<button type="button" class="like" data-like="${esc(id)}" data-nome="${esc(nome)}" data-amb="${esc(amb)}" aria-pressed="false" aria-label="Aggiungi ${esc(nome)} ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button>`;
+// una sola dicitura sotto le griglie che contengono foto d'ispirazione
+const NOTA = '<p class="isp-nota">Alcune foto sono d\'ispirazione: mostrano lo stile, non sono lavori realizzati da noi.</p>';
+const nota = (names) => (names.some((n) => images[n]?.stock) ? NOTA : '');
 const arrow = '<span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>';
 
 function prefill(form, msg, label, cls = 'btn btn--ghost btn--sm') {
@@ -29,7 +55,7 @@ function proposalCard(c, p) {
   const marchi = p.marchi || []; // i marchi della categoria stanno una volta sola nell'introduzione
   return `
         <article class="pcard reveal-card" data-tipo="${p.tipo}" data-id="${p.id}">
-          <div class="pcard__media">${media(p.img, p.titolo, '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw', ' alt=""')}</div>
+          <div class="pcard__media">${media(p.img, p.titolo, '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw', ' alt=""')}${likeBtn(p.id, p.titolo, c.nome)}</div>
           <div class="pcard__body">
             ${tipo ? `<span class="pcard__brand">${esc(tipo.nome)}</span>` : ''}
             <h3 class="pcard__title">${esc(p.titolo)}</h3>
@@ -58,6 +84,7 @@ function proposteSection(c) {
       <p class="proposte__desc" id="proposte-desc" aria-live="polite"></p>
       <div class="cards3 proposte__grid" id="proposte-grid">${items.map((p) => proposalCard(c, p)).join('')}
       </div>
+      ${nota(items.map((p) => p.img))}
       <a class="proposte__misura" href="@base/su-misura/"><span>Ogni proposta si adatta alle tue misure: i pezzi che mancano li costruiamo nella nostra falegnameria di Massa Lombarda.</span> ${arrow}</a>
     </section>`;
 }
@@ -117,7 +144,8 @@ function extraSection(c) {
 }
 
 function occasioniSection(c) {
-  const items = occasioni.filter((o) => o.ambiente === c.slug);
+  // le voci d'esempio stanno solo in home: nelle pagine ripeterebbero le foto delle proposte
+  const items = occasioni.filter((o) => o.ambiente === c.slug && !o.esempio);
   if (!items.length) return '';
   return `
     <section class="section occasioni" id="occasioni" aria-labelledby="occasioni-title">
@@ -127,7 +155,7 @@ function occasioniSection(c) {
       </div>
       <div class="cards3">${items.map((o) => `
         <article class="pcard pcard--deal reveal-card">
-          <div class="pcard__media">${media(o.immagine, o.nome, '(max-width: 600px) 100vw, 33vw')}<span class="tag pcard__flag">Occasione</span></div>
+          <div class="pcard__media">${media(o.immagine, o.nome, '(max-width: 600px) 100vw, 33vw', ' alt=""')}<span class="tag pcard__flag">${o.esempio ? 'Esempio · ' : ''}Occasione</span>${likeBtn(`occ:${o.nome}`, o.nome, 'Occasione')}</div>
           <div class="pcard__body">
             ${o.marchio ? `<span class="pcard__brand">${esc(o.marchio)}</span>` : ''}
             <h3 class="pcard__title">${esc(o.nome)}</h3>
@@ -137,6 +165,7 @@ function occasioniSection(c) {
           </div>
         </article>`).join('')}
       </div>
+      ${items.some((o) => o.esempio) ? '<p class="isp-nota">Voci d\'esempio, per mostrare la sezione: le occasioni vere le inseriscono i titolari.</p>' : nota(items.map((o) => o.immagine))}
     </section>`;
 }
 
@@ -184,13 +213,57 @@ function metodoSection(titolo, sottotitolo) {
             </div>
           </li>`).join('')}
         </ol>
+        ${nota(ristr.tappe.map((t) => t.img)).replace('class="isp-nota"', 'class="isp-nota tappe__nota"')}
       </div>
+    </section>`;
+}
+
+const finiture = read('finiture.json');
+function finitureSection() {
+  return `
+    <section class="section finiture" id="finiture" aria-labelledby="finiture-title">
+      <div class="section__head section__head--row">
+        <h2 class="h-display" id="finiture-title">Il campionario</h2>
+        <p class="lead">Tocca le finiture che ti piacciono: prepariamo i campioni veri per la tua visita.</p>
+      </div>
+      <div class="fin" id="fin">${finiture.gruppi.map((g) => `
+        <div class="fin__group">
+          <h3 class="fin__title">${esc(g.nome)} <span>${esc(g.nota)}</span></h3>
+          <ul class="fin__list">${g.items.map((f) => `
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="${esc(f.nome)}" data-gruppo="${esc(g.nome)}"><span class="fin__sw" style="background:${f.css}"></span><span class="fin__name">${esc(f.nome)}</span></button></li>`).join('')}
+          </ul>
+        </div>`).join('')}
+      </div>
+      <div class="fin__bar">
+        <p class="fin__sel" id="fin-sel" aria-live="polite">Nessuna finitura scelta</p>
+        <button type="button" class="btn btn--light" id="fin-go" data-prefill data-ambiente="Su misura" data-msg="Vorrei vedere i campioni delle finiture in showroom." disabled>Chiedi i campioni in showroom</button>
+      </div>
+      <p class="isp-nota">Colori indicativi: lo schermo non rende la materia, i campioni veri sono in showroom.</p>
+    </section>`;
+}
+
+function primaDopoSection() {
+  return `
+    <section class="section primadopo" aria-labelledby="pd-title">
+      <div class="section__head section__head--row">
+        <h2 class="h-display" id="pd-title">Dal disegno<br>alla stanza</h2>
+        <p class="lead">Prima il progetto, poi la stanza finita. Trascina per confrontare.</p>
+      </div>
+      <div class="pd" style="--pos:50%">
+        <div class="pd__img pd__img--dopo">${img('stock-cucina-lineare', '(max-width: 860px) 100vw, 90vw', ' alt="La cucina finita" nobadge')}</div>
+        <div class="pd__img pd__img--prima" aria-hidden="true">${img('stock-cucina-lineare-progetto', '(max-width: 860px) 100vw, 90vw', ' alt="" nobadge')}</div>
+        <span class="pd__tag pd__tag--l" aria-hidden="true">Il progetto</span>
+        <span class="pd__tag pd__tag--r" aria-hidden="true">La stanza finita</span>
+        <span class="pd__handle" aria-hidden="true"><svg class="ico"><use href="#i-chev"/></svg></span>
+        <input class="pd__range" type="range" min="0" max="100" value="50" aria-label="Confronta il progetto con la stanza finita">
+      </div>
+      <p class="isp-nota">Esempio con una foto d'ispirazione e il suo schizzo: qui andranno il progetto e la foto di un vostro lavoro.</p>
     </section>`;
 }
 
 function misuraSections(c) {
   if (c.slug !== 'su-misura') return ''; // nelle categorie il su misura è una riga dentro le proposte
-  return metodoSection('Dal progetto<br>alla casa', 'Gli stessi passaggi, che tu stia arredando una stanza o tutta la casa.') + `
+  return finitureSection() + metodoSection('Dal progetto<br>alla casa', 'Gli stessi passaggi, che tu stia arredando una stanza o tutta la casa.') + `
     <section class="section officina" aria-labelledby="officina-title">
       <div class="officina__grid">
         <div class="officina__big">${ph('Falegnameria di Massa Lombarda')}</div>
@@ -296,10 +369,10 @@ function page(c) {
         <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
       </header>
 
-      <div class="phero" id="hero">
+      <div class="phero" id="hero" data-scheda-host>
         <div class="phero__frame">
           <div class="phero__media">${img(c.hero, '(max-width: 860px) 100vw, 96vw', ' loading="eager" fetchpriority="high"')}</div>
-          <div class="hero__shade" aria-hidden="true"></div>
+          <div class="hero__shade" aria-hidden="true"></div>${hotspotsHTML(c.hero, 'ph')}
           <div class="hero__copy">
             <nav class="crumbs" aria-label="Percorso"><a href="@base/">Home</a><span aria-hidden="true">/</span><span aria-current="page">${esc(c.nome)}</span></nav>
             <h1 class="hero__title phero__title">${c.h1.map(esc).join('<br>')}</h1>
@@ -309,7 +382,7 @@ function page(c) {
               ${c.tipi.length ? '<a class="btn btn--ghost" href="#proposte">Le proposte</a>' : ''}
             </div>
           </div>
-        </div>
+        </div>${pezziHTML(c.hero)}
       </div>
     </section>
 
@@ -328,7 +401,7 @@ ${percorsoSection(c)}${proposteSection(c)}${extraSection(c)}${misuraSections(c)}
   </main>
 
   <!--PARTIAL:footer-->
-  <!--PARTIAL:tail-->
+  ${schedeData.foto?.[c.hero] ? '<!--PARTIAL:schede-->\n  ' : ''}<!--PARTIAL:tail-->
 </body>
 </html>
 `;
@@ -362,6 +435,7 @@ const tileHTML = (g) => {
 const galleriaHome = galleria.filter((g) => g.home).slice(0, 6);
 fs.writeFileSync('src/partials/galleria.html', `<ul class="grid grid--home" id="grid">${galleriaHome.map(tileHTML).join('')}
       </ul>
+      ${nota(galleriaHome.map((g) => g.img))}
       <div class="galleria__more"><a class="btn btn--ghost" href="@base/galleria/">Vedi tutta la galleria <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
 `);
 
@@ -386,6 +460,7 @@ function galleriaPage() {
       </div>
       <ul class="grid" id="grid">${galleria.map(tileHTML).join('')}
       </ul>
+      ${nota(galleria.map((g) => g.img))}
     </section>`;
   html = html.replace(/\n    <section class="section pintro"[\s\S]*?<\/section>\n/, `\n${body}\n`);
   html = html.replace('<!--PARTIAL:tail-->', '<!--PARTIAL:lightbox-->\n  <!--PARTIAL:tail-->');
@@ -413,7 +488,7 @@ const catTiles = categorie.map((c, i) => {
           </a>
         </li>`;
 }).join('');
-fs.writeFileSync('src/partials/categorie.html', `<ul class="cats" id="cats">${catTiles}\n      </ul>\n`);
+fs.writeFileSync('src/partials/categorie.html', `<ul class="cats" id="cats">${catTiles}\n      </ul>\n      ${nota(categorie.map((c) => c.tile))}\n`);
 
 // --- Crediti delle foto d'ispirazione -----------------------------------------
 const stock = Object.entries(images).filter(([, v]) => v.stock);
@@ -435,7 +510,7 @@ function ristrPage() {
     correlate: ristr.correlate, altriTitolo: 'Stanza per stanza',
   };
   let html = page(c);
-  const body = metodoSection('Dal cantiere<br>alla casa finita', 'Cinque passaggi, un solo riferimento.') + `
+  const body = metodoSection('Dal cantiere<br>alla casa finita', 'Cinque passaggi, un solo riferimento.') + primaDopoSection() + `
     <section class="section servizi" aria-labelledby="servizi-title">
       <div class="servizi__grid">
         <div class="servizi__media">${img('stock-ristr-cantiere', '(max-width: 860px) 100vw, 40vw', ' alt=""')}</div>
@@ -471,6 +546,32 @@ fs.writeFileSync('src/partials/ristrutturi.html', `<a class="rhome" href="@base/
       </a>
 `);
 
+// --- Occasioni in evidenza in home (sparisce se non ce ne sono) ---------------
+const occHome = occasioni.filter((o) => o.home).slice(0, 3);
+fs.writeFileSync('src/partials/occasioni.html', occHome.length ? `<section class="section occhome" id="occasioni" aria-labelledby="occhome-title">
+      <div class="section__head section__head--row">
+        <h2 class="h-display" id="occhome-title">Occasioni<br>in showroom</h2>
+        <p class="lead">Pezzi d'esposizione e fine serie: si vedono, si provano e si portano a casa.</p>
+      </div>
+      <ul class="occhome__list">${occHome.map((o) => {
+        const cat = categorie.find((c) => c.slug === o.ambiente);
+        return `
+        <li class="occ">
+          <div class="occ__media">${media(o.immagine, o.nome, '(max-width: 600px) 80vw, 30vw', ' alt=""')}<span class="tag occ__flag">${o.esempio ? 'Esempio · ' : ''}Occasione</span>${likeBtn(`occ:${o.nome}`, o.nome, 'Occasione')}</div>
+          <div class="occ__body">
+            ${cat ? `<span class="occ__cat">${esc(cat.nome)}</span>` : ''}
+            <h3 class="occ__title">${o.marchio ? `${esc(o.marchio)} · ` : ''}${esc(o.nome)}</h3>
+            ${o.descrizione ? `<p>${esc(o.descrizione)}</p>` : ''}
+            ${o.prezzo ? `<p class="occ__price">${o.prezzo_listino ? `<s>${esc(o.prezzo_listino)}</s> ` : ''}<strong>${esc(o.prezzo)}</strong></p>` : ''}
+            ${prefill(cat?.form || 'Casa intera', `Mi interessa l'occasione: ${o.marchio ? `${o.marchio}, ` : ''}${o.nome}.`, 'La voglio vedere', 'linklike occ__go')}
+          </div>
+        </li>`;
+      }).join('')}
+      </ul>
+      ${occHome.some((o) => o.esempio) ? '<p class="isp-nota">Voci d\'esempio, per mostrare la sezione: le occasioni vere le inseriscono i titolari.</p>' : nota(occHome.map((o) => o.immagine))}
+    </section>
+` : '<!-- occasioni: nessuna voce con home:true in src/data/occasioni.json -->\n');
+
 // --- Menu mobile -------------------------------------------------------------
 const chev = '<svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg>';
 fs.writeFileSync('src/partials/menu.html', `<!-- Menu mobile a schermo intero -->
@@ -490,6 +591,7 @@ fs.writeFileSync('src/partials/menu.html', `<!-- Menu mobile a schermo intero --
     <nav aria-label="Menu principale">
       <ul class="menu__links">
         <li class="menu__home"><a href="@base/">Home ${chev}</a></li>
+        <li class="menu__likes" data-likes-show hidden><a href="#contatti"><span><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg> I tuoi Mi piace · <b data-likes-count>0</b></span> ${chev}</a></li>
         <li><a href="@base/ristrutturi/">Ristrutturi casa? ${chev}</a></li>
         <li><a href="@base/#galleria">Galleria ${chev}</a></li>
         <li><a href="@base/#chi-siamo">Chi siamo ${chev}</a></li>
@@ -527,7 +629,14 @@ fs.writeFileSync('src/partials/recensioni.html', recensioni.items.length ? `<sec
 ` : '<!-- recensioni: nessuna voce in src/data/recensioni.json -->\n');
 
 // --- Schede dei pezzi indicati dai "+" -----------------------------------------
-const schede = read('schede.json').items;
+const schede = schedeData.items;
+for (const [foto, spots] of Object.entries(schedeData.foto || {})) {
+  for (const s of spots) {
+    if (!schede[s.id]) console.warn(`  ! scheda mancante: ${s.id}`);
+    else if (!schede[s.id].zoom) schede[s.id].zoom = s.pos;
+  }
+  if (!images[foto]) console.warn(`  ! foto dei + sconosciuta: ${foto}`);
+}
 fs.writeFileSync('src/partials/schede.html', `<dialog class="sheet scheda" id="scheda" aria-labelledby="scheda-title" data-lenis-prevent>
   <div class="sheet__inner">
     <div class="sheet__top">
@@ -541,6 +650,7 @@ fs.writeFileSync('src/partials/schede.html', `<dialog class="sheet scheda" id="s
       <p class="scheda__text" id="scheda-text"></p>
       <ul class="pcard__mat" id="scheda-mat" aria-label="Materiali"></ul>
       <div class="scheda__btns">
+        <button type="button" class="like like--txt" id="scheda-like" data-like="" data-nome="" data-amb="" aria-pressed="false"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg><span class="like__on">Nei Mi piace</span><span class="like__off">Mi piace</span></button>
         <button type="button" class="btn btn--light" id="scheda-prenota" data-prefill>Lo voglio vedere in showroom</button>
         <a class="btn btn--ghost" id="scheda-link" href="#"></a>
       </div>

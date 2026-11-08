@@ -54,7 +54,7 @@
         <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
       </header>
 
-      <div class="phero" id="hero">
+      <div class="phero" id="hero" data-scheda-host>
         <div class="phero__frame">
           <div class="phero__media"><cm-img name="stock-soggiorno-scuro" sizes="(max-width: 860px) 100vw, 96vw" loading="eager" fetchpriority="high"></cm-img></div>
           <div class="hero__shade" aria-hidden="true"></div>
@@ -94,7 +94,7 @@
       <p class="proposte__desc" id="proposte-desc" aria-live="polite"></p>
       <div class="cards3 proposte__grid" id="proposte-grid">
         <article class="pcard reveal-card" data-tipo="parete" data-id="parete-geometrica">
-          <div class="pcard__media"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="parete-geometrica" data-nome="Parete a moduli sospesi" data-amb="Soggiorno" aria-pressed="false" aria-label="Aggiungi Parete a moduli sospesi ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Pareti attrezzate</span>
             <h3 class="pcard__title">Parete a moduli sospesi</h3>
@@ -104,7 +104,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="libreria" data-id="libreria">
-          <div class="pcard__media"><cm-img name="stock-libreria" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-libreria" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="libreria" data-nome="Libreria a tutta parete" data-amb="Soggiorno" aria-pressed="false" aria-label="Aggiungi Libreria a tutta parete ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Librerie</span>
             <h3 class="pcard__title">Libreria a tutta parete</h3>
@@ -114,7 +114,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="tv" data-id="mobile-tv">
-          <div class="pcard__media"><cm-img name="stock-mobile-tv" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-mobile-tv" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="mobile-tv" data-nome="Mobile TV basso" data-amb="Soggiorno" aria-pressed="false" aria-label="Aggiungi Mobile TV basso ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Mobili porta TV</span>
             <h3 class="pcard__title">Mobile TV basso</h3>
@@ -124,6 +124,7 @@
           </div>
         </article>
       </div>
+      <p class="isp-nota">Alcune foto sono d'ispirazione: mostrano lo stile, non sono lavori realizzati da noi.</p>
       <a class="proposte__misura" href="@base/su-misura/"><span>Ogni proposta si adatta alle tue misure: i pezzi che mancano li costruiamo nella nostra falegnameria di Massa Lombarda.</span> <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
     </section>
     <section class="section extra" aria-labelledby="extra-title">

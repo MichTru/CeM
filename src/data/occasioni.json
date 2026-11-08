@@ -1,13 +1,38 @@
 {
-  "_come_si_usa": "Pezzi d'esposizione e fine serie. 'ambiente' è lo slug della pagina. 'prezzo' e 'prezzo_listino' sono facoltativi: lasciali vuoti se i titolari preferiscono non mostrarli. 'immagine' è il nome di una foto preparata con npm run images.",
-  "_esempio": {
-    "ambiente": "zona-giorno",
-    "marchio": "Felis",
-    "nome": "Divano tre posti",
-    "descrizione": "Pezzo d'esposizione, tessuto e dimensioni.",
-    "prezzo": "",
-    "prezzo_listino": "",
-    "immagine": "nome-foto-senza-estensione"
-  },
-  "items": []
+  "_come_si_usa": "Pezzi d'esposizione e fine serie. 'ambiente' è lo slug della pagina. 'prezzo' e 'prezzo_listino' sono facoltativi: lasciali vuoti se i titolari preferiscono non mostrarli. 'immagine' è il nome di una foto preparata con npm run images. 'esempio': true segna le voci dimostrative (etichetta 'Esempio'): toglile quando arrivano le occasioni vere. 'home': true le mette in evidenza in home.",
+  "items": [
+    {
+      "esempio": true,
+      "home": true,
+      "ambiente": "divani-e-poltrone",
+      "marchio": "",
+      "nome": "Divano due posti in tessuto",
+      "descrizione": "Pezzo d'esposizione: si vede e si prova in showroom.",
+      "prezzo": "",
+      "prezzo_listino": "",
+      "immagine": "stock-divano-due-posti"
+    },
+    {
+      "esempio": true,
+      "home": true,
+      "ambiente": "zona-pranzo",
+      "marchio": "",
+      "nome": "Tavolo da pranzo con sedie",
+      "descrizione": "Composizione di fine serie, completa di sedie.",
+      "prezzo": "",
+      "prezzo_listino": "",
+      "immagine": "stock-tavolo-luminoso"
+    },
+    {
+      "esempio": true,
+      "home": true,
+      "ambiente": "divani-e-poltrone",
+      "marchio": "",
+      "nome": "Poltrona da lettura",
+      "descrizione": "Ultimo pezzo in esposizione.",
+      "prezzo": "",
+      "prezzo_listino": "",
+      "immagine": "stock-poltrona"
+    }
+  ]
 }

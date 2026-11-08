@@ -43,6 +43,11 @@
               <option>Casa intera</option>
             </select>
           </div>
+          <div class="likes-box" id="likes-box" hidden>
+            <p class="likes-box__title"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg> I tuoi Mi piace <span>li prepariamo per la visita</span></p>
+            <ul class="likes-box__list"></ul>
+            <input type="hidden" name="mi_piace" id="f-likes">
+          </div>
           <div class="field">
             <label for="f-msg">Messaggio</label>
             <textarea id="f-msg" name="messaggio" rows="4"></textarea>
@@ -51,6 +56,9 @@
             <input type="checkbox" name="privacy" required>
             <span>Ho letto l'<a href="@base/privacy.html">informativa privacy</a> e acconsento al trattamento dei dati per ricevere una risposta.</span>
           </label>
-          <button class="btn btn--light form__send" type="submit">Invia la richiesta</button>
+          <div class="form__btns">
+            <button class="btn btn--light form__send" type="submit">Invia la richiesta</button>
+            <a class="btn btn--ghost form__wa" href="https://wa.me/[NUMERO WHATSAPP]" target="_blank" rel="noopener" data-whatsapp><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg> Oppure su WhatsApp</a>
+          </div>
           <p class="form__msg" id="form-msg" role="status" aria-live="polite"></p>
         </form>

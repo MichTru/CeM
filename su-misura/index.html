@@ -54,7 +54,7 @@
         <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
       </header>
 
-      <div class="phero" id="hero">
+      <div class="phero" id="hero" data-scheda-host>
         <div class="phero__frame">
           <div class="phero__media"><cm-img name="stock-legno-progetto" sizes="(max-width: 860px) 100vw, 96vw" loading="eager" fetchpriority="high"></cm-img></div>
           <div class="hero__shade" aria-hidden="true"></div>
@@ -81,6 +81,55 @@
       </div>
     </section>
 
+    <section class="section finiture" id="finiture" aria-labelledby="finiture-title">
+      <div class="section__head section__head--row">
+        <h2 class="h-display" id="finiture-title">Il campionario</h2>
+        <p class="lead">Tocca le finiture che ti piacciono: prepariamo i campioni veri per la tua visita.</p>
+      </div>
+      <div class="fin" id="fin">
+        <div class="fin__group">
+          <h3 class="fin__title">Legni <span>Essenze per ante, piani e strutture</span></h3>
+          <ul class="fin__list">
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Rovere naturale" data-gruppo="Legni"><span class="fin__sw" style="background:repeating-linear-gradient(96deg, #c7a77c 0 3px, #b8966a 3px 5px, #cdb08a 5px 11px, #ba9a70 11px 13px)"></span><span class="fin__name">Rovere naturale</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Rovere fumé" data-gruppo="Legni"><span class="fin__sw" style="background:repeating-linear-gradient(96deg, #7a5c44 0 3px, #6a4f3a 3px 6px, #82634a 6px 12px, #6f533e 12px 14px)"></span><span class="fin__name">Rovere fumé</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Noce canaletto" data-gruppo="Legni"><span class="fin__sw" style="background:repeating-linear-gradient(94deg, #5b3b28 0 4px, #4c3020 4px 6px, #644331 6px 12px, #523524 12px 15px)"></span><span class="fin__name">Noce canaletto</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Frassino tinto nero" data-gruppo="Legni"><span class="fin__sw" style="background:repeating-linear-gradient(97deg, #2a2420 0 3px, #1d1916 3px 5px, #322b26 5px 11px, #221d1a 11px 13px)"></span><span class="fin__name">Frassino tinto nero</span></button></li>
+          </ul>
+        </div>
+        <div class="fin__group">
+          <h3 class="fin__title">Laccati opachi <span>Ante lisce, anche fuori standard</span></h3>
+          <ul class="fin__list">
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Bianco seta" data-gruppo="Laccati opachi"><span class="fin__sw" style="background:#ece6dc"></span><span class="fin__name">Bianco seta</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Grigio talpa" data-gruppo="Laccati opachi"><span class="fin__sw" style="background:#8a7f74"></span><span class="fin__name">Grigio talpa</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Salvia" data-gruppo="Laccati opachi"><span class="fin__sw" style="background:#9aa48d"></span><span class="fin__name">Salvia</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Blu notte" data-gruppo="Laccati opachi"><span class="fin__sw" style="background:#2b3442"></span><span class="fin__name">Blu notte</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Terracotta" data-gruppo="Laccati opachi"><span class="fin__sw" style="background:#a8603f"></span><span class="fin__name">Terracotta</span></button></li>
+          </ul>
+        </div>
+        <div class="fin__group">
+          <h3 class="fin__title">Tessuti <span>Per divani, testate e sedute</span></h3>
+          <ul class="fin__list">
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Lino naturale" data-gruppo="Tessuti"><span class="fin__sw" style="background:repeating-linear-gradient(0deg, #cfc2ad 0 1px, #c4b6a0 1px 2px), #cbbda7"></span><span class="fin__name">Lino naturale</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Bouclé avorio" data-gruppo="Tessuti"><span class="fin__sw" style="background:radial-gradient(circle at 30% 30%, #f1ebe0 0 2px, transparent 2.5px) 0 0 / 6px 6px, radial-gradient(circle at 70% 70%, #ddd3c4 0 2px, transparent 2.5px) 0 0 / 6px 6px, #e7dfd2"></span><span class="fin__name">Bouclé avorio</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Velluto verde" data-gruppo="Tessuti"><span class="fin__sw" style="background:linear-gradient(135deg, #3f5a46, #2c4232 60%, #4a6852)"></span><span class="fin__name">Velluto verde</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Velluto ruggine" data-gruppo="Tessuti"><span class="fin__sw" style="background:linear-gradient(135deg, #a5583a, #7d3f27 60%, #b0664a)"></span><span class="fin__name">Velluto ruggine</span></button></li>
+          </ul>
+        </div>
+        <div class="fin__group">
+          <h3 class="fin__title">Pelli <span>Per sedute, poltrone e dettagli</span></h3>
+          <ul class="fin__list">
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Cognac" data-gruppo="Pelli"><span class="fin__sw" style="background:radial-gradient(circle at 30% 20%, #b47a4c, #8c5530 70%)"></span><span class="fin__name">Cognac</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Testa di moro" data-gruppo="Pelli"><span class="fin__sw" style="background:radial-gradient(circle at 30% 20%, #5a3b2b, #3a2419 70%)"></span><span class="fin__name">Testa di moro</span></button></li>
+            <li><button type="button" class="fin__item" aria-pressed="false" data-fin="Nero" data-gruppo="Pelli"><span class="fin__sw" style="background:radial-gradient(circle at 30% 20%, #3a3532, #171412 70%)"></span><span class="fin__name">Nero</span></button></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fin__bar">
+        <p class="fin__sel" id="fin-sel" aria-live="polite">Nessuna finitura scelta</p>
+        <button type="button" class="btn btn--light" id="fin-go" data-prefill data-ambiente="Su misura" data-msg="Vorrei vedere i campioni delle finiture in showroom." disabled>Chiedi i campioni in showroom</button>
+      </div>
+      <p class="isp-nota">Colori indicativi: lo schermo non rende la materia, i campioni veri sono in showroom.</p>
+    </section>
     <section class="section tappe" id="tappe" aria-labelledby="tappe-title">
       <div class="tappe__grid">
         <div class="tappe__head">
@@ -125,6 +174,7 @@
             </div>
           </li>
         </ol>
+        <p class="isp-nota tappe__nota">Alcune foto sono d'ispirazione: mostrano lo stile, non sono lavori realizzati da noi.</p>
       </div>
     </section>
     <section class="section officina" aria-labelledby="officina-title">

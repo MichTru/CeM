@@ -54,7 +54,7 @@
         <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
       </header>
 
-      <div class="phero" id="hero">
+      <div class="phero" id="hero" data-scheda-host>
         <div class="phero__frame">
           <div class="phero__media"><cm-img name="stock-letto-legno" sizes="(max-width: 860px) 100vw, 96vw" loading="eager" fetchpriority="high"></cm-img></div>
           <div class="hero__shade" aria-hidden="true"></div>
@@ -108,7 +108,7 @@
       <p class="proposte__desc" id="proposte-desc" aria-live="polite"></p>
       <div class="cards3 proposte__grid" id="proposte-grid">
         <article class="pcard reveal-card" data-tipo="imbottito" data-id="letto-imbottito">
-          <div class="pcard__media"><cm-img name="stock-letto-imbottito" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-letto-imbottito" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="letto-imbottito" data-nome="Imbottito con testiera alta" data-amb="Letti" aria-pressed="false" aria-label="Aggiungi Imbottito con testiera alta ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Imbottiti</span>
             <h3 class="pcard__title">Imbottito con testiera alta</h3>
@@ -118,7 +118,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="contenitore" data-id="letto-contenitore">
-          <div class="pcard__media"><cm-img name="stock-letto-contenitore" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-letto-contenitore" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="letto-contenitore" data-nome="Contenitore, per guadagnare spazio" data-amb="Letti" aria-pressed="false" aria-label="Aggiungi Contenitore, per guadagnare spazio ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Contenitore</span>
             <h3 class="pcard__title">Contenitore, per guadagnare spazio</h3>
@@ -128,7 +128,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="legno" data-id="letto-legno">
-          <div class="pcard__media"><cm-img name="stock-letto-scuro" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-letto-scuro" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="letto-legno" data-nome="In legno, linee pulite" data-amb="Letti" aria-pressed="false" aria-label="Aggiungi In legno, linee pulite ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">In legno</span>
             <h3 class="pcard__title">In legno, linee pulite</h3>
@@ -138,7 +138,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="legno" data-id="letto-essenziale">
-          <div class="pcard__media"><cm-img name="stock-letto-essenziale" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-letto-essenziale" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="letto-essenziale" data-nome="Essenziale, laccato o in metallo" data-amb="Letti" aria-pressed="false" aria-label="Aggiungi Essenziale, laccato o in metallo ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">In legno</span>
             <h3 class="pcard__title">Essenziale, laccato o in metallo</h3>
@@ -148,7 +148,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="imbottito" data-id="letto-singolo">
-          <div class="pcard__media"><cm-img name="stock-letto-singolo" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-letto-singolo" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="letto-singolo" data-nome="Singolo o piazza e mezza" data-amb="Letti" aria-pressed="false" aria-label="Aggiungi Singolo o piazza e mezza ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Imbottiti</span>
             <h3 class="pcard__title">Singolo o piazza e mezza</h3>
@@ -158,7 +158,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="materasso" data-id="materassi">
-          <div class="pcard__media"><cm-img name="stock-materasso" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-materasso" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="materassi" data-nome="Materassi e reti da provare" data-amb="Letti" aria-pressed="false" aria-label="Aggiungi Materassi e reti da provare ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Materassi e reti</span>
             <h3 class="pcard__title">Materassi e reti da provare</h3>
@@ -168,6 +168,7 @@
           </div>
         </article>
       </div>
+      <p class="isp-nota">Alcune foto sono d'ispirazione: mostrano lo stile, non sono lavori realizzati da noi.</p>
       <a class="proposte__misura" href="@base/su-misura/"><span>Ogni proposta si adatta alle tue misure: i pezzi che mancano li costruiamo nella nostra falegnameria di Massa Lombarda.</span> <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
     </section>
     <section class="section extra" aria-labelledby="extra-title">

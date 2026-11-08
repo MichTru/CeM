@@ -54,10 +54,24 @@
         <button class="burger" type="button" aria-label="Apri il menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
       </header>
 
-      <div class="phero" id="hero">
+      <div class="phero" id="hero" data-scheda-host>
         <div class="phero__frame">
           <div class="phero__media"><cm-img name="giorno-divano-angolare-vetrata" sizes="(max-width: 860px) 100vw, 96vw" loading="eager" fetchpriority="high"></cm-img></div>
           <div class="hero__shade" aria-hidden="true"></div>
+          <div class="hotspots" data-w="1600" data-h="888">
+            <div class="hotspot" data-x="55" data-y="43">
+              <button type="button" aria-expanded="false" aria-controls="ph-hs-0" aria-label="Dettaglio: divano angolare a isola"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
+              <button type="button" class="hotspot__label" id="ph-hs-0" data-scheda="dv-divano"><span>Divano angolare a isola</span><span class="hotspot__more">Scheda <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+            </div>
+            <div class="hotspot" data-x="54" data-y="77">
+              <button type="button" aria-expanded="false" aria-controls="ph-hs-1" aria-label="Dettaglio: tavolini bassi componibili"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
+              <button type="button" class="hotspot__label" id="ph-hs-1" data-scheda="dv-tavolini"><span>Tavolini bassi componibili</span><span class="hotspot__more">Scheda <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+            </div>
+            <div class="hotspot" data-x="92" data-y="40">
+              <button type="button" aria-expanded="false" aria-controls="ph-hs-2" aria-label="Dettaglio: lampada da terra"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
+              <button type="button" class="hotspot__label hotspot__label--left" id="ph-hs-2" data-scheda="dv-lampada"><span>Lampada da terra</span><span class="hotspot__more">Scheda <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+            </div>
+          </div>
           <div class="hero__copy">
             <nav class="crumbs" aria-label="Percorso"><a href="@base/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Divani e poltrone</span></nav>
             <h1 class="hero__title phero__title">Divani<br>e poltrone</h1>
@@ -68,6 +82,7 @@
             </div>
           </div>
         </div>
+        <div class="phero__pezzi"><span>In questa foto</span><ul><li><button type="button" class="chip" data-scheda="dv-divano"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg> Divano angolare a isola</button></li><li><button type="button" class="chip" data-scheda="dv-tavolini"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg> Tavolini bassi componibili</button></li><li><button type="button" class="chip" data-scheda="dv-lampada"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg> Lampada da terra</button></li></ul></div>
       </div>
     </section>
 
@@ -108,7 +123,7 @@
       <p class="proposte__desc" id="proposte-desc" aria-live="polite"></p>
       <div class="cards3 proposte__grid" id="proposte-grid">
         <article class="pcard reveal-card" data-tipo="lineare" data-id="divano-velluto">
-          <div class="pcard__media"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="divano-velluto" data-nome="Tre posti in velluto" data-amb="Divani e poltrone" aria-pressed="false" aria-label="Aggiungi Tre posti in velluto ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Lineari</span>
             <h3 class="pcard__title">Tre posti in velluto</h3>
@@ -118,7 +133,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="angolare" data-id="divano-angolare-penisola">
-          <div class="pcard__media"><cm-img name="stock-divano-angolare" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-divano-angolare" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="divano-angolare-penisola" data-nome="Con penisola, per allungarsi" data-amb="Divani e poltrone" aria-pressed="false" aria-label="Aggiungi Con penisola, per allungarsi ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Angolari</span>
             <h3 class="pcard__title">Con penisola, per allungarsi</h3>
@@ -128,7 +143,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="letto" data-id="divano-letto">
-          <div class="pcard__media"><cm-img name="stock-divano-letto" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-divano-letto" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="divano-letto" data-nome="Divano letto con materasso vero" data-amb="Divani e poltrone" aria-pressed="false" aria-label="Aggiungi Divano letto con materasso vero ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Divani letto</span>
             <h3 class="pcard__title">Divano letto con materasso vero</h3>
@@ -138,7 +153,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="lineare" data-id="divano-pelle-relax">
-          <div class="pcard__media"><cm-img name="stock-divano-pelle" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-divano-pelle" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="divano-pelle-relax" data-nome="Pelle con movimento relax" data-amb="Divani e poltrone" aria-pressed="false" aria-label="Aggiungi Pelle con movimento relax ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Lineari</span>
             <h3 class="pcard__title">Pelle con movimento relax</h3>
@@ -148,7 +163,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="lineare" data-id="divano-due-posti">
-          <div class="pcard__media"><cm-img name="stock-divano-due-posti" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-divano-due-posti" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="divano-due-posti" data-nome="Due posti compatto" data-amb="Divani e poltrone" aria-pressed="false" aria-label="Aggiungi Due posti compatto ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Lineari</span>
             <h3 class="pcard__title">Due posti compatto</h3>
@@ -158,7 +173,7 @@
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="poltrona" data-id="poltrona-lettura">
-          <div class="pcard__media"><cm-img name="stock-poltrona" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-poltrona" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img><button type="button" class="like" data-like="poltrona-lettura" data-nome="Poltrona da lettura" data-amb="Divani e poltrone" aria-pressed="false" aria-label="Aggiungi Poltrona da lettura ai Mi piace"><svg class="ico" aria-hidden="true"><use href="#i-heart"/></svg></button></div>
           <div class="pcard__body">
             <span class="pcard__brand">Poltrone e relax</span>
             <h3 class="pcard__title">Poltrona da lettura</h3>
@@ -168,6 +183,7 @@
           </div>
         </article>
       </div>
+      <p class="isp-nota">Alcune foto sono d'ispirazione: mostrano lo stile, non sono lavori realizzati da noi.</p>
       <a class="proposte__misura" href="@base/su-misura/"><span>Ogni proposta si adatta alle tue misure: i pezzi che mancano li costruiamo nella nostra falegnameria di Massa Lombarda.</span> <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
     </section>
     <section class="section extra" aria-labelledby="extra-title">
@@ -212,6 +228,7 @@
   </main>
 
   <!--PARTIAL:footer-->
+  <!--PARTIAL:schede-->
   <!--PARTIAL:tail-->
 </body>
 </html>

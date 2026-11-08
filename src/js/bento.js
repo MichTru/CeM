@@ -1,4 +1,5 @@
 import { gsap, reduced, finePointer, lenis } from './motion.js';
+import { renderLikes } from './likes.js';
 
 const BASE = import.meta.env.BASE_URL;
 
@@ -14,8 +15,58 @@ export function initBento() {
       scrollTrigger: { trigger: '.bento', start: 'top 92%', once: true },
     });
   }
+  initHotspots();
+  initSchede();
+}
 
-  // Hotspot: il "+" apre l'etichetta, l'etichetta apre la scheda del pezzo
+// "+" con le coordinate sulla foto intera (data-x/data-y in %): li riporta sul ritaglio
+// che object-fit: cover lascia visibile. Se il punto esce dal ritaglio o finisce sotto
+// i testi della hero, il "+" non compare.
+function placeSpots(layer) {
+  const W = +layer.dataset.w;
+  const H = +layer.dataset.h;
+  const cw = layer.offsetWidth;
+  const ch = layer.offsetHeight;
+  if (!cw || !ch) return;
+  const img = layer.parentElement.querySelector('.pic img');
+  const [px, py] = (img ? getComputedStyle(img).objectPosition : '50% 50%').split(' ').map((v) => (v.endsWith('%') ? parseFloat(v) / 100 : 0.5));
+  const s = Math.max(cw / W, ch / H);
+  const dw = W * s;
+  const dh = H * s;
+  // l'ingombro vero dei testi (riga per riga), non il riquadro intero del blocco
+  const avoid = [...layer.parentElement.querySelectorAll('.hero__copy > *, .hero__copy .phero__btns > *')].flatMap((el) => {
+    if (el.classList.contains('phero__btns')) return [];
+    const r = document.createRange();
+    r.selectNodeContents(el);
+    return [...r.getClientRects(), ...(el.matches('a, button') ? [el.getBoundingClientRect()] : [])];
+  });
+  const box = layer.getBoundingClientRect();
+  const m = 26; // margine dai bordi
+  layer.querySelectorAll('.hotspot[data-x]').forEach((spot) => {
+    const x = (cw - dw) * px + (spot.dataset.x / 100) * dw;
+    const y = (ch - dh) * py + (spot.dataset.y / 100) * dh;
+    spot.style.left = `${x}px`;
+    spot.style.top = `${y}px`;
+    const vx = box.left + x;
+    const vy = box.top + y;
+    const inside = x > m && x < cw - m && y > m + 50 && y < ch - m;
+    const covered = avoid.some((r) => vx > r.left - 44 && vx < r.right + 44 && vy > r.top - 36 && vy < r.bottom + 36);
+    spot.hidden = !inside || covered;
+    spot.classList.add('is-placed');
+  });
+}
+
+export function initHotspots() {
+  const layers = [...document.querySelectorAll('.hotspots[data-w]')];
+  const place = () => layers.forEach(placeSpots);
+  if (layers.length) {
+    place();
+    new ResizeObserver(place).observe(document.documentElement);
+    document.fonts?.ready.then(place);
+    setTimeout(place, 2000); // dopo l'entrata della hero, quando i testi sono al loro posto
+  }
+
+  // il "+" apre l'etichetta, l'etichetta apre la scheda del pezzo
   const spots = [...document.querySelectorAll('.hotspot')];
   const close = (s) => {
     s.classList.remove('is-open');
@@ -28,7 +79,8 @@ export function initBento() {
   };
   spots.forEach((s) => {
     const btn = s.querySelector('button');
-    btn.addEventListener('click', () => (s.classList.contains('is-open') ? close(s) : open(s)));
+    // col mouse l'etichetta è già aperta dal passaggio: il click la tiene aperta
+    btn.addEventListener('click', () => (s.classList.contains('is-open') && !finePointer ? close(s) : open(s)));
     if (finePointer) {
       s.addEventListener('mouseenter', () => open(s));
       s.addEventListener('mouseleave', () => close(s));
@@ -39,12 +91,10 @@ export function initBento() {
   });
   document.addEventListener('keydown', (e) => e.key === 'Escape' && spots.forEach(close));
   document.addEventListener('click', (e) => !e.target.closest('.hotspot') && spots.forEach(close));
-
-  initSchede();
 }
 
 // Scheda del pezzo: foto ingrandita sul dettaglio, descrizione, materiali e prenotazione
-function initSchede() {
+export function initSchede() {
   const dlg = document.getElementById('scheda');
   const dataEl = document.getElementById('schede-data');
   if (!dlg || !dataEl) return;
@@ -60,14 +110,23 @@ function initSchede() {
     $('scheda-text').textContent = d.testo;
     $('scheda-mat').innerHTML = (d.materiali || []).map((m) => `<li>${m}</li>`).join('');
     const link = $('scheda-link');
+    const here = location.pathname.endsWith(`/${d.link.split('#')[0]}`) && !d.link.includes('#');
+    link.hidden = here;
     link.href = `${BASE}${d.link}`;
     link.textContent = d.linkLabel;
     const pren = $('scheda-prenota');
     pren.dataset.ambiente = d.form;
-    pren.dataset.msg = `Vorrei vedere in showroom: ${d.nome.toLowerCase()} (dalla foto "Da vicino").`;
+    pren.dataset.msg = `Vorrei vedere in showroom: ${d.nome.toLowerCase()} (visto in foto sul sito).`;
+    const like = $('scheda-like');
+    if (like) {
+      like.dataset.like = `scheda:${key}`;
+      like.dataset.nome = d.nome;
+      like.dataset.amb = d.ambiente;
+      renderLikes();
+    }
 
-    // la stessa foto della card, ingrandita sul punto indicato
-    const pic = from.closest('.bento__card').querySelector('.pic');
+    // la stessa foto da cui si è partiti, ingrandita sul punto indicato
+    const pic = from.closest('[data-scheda-host]')?.querySelector('.pic');
     media.innerHTML = '';
     if (pic) {
       const clone = pic.cloneNode(true);
