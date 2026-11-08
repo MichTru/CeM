@@ -1429,3 +1429,11 @@ ul, ol { padding: 0; list-style: none; }
 
 /* Zona sicura dell'iPhone (web app a schermo pieno): niente sotto orario, notch e barra Home */
 .footer { margin-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--gutter)); }
+
+/* Fascia scura dietro orario e notch quando la pagina scorre (web app su iPhone) */
+body::before {
+  content: ''; position: fixed; left: 0; right: 0; top: 0; z-index: 140;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--espresso);
+  pointer-events: none;
+}

@@ -375,3 +375,8 @@
   .altri__list { grid-template-columns: repeat(3, 1fr); }
   .altri__card { aspect-ratio: 3 / 4; }
 }
+
+/* Titoli lunghi della hero (es. FALEGNAMERIA) dentro lo schermo anche su telefoni stretti */
+@media (max-width: 600px) {
+  .phero__title { font-size: min(2.6rem, 8.6vw); }
+}
