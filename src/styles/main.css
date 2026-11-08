@@ -276,7 +276,7 @@ ul, ol { padding: 0; list-style: none; }
 .shell {
   position: relative;
   width: min(100% - 2 * var(--gutter), var(--max));
-  margin: clamp(10px, 3.2vw, 48px) auto 0;
+  margin: calc(env(safe-area-inset-top, 0px) + clamp(10px, 3.2vw, 48px)) auto 0;
   padding: 12px;
   border-radius: var(--r-shell);
   background: linear-gradient(180deg, rgb(58 43 33 / 0.62), rgb(36 27 21 / 0.72));
@@ -848,7 +848,7 @@ ul, ol { padding: 0; list-style: none; }
    Header flottante e menu mobile
    -------------------------------------------------------------------------- */
 .float-nav {
-  position: fixed; z-index: 90; top: 14px; left: 50%;
+  position: fixed; z-index: 90; top: calc(env(safe-area-inset-top, 0px) + 14px); left: 50%;
   display: flex; align-items: center; gap: clamp(16px, 2.4vw, 36px);
   padding: 8px 8px 8px 22px;
   border-radius: var(--r-pill);
@@ -970,7 +970,7 @@ ul, ol { padding: 0; list-style: none; }
    Banner cookie
    -------------------------------------------------------------------------- */
 .cookie {
-  position: fixed; z-index: 110; left: 50%; bottom: 16px;
+  position: fixed; z-index: 110; left: 50%; bottom: calc(env(safe-area-inset-bottom, 0px) + 16px);
   width: min(100% - 32px, 720px);
   display: flex; align-items: center; gap: 18px; flex-wrap: wrap;
   padding: 16px 16px 16px 22px;
@@ -1077,7 +1077,7 @@ ul, ol { padding: 0; list-style: none; }
 
 @media (max-width: 860px) {
   :root { --gutter: 16px; }
-  .shell { width: calc(100% - 16px); margin-top: 8px; padding: 8px; }
+  .shell { width: calc(100% - 16px); margin-top: calc(env(safe-area-inset-top, 0px) + 10px); padding: 8px; }
   .topbar { padding: 6px 4px 10px 10px; }
   .topbar__cta { display: none; }
   .hero__tabs {
@@ -1163,7 +1163,7 @@ ul, ol { padding: 0; list-style: none; }
 }
 
 @media (max-width: 600px) {
-  .cookie { bottom: 8px; padding: 12px 12px 12px 16px; gap: 10px; border-radius: 18px; }
+  .cookie { bottom: calc(env(safe-area-inset-bottom, 0px) + 8px); padding: 12px 12px 12px 16px; gap: 10px; border-radius: 18px; }
   .cookie p { font-size: 0.8rem; flex-basis: 100%; }
   .cookie__btns { width: 100%; }
   .cookie__btns .btn { flex: 1; }
@@ -1421,3 +1421,6 @@ ul, ol { padding: 0; list-style: none; }
 .rev__stars { color: var(--cognac-chiaro); letter-spacing: 0.15em; }
 .rev blockquote { margin: 0; font-size: 1.05rem; line-height: 1.5; }
 .rev__who { font-size: 0.85rem; color: var(--sabbia); }
+
+/* Zona sicura dell'iPhone (web app a schermo pieno): niente sotto orario, notch e barra Home */
+.footer { margin-bottom: calc(env(safe-area-inset-bottom, 0px) + var(--gutter)); }
