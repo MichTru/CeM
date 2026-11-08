@@ -1,0 +1,35 @@
+{
+  "_come_si_usa": "Schede dei pezzi indicati dai '+' nelle foto (per ora la card 'Da vicino' in home). 'zoom' è il punto della foto su cui si ingrandisce la scheda, in percentuale. Le descrizioni partono da quello che si vede in foto: marchio e modello vanno confermati con i titolari.",
+  "items": {
+    "moduli": {
+      "nome": "Pensili a moduli geometrici",
+      "ambiente": "Soggiorno",
+      "testo": "Composizioni sospese che alternano legno e laccato: i moduli si combinano tra loro per disegnare la parete, senza appesantirla.",
+      "materiali": ["Legno", "Laccato opaco", "Montaggio sospeso"],
+      "link": "soggiorno/",
+      "linkLabel": "Le proposte per il soggiorno",
+      "form": "Zona giorno",
+      "zoom": [24, 34]
+    },
+    "tv": {
+      "nome": "Base TV sospesa",
+      "ambiente": "Soggiorno",
+      "testo": "Un piano lungo e leggero, staccato da terra: c'è posto per decoder e casse, e i cavi restano nascosti dietro.",
+      "materiali": ["Laccato opaco", "Vano a giorno"],
+      "link": "soggiorno/",
+      "linkLabel": "Le proposte per il soggiorno",
+      "form": "Zona giorno",
+      "zoom": [58, 58]
+    },
+    "tappeto": {
+      "nome": "Tappeto a pelo corto",
+      "ambiente": "Complementi",
+      "testo": "Morbido e a pelo corto, sui toni del grigio: definisce la zona del soggiorno e completa la parete attrezzata.",
+      "materiali": ["Pelo corto", "Toni del grigio"],
+      "link": "soggiorno/",
+      "linkLabel": "Le proposte per il soggiorno",
+      "form": "Complementi",
+      "zoom": [38, 82]
+    }
+  }
+}

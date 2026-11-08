@@ -526,6 +526,30 @@ fs.writeFileSync('src/partials/recensioni.html', recensioni.items.length ? `<sec
     </section>
 ` : '<!-- recensioni: nessuna voce in src/data/recensioni.json -->\n');
 
+// --- Schede dei pezzi indicati dai "+" -----------------------------------------
+const schede = read('schede.json').items;
+fs.writeFileSync('src/partials/schede.html', `<dialog class="sheet scheda" id="scheda" aria-labelledby="scheda-title" data-lenis-prevent>
+  <div class="sheet__inner">
+    <div class="sheet__top">
+      <p class="sheet__title" id="scheda-kicker">Da vicino</p>
+      <button type="button" class="menu__close" data-scheda-close aria-label="Chiudi la scheda"><svg class="ico" aria-hidden="true"><use href="#i-close"/></svg> Chiudi</button>
+    </div>
+    <div class="scheda__media"></div>
+    <div class="scheda__body">
+      <span class="pcard__brand" id="scheda-amb"></span>
+      <h2 class="scheda__title" id="scheda-title"></h2>
+      <p class="scheda__text" id="scheda-text"></p>
+      <ul class="pcard__mat" id="scheda-mat" aria-label="Materiali"></ul>
+      <div class="scheda__btns">
+        <button type="button" class="btn btn--light" id="scheda-prenota" data-prefill>Lo voglio vedere in showroom</button>
+        <a class="btn btn--ghost" id="scheda-link" href="#"></a>
+      </div>
+    </div>
+  </div>
+</dialog>
+<script type="application/json" id="schede-data">${JSON.stringify(schede).replace(/</g, '\\u003c')}</script>
+`);
+
 // --- Regola: nessuna foto due volte nella stessa pagina --------------------------
 // (il menu è escluso: è un pannello a parte). Avvisa durante la build.
 const partials = (n) => (fs.existsSync(`src/partials/${n}.html`) ? fs.readFileSync(`src/partials/${n}.html`, 'utf8') : '');
