@@ -82,51 +82,6 @@
       </div>
     </section>
 
-    <section class="section tipi" id="tipi" aria-labelledby="tipi-title">
-      <h2 class="h-display tipi__title" id="tipi-title">Che cucina cerchi?</h2>
-      <ul class="tipi__list tipi__list--4">
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="isola">
-            <div class="tipo__media"><cm-img name="stock-cucina-isola" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Con isola</h3>
-              <p>Per gli open space: si cucina guardando il soggiorno.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="penisola">
-            <div class="tipo__media"><cm-img name="stock-cucina-penisola" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">A penisola</h3>
-              <p>Divide gli spazi senza chiuderli, con il piano snack.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="lineare">
-            <div class="tipo__media"><cm-img name="stock-cucina-lineare" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Lineari</h3>
-              <p>Tutto su una parete: ordinate, perfette anche per gli spazi stretti.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="angolo">
-            <div class="tipo__media"><cm-img name="cucina-bianca-angolo-legno-scuro" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Ad angolo</h3>
-              <p>A L o a U, con tanto piano di lavoro e tutto a portata di mano.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-      </ul>
-    </section>
     <section class="section guida" id="percorso" aria-labelledby="guida-title">
       <div class="guida__card">
         <div class="guida__intro">
@@ -138,19 +93,20 @@
           <noscript><p>Il percorso guidato funziona con JavaScript attivo: in alternativa sfoglia le proposte qui sotto.</p></noscript>
         </div>
       </div>
-      <script type="application/json" id="guida-data">{"form":"Cucina","nome":"Cucine","domande":[{"id":"spazio","testo":"Com'è lo spazio?","peso":2,"opzioni":[{"v":"open","label":"Aperto sul soggiorno","nota":"Open space o living con cucina"},{"v":"chiusa","label":"Una stanza a sé","nota":"Cucina abitabile, con la porta"},{"v":"piccola","label":"Piccolo o stretto","nota":"Ogni centimetro conta"}]},{"id":"forma","testo":"Che forma immagini?","peso":3,"opzioni":[{"v":"isola","label":"Con isola"},{"v":"penisola","label":"A penisola"},{"v":"lineare","label":"Lineare"},{"v":"angolo","label":"Ad angolo"},{"v":"boh","label":"Consigliatemi voi","jolly":true}]},{"id":"stile","testo":"Che stile ti somiglia?","peso":2,"opzioni":[{"v":"moderno","label":"Essenziale e moderno"},{"v":"caldo","label":"Caldo, con il legno"},{"v":"industriale","label":"Industriale, materico"},{"v":"classico","label":"Classico contemporaneo"}]},{"id":"elettrodomestici","testo":"E gli elettrodomestici?","peso":0,"opzioni":[{"v":"si","label":"Li scegliamo insieme","nota":"Forni, piani, frigo, lavastoviglie"},{"v":"no","label":"Ho già i miei"}]}],"proposte":[{"id":"cucina-isola-salvia","tipo":"isola","tag":{"spazio":["open"],"forma":["isola"],"stile":["caldo","moderno"]},"titolo":"Isola salvia e rovere"},{"id":"cucina-isola-essenziale","tipo":"isola","tag":{"spazio":["open"],"forma":["isola"],"stile":["moderno"]},"titolo":"Isola essenziale aperta sul living"},{"id":"cucina-loft","tipo":"isola","tag":{"spazio":["open"],"forma":["isola","lineare"],"stile":["industriale"]},"titolo":"Loft con isola effetto cemento"},{"id":"cucina-penisola","tipo":"penisola","tag":{"spazio":["open","chiusa"],"forma":["penisola"],"stile":["moderno","caldo"]},"titolo":"Penisola con piano snack"},{"id":"cucina-nera","tipo":"lineare","tag":{"spazio":["open","piccola"],"forma":["lineare","penisola"],"stile":["moderno","industriale"]},"titolo":"Nero opaco e tavolo in legno"},{"id":"cucina-lineare-compatta","tipo":"lineare","tag":{"spazio":["piccola","chiusa"],"forma":["lineare"],"stile":["moderno","caldo"]},"titolo":"Lineare compatta con colonne"},{"id":"cucina-angolo","tipo":"angolo","tag":{"spazio":["chiusa","open"],"forma":["angolo"],"stile":["moderno","caldo"]},"titolo":"Ad angolo, bianco e legno scuro"},{"id":"cucina-classica","tipo":"angolo","tag":{"spazio":["chiusa","piccola"],"forma":["angolo","lineare"],"stile":["classico"]},"titolo":"Classica contemporanea"}]}</script>
+      <script type="application/json" id="guida-data">{"form":"Cucina","nome":"Cucine","domande":[{"id":"spazio","testo":"Com'è lo spazio?","peso":2,"opzioni":[{"v":"open","label":"Aperto sul soggiorno","nota":"Open space o living con cucina"},{"v":"chiusa","label":"Una stanza a sé","nota":"Cucina abitabile, con la porta"},{"v":"piccola","label":"Piccolo o stretto","nota":"Ogni centimetro conta"}]},{"id":"forma","testo":"Che forma immagini?","peso":3,"opzioni":[{"v":"isola","label":"Con isola"},{"v":"penisola","label":"A penisola"},{"v":"lineare","label":"Lineare"},{"v":"angolo","label":"Ad angolo"},{"v":"boh","label":"Consigliatemi voi","jolly":true}]},{"id":"stile","testo":"Che stile ti somiglia?","peso":2,"opzioni":[{"v":"moderno","label":"Essenziale e moderno"},{"v":"caldo","label":"Caldo, con il legno"},{"v":"industriale","label":"Industriale, materico"},{"v":"classico","label":"Classico contemporaneo"}]},{"id":"elettrodomestici","testo":"E gli elettrodomestici?","peso":0,"opzioni":[{"v":"si","label":"Li scegliamo insieme","nota":"Forni, piani, frigo, lavastoviglie"},{"v":"no","label":"Ho già i miei"}]}],"proposte":[{"id":"cucina-isola-salvia","tipo":"isola","tag":{"spazio":["open"],"forma":["isola"],"stile":["caldo","moderno"]},"titolo":"Isola salvia e rovere"},{"id":"cucina-isola-essenziale","tipo":"isola","tag":{"spazio":["open"],"forma":["isola"],"stile":["moderno"]},"titolo":"Isola essenziale aperta sul living"},{"id":"cucina-loft","tipo":"isola","tag":{"spazio":["open"],"forma":["isola","lineare"],"stile":["industriale"]},"titolo":"Loft con isola effetto cemento"},{"id":"cucina-penisola","tipo":"penisola","tag":{"spazio":["open","chiusa"],"forma":["penisola"],"stile":["moderno","caldo"]},"titolo":"Penisola con piano snack"},{"id":"cucina-lineare-compatta","tipo":"lineare","tag":{"spazio":["piccola","chiusa"],"forma":["lineare"],"stile":["moderno","caldo"]},"titolo":"Lineare compatta con colonne"},{"id":"cucina-angolo","tipo":"angolo","tag":{"spazio":["chiusa","open"],"forma":["angolo"],"stile":["moderno","caldo"]},"titolo":"Ad angolo, bianco e legno scuro"},{"id":"cucina-classica","tipo":"angolo","tag":{"spazio":["chiusa","piccola"],"forma":["angolo","lineare"],"stile":["classico"]},"titolo":"Classica contemporanea"}]}</script>
     </section>
     <section class="section proposte" id="proposte" aria-labelledby="proposte-title">
       <div class="section__head section__head--row">
-        <h2 class="h-display" id="proposte-title">Le proposte</h2>
+        <h2 class="h-display" id="proposte-title">Che cucina cerchi?</h2>
         <div class="filters" role="group" aria-label="Filtra per tipo">
-          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti">Tutte</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="isola">Con isola</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="penisola">A penisola</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="lineare">Lineari</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="angolo">Ad angolo</button>
+          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti" data-desc="">Tutte</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="isola" data-desc="Per gli open space: si cucina guardando il soggiorno.">Con isola</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="penisola" data-desc="Divide gli spazi senza chiuderli, con il piano snack.">A penisola</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="lineare" data-desc="Tutto su una parete: ordinate, perfette anche per gli spazi stretti.">Lineari</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="angolo" data-desc="A L o a U, con tanto piano di lavoro e tutto a portata di mano.">Ad angolo</button>
         </div>
       </div>
+      <p class="proposte__desc" id="proposte-desc" aria-live="polite"></p>
       <div class="cards3 proposte__grid" id="proposte-grid">
         <article class="pcard reveal-card" data-tipo="isola" data-id="cucina-isola-salvia">
           <div class="pcard__media"><cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
@@ -158,7 +114,7 @@
             <span class="pcard__brand">Con isola</span>
             <h3 class="pcard__title">Isola salvia e rovere</h3>
             <p>Un'isola grande al centro, vani a giorno in rovere e colonne con vetrine: per chi vive la cucina insieme al soggiorno.</p>
-            <p class="pcard__brands"><span>In showroom</span> Doimo Cucine · Cucinesse · Gicinque · Prima Cucine · Paganelli Cucine</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Cucina" data-msg="Vorrei vedere in showroom: Isola salvia e rovere (cucine).">La voglio vedere</button>
           </div>
         </article>
@@ -168,7 +124,7 @@
             <span class="pcard__brand">Con isola</span>
             <h3 class="pcard__title">Isola essenziale aperta sul living</h3>
             <p>Linee pulite, piano continuo e sgabelli: l'isola diventa il punto d'incontro della casa.</p>
-            <p class="pcard__brands"><span>In showroom</span> Doimo Cucine · Cucinesse · Gicinque · Prima Cucine · Paganelli Cucine</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Cucina" data-msg="Vorrei vedere in showroom: Isola essenziale aperta sul living (cucine).">La voglio vedere</button>
           </div>
         </article>
@@ -178,7 +134,7 @@
             <span class="pcard__brand">Con isola</span>
             <h3 class="pcard__title">Loft con isola effetto cemento</h3>
             <p>Superfici materiche, colonne grigie e un tavolo in legno vero accanto: il carattere di un loft.</p>
-            <p class="pcard__brands"><span>In showroom</span> Doimo Cucine · Cucinesse · Gicinque · Prima Cucine · Paganelli Cucine</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Cucina" data-msg="Vorrei vedere in showroom: Loft con isola effetto cemento (cucine).">La voglio vedere</button>
           </div>
         </article>
@@ -188,18 +144,8 @@
             <span class="pcard__brand">A penisola</span>
             <h3 class="pcard__title">Penisola con piano snack</h3>
             <p>La penisola separa la zona cottura dal soggiorno senza chiuderla, e diventa il posto per la colazione.</p>
-            <p class="pcard__brands"><span>In showroom</span> Doimo Cucine · Cucinesse · Gicinque · Prima Cucine · Paganelli Cucine</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Cucina" data-msg="Vorrei vedere in showroom: Penisola con piano snack (cucine).">La voglio vedere</button>
-          </div>
-        </article>
-        <article class="pcard reveal-card" data-tipo="lineare" data-id="cucina-nera">
-          <div class="pcard__media"><cm-img name="cucina-nera-penisola-legno" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
-          <div class="pcard__body">
-            <span class="pcard__brand">Lineari</span>
-            <h3 class="pcard__title">Nero opaco e tavolo in legno</h3>
-            <p>Una parete sola, laccato nero opaco e colonne forni: davanti, un tavolo alto in legno fa da penisola.</p>
-            <p class="pcard__brands"><span>In showroom</span> Doimo Cucine · Cucinesse · Gicinque · Prima Cucine · Paganelli Cucine</p>
-            <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Cucina" data-msg="Vorrei vedere in showroom: Nero opaco e tavolo in legno (cucine).">La voglio vedere</button>
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="lineare" data-id="cucina-lineare-compatta">
@@ -208,7 +154,7 @@
             <span class="pcard__brand">Lineari</span>
             <h3 class="pcard__title">Lineare compatta con colonne</h3>
             <p>Tutto su una parete, con colonne a tutta altezza per guadagnare spazio dove la stanza è stretta.</p>
-            <p class="pcard__brands"><span>In showroom</span> Doimo Cucine · Cucinesse · Gicinque · Prima Cucine · Paganelli Cucine</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Cucina" data-msg="Vorrei vedere in showroom: Lineare compatta con colonne (cucine).">La voglio vedere</button>
           </div>
         </article>
@@ -218,7 +164,7 @@
             <span class="pcard__brand">Ad angolo</span>
             <h3 class="pcard__title">Ad angolo, bianco e legno scuro</h3>
             <p>Una L con tanto piano di lavoro, basi bianche e colonne in legno scuro: luminosa e ordinata.</p>
-            <p class="pcard__brands"><span>In showroom</span> Doimo Cucine · Cucinesse · Gicinque · Prima Cucine · Paganelli Cucine</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Cucina" data-msg="Vorrei vedere in showroom: Ad angolo, bianco e legno scuro (cucine).">La voglio vedere</button>
           </div>
         </article>
@@ -228,11 +174,12 @@
             <span class="pcard__brand">Ad angolo</span>
             <h3 class="pcard__title">Classica contemporanea</h3>
             <p>Ante con cornice, maniglie in metallo e colori morbidi: il gusto della tradizione con la funzionalità di oggi.</p>
-            <p class="pcard__brands"><span>In showroom</span> Doimo Cucine · Cucinesse · Gicinque · Prima Cucine · Paganelli Cucine</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Cucina" data-msg="Vorrei vedere in showroom: Classica contemporanea (cucine).">La voglio vedere</button>
           </div>
         </article>
       </div>
+      <a class="proposte__misura" href="@base/su-misura/"><span>Ogni proposta si adatta alle tue misure: i pezzi che mancano li costruiamo nella nostra falegnameria di Massa Lombarda.</span> <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
     </section>
     <section class="section extra" aria-labelledby="extra-title">
       <div class="extra__card reveal-card">
@@ -245,48 +192,9 @@
         </div>
       </div>
     </section>
-    <section class="section plus" aria-label="Su misura">
-      <a class="plus__card" href="@base/su-misura/">
-        <div class="plus__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 860px) 100vw, 40vw" alt=""></cm-img></div>
-        <div class="plus__body">
-          <span class="tag">Falegnameria propria</span>
-          <h2 class="plus__title">Serve un pezzo in più?<br>Lo facciamo su misura.</h2>
-          <p>Nella nostra falegnameria di Massa Lombarda adattiamo e completiamo i mobili, sulle misure di casa tua.</p>
-          <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-        </div>
-      </a>
-    </section>
     <section class="section altri" aria-labelledby="altri-title">
-      <h2 class="h-display altri__title" id="altri-title">Cos'altro cerchi?</h2>
+      <h2 class="altri__title" id="altri-title">Potrebbe interessarti anche</h2>
       <ul class="altri__list">
-        <li>
-          <a class="altri__card" href="@base/divani-e-poltrone/">
-            <div class="altri__media"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Divani e poltrone</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/letti/">
-            <div class="altri__media"><cm-img name="stock-letto-imbottito" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Letti</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/armadi/">
-            <div class="altri__media"><cm-img name="notte-armadio-bianco-maniglia-scura" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Armadi e cabine</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/camerette/">
-            <div class="altri__media"><cm-img name="stock-cameretta" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Camerette</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
         <li>
           <a class="altri__card" href="@base/zona-pranzo/">
             <div class="altri__media"><cm-img name="stock-tavolo-pranzo" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
@@ -296,14 +204,14 @@
         </li>
         <li>
           <a class="altri__card" href="@base/soggiorno/">
-            <div class="altri__media"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <div class="altri__media"><cm-img name="stock-mobile-tv" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
             <span class="altri__name">Soggiorno</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
         <li>
           <a class="altri__card" href="@base/su-misura/">
-            <div class="altri__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <div class="altri__media"><cm-img name="stock-legno-lavorazione" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
             <span class="altri__name">Su misura</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
@@ -311,7 +219,7 @@
       </ul>
     </section>
 
-    <!--PARTIAL:contatti-->
+    <!--PARTIAL:prenota-->
   </main>
 
   <!--PARTIAL:footer-->

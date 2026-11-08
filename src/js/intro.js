@@ -53,6 +53,35 @@ export function runIntro() {
       return;
     }
 
+    // Chi l'ha già vista oggi riceve la versione breve (luce, logo, apertura)
+    const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome' }).format(new Date());
+    let seenToday = false;
+    try { seenToday = localStorage.getItem('cm-intro-giorno') === today; localStorage.setItem('cm-intro-giorno', today); } catch (e) { /* storage non disponibile */ }
+    if (seenToday) {
+      gsap.set(headerLogo, { opacity: 0 });
+      gsap.set(svg.querySelectorAll('path'), { opacity: 1 });
+      gsap.set(blade, { x: 0, y: 0, rotation: -28, xPercent: -110, opacity: 0 });
+      gsap.set(shell, { scale: 0.97, y: 14, transformOrigin: '50% 30%' });
+      gsap.set(slats, { transformPerspective: 900, transformOrigin: '50% 50%' });
+      const quick = gsap.timeline({ onComplete: finish });
+      quick.to(blade, { opacity: 1, xPercent: 0, duration: 0.7, ease: 'power3.out' }, 0)
+        .to(blade, { opacity: 0, duration: 0.4, ease: 'none' }, 0.55)
+        .from(logoBox, { opacity: 0, scale: 0.96, duration: 0.6 }, 0.15)
+        .add(() => {
+          const from = logoBox.getBoundingClientRect();
+          const to = headerLogo.getBoundingClientRect();
+          gsap.to(logoBox, { x: to.left + to.width / 2 - (from.left + from.width / 2), y: to.top + to.height / 2 - (from.top + from.height / 2), scale: to.width / from.width, duration: 0.6, ease: EASE_MOVE });
+        }, 0.8)
+        .to(slats, { rotationY: 90, duration: 0.6, ease: 'power3.inOut', stagger: { each: 0.03, from: 'center' } }, 0.8)
+        .to(shell, { scale: 1, y: 0, duration: 0.8 }, 0.85)
+        .set(headerLogo, { opacity: 1 }, 1.4)
+        .to(logoBox, { opacity: 0, duration: 0.12, ease: 'none' }, 1.4);
+      const skipQ = () => quick.progress(1);
+      intro.addEventListener('click', skipQ, { once: true });
+      addEventListener('keydown', skipQ, { once: true });
+      return;
+    }
+
     // Ombre della tenda che si accendono con la luce
     const curtain = document.createElement('div');
     curtain.className = 'intro-curtain';

@@ -105,6 +105,19 @@ function grade(img) {
     .modulate({ saturation: 0.96 });
 }
 
+// Foto stock: correzione comune più decisa, per uniformare scatti di fonti diverse
+// al tono caldo e basso del sito (più calde, un po' più scure, meno sature).
+function gradeStock(img) {
+  return img
+    .recomb([
+      [1.06, 0.02, 0],
+      [0.01, 1.0, 0],
+      [0, 0.02, 0.86],
+    ])
+    .linear(0.9, 2)
+    .modulate({ saturation: 0.8, brightness: 0.95 });
+}
+
 async function run() {
   await fs.mkdir(OUT, { recursive: true });
   await fs.mkdir(path.dirname(MANIFEST), { recursive: true });
@@ -155,11 +168,11 @@ async function run() {
     const widths = WIDTHS.filter((w) => w < meta.width);
     widths.push(meta.width);
     for (const w of widths) {
-      const base = grade(sharp(file).resize({ width: w }));
+      const base = gradeStock(sharp(file).resize({ width: w }));
       await base.clone().avif({ quality: 52, effort: 4 }).toFile(`${OUT}/${name}-${w}.avif`);
       await base.clone().webp({ quality: 76 }).toFile(`${OUT}/${name}-${w}.webp`);
     }
-    const lqip = await grade(sharp(file).resize({ width: 24 })).blur(1.2).webp({ quality: 40 }).toBuffer();
+    const lqip = await gradeStock(sharp(file).resize({ width: 24 })).blur(1.2).webp({ quality: 40 }).toBuffer();
     const c = credits[name] || {};
     manifest[name] = {
       cat: 'stock', alt, w: meta.width, h: meta.height, widths, stock: true,

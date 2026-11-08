@@ -1,0 +1,24 @@
+<!-- Invito compatto alla visita: il modulo si apre in un pannello dal basso -->
+<section class="section prenota" id="contatti" aria-labelledby="prenota-title">
+  <div class="prenota__card">
+    <div class="prenota__text">
+      <h2 class="prenota__title" id="prenota-title">Vieni a vederla in showroom</h2>
+      <p class="status prenota__status"><span class="status__dot"></span><span class="status__text">Orari dello showroom</span></p>
+      <p class="prenota__where">Via Francesco Baracca 70, Lugo · <a href="https://www.google.com/maps/search/?api=1&amp;query=Via+Francesco+Baracca+70+48022+Lugo+RA" target="_blank" rel="noopener">Indicazioni</a></p>
+    </div>
+    <div class="prenota__btns">
+      <button type="button" class="btn btn--light" data-sheet-open>Prenota una visita</button>
+      <a class="btn btn--ghost" href="tel:+39054531440"><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg> 0545 31440</a>
+    </div>
+  </div>
+</section>
+
+<dialog class="sheet" id="sheet" aria-labelledby="sheet-title" data-lenis-prevent>
+  <div class="sheet__inner">
+    <div class="sheet__top">
+      <p class="sheet__title" id="sheet-title">Cassani &amp; Martignani · Lugo</p>
+      <button type="button" class="menu__close" data-sheet-close aria-label="Chiudi il modulo"><svg class="ico" aria-hidden="true"><use href="#i-close"/></svg> Chiudi</button>
+    </div>
+    <!--PARTIAL:form-->
+  </div>
+</dialog>

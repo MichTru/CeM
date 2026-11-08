@@ -25,7 +25,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <script>document.documentElement.classList.add('js','no-intro');if(matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('reduced');</script>
   <link rel="preload" href="@base/fonts/archivo-expanded-maiuscole.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/avif" imagesrcset="@base/img/giorno-parete-attrezzata-geometrica-480.avif 480w, @base/img/giorno-parete-attrezzata-geometrica-800.avif 800w, @base/img/giorno-parete-attrezzata-geometrica-1200.avif 1200w, @base/img/giorno-parete-attrezzata-geometrica-1600.avif 1600w" imagesizes="(max-width: 860px) 100vw, 96vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/avif" imagesrcset="@base/img/stock-soggiorno-scuro-480.avif 480w, @base/img/stock-soggiorno-scuro-800.avif 800w, @base/img/stock-soggiorno-scuro-960.avif 960w" imagesizes="(max-width: 860px) 100vw, 96vw" fetchpriority="high">
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://michtru.github.io/CeM/"},{"@type":"ListItem","position":2,"name":"Soggiorno","item":"https://michtru.github.io/CeM/soggiorno/"}]},{"@type":"WebPage","name":"Pareti attrezzate e librerie a Lugo · Cassani & Martignani","description":"Pareti attrezzate, librerie e mobili porta TV nello showroom di Lugo (RA): Voltan, Cinquanta3, Zamagna e gli altri marchi della zona giorno.","url":"https://michtru.github.io/CeM/soggiorno/","about":{"@id":"https://michtru.github.io/CeM/#store"},"isPartOf":{"@type":"WebSite","name":"Cassani & Martignani","url":"https://michtru.github.io/CeM/"}}]}</script>
   <script type="module" src="/src/page.js"></script>
 </head>
@@ -56,7 +56,7 @@
 
       <div class="phero" id="hero">
         <div class="phero__frame">
-          <div class="phero__media"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 860px) 100vw, 96vw" loading="eager" fetchpriority="high"></cm-img></div>
+          <div class="phero__media"><cm-img name="stock-soggiorno-scuro" sizes="(max-width: 860px) 100vw, 96vw" loading="eager" fetchpriority="high"></cm-img></div>
           <div class="hero__shade" aria-hidden="true"></div>
           <div class="hero__copy">
             <nav class="crumbs" aria-label="Percorso"><a href="@base/">Home</a><span aria-hidden="true">/</span><span aria-current="page">Soggiorno</span></nav>
@@ -81,51 +81,17 @@
       </div>
     </section>
 
-    <section class="section tipi" id="tipi" aria-labelledby="tipi-title">
-      <h2 class="h-display tipi__title" id="tipi-title">Cosa cerchi per il soggiorno?</h2>
-      <ul class="tipi__list tipi__list--3">
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="parete">
-            <div class="tipo__media"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Pareti attrezzate</h3>
-              <p>Moduli sospesi, a terra o a tutta altezza.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="libreria">
-            <div class="tipo__media"><cm-img name="stock-libreria" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Librerie</h3>
-              <p>Per i libri, gli oggetti e un po' di ordine.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="tv">
-            <div class="tipo__media"><cm-img name="stock-mobile-tv" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Mobili porta TV</h3>
-              <p>Bassi e puliti, con i cavi che non si vedono.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-      </ul>
-    </section>
     <section class="section proposte" id="proposte" aria-labelledby="proposte-title">
       <div class="section__head section__head--row">
-        <h2 class="h-display" id="proposte-title">Le proposte</h2>
+        <h2 class="h-display" id="proposte-title">Cosa cerchi per il soggiorno?</h2>
         <div class="filters" role="group" aria-label="Filtra per tipo">
-          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti">Tutte</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="parete">Pareti attrezzate</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="libreria">Librerie</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="tv">Mobili porta TV</button>
+          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti" data-desc="">Tutte</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="parete" data-desc="Moduli sospesi, a terra o a tutta altezza.">Pareti attrezzate</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="libreria" data-desc="Per i libri, gli oggetti e un po' di ordine.">Librerie</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="tv" data-desc="Bassi e puliti, con i cavi che non si vedono.">Mobili porta TV</button>
         </div>
       </div>
+      <p class="proposte__desc" id="proposte-desc" aria-live="polite"></p>
       <div class="cards3 proposte__grid" id="proposte-grid">
         <article class="pcard reveal-card" data-tipo="parete" data-id="parete-geometrica">
           <div class="pcard__media"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
@@ -133,7 +99,7 @@
             <span class="pcard__brand">Pareti attrezzate</span>
             <h3 class="pcard__title">Parete a moduli sospesi</h3>
             <p>Moduli geometrici in legno e laccato, mensole sagomate e il mobile TV sospeso.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Zamagna · Felis · Samoa</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Parete a moduli sospesi (soggiorno).">La voglio vedere</button>
           </div>
         </article>
@@ -143,7 +109,7 @@
             <span class="pcard__brand">Librerie</span>
             <h3 class="pcard__title">Libreria a tutta parete</h3>
             <p>Ripiani aperti e qualche anta, per libri e oggetti, anche come divisorio tra due zone.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Zamagna · Felis · Samoa</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Libreria a tutta parete (soggiorno).">La voglio vedere</button>
           </div>
         </article>
@@ -153,11 +119,12 @@
             <span class="pcard__brand">Mobili porta TV</span>
             <h3 class="pcard__title">Mobile TV basso</h3>
             <p>Lungo e leggero, con i cavi nascosti e lo spazio per casse e decoder.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Zamagna · Felis · Samoa</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Mobile TV basso (soggiorno).">La voglio vedere</button>
           </div>
         </article>
       </div>
+      <a class="proposte__misura" href="@base/su-misura/"><span>Ogni proposta si adatta alle tue misure: i pezzi che mancano li costruiamo nella nostra falegnameria di Massa Lombarda.</span> <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
     </section>
     <section class="section extra" aria-labelledby="extra-title">
       <div class="extra__card reveal-card">
@@ -170,52 +137,13 @@
         </div>
       </div>
     </section>
-    <section class="section plus" aria-label="Su misura">
-      <a class="plus__card" href="@base/su-misura/">
-        <div class="plus__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 860px) 100vw, 40vw" alt=""></cm-img></div>
-        <div class="plus__body">
-          <span class="tag">Falegnameria propria</span>
-          <h2 class="plus__title">Serve un pezzo in più?<br>Lo facciamo su misura.</h2>
-          <p>Nella nostra falegnameria di Massa Lombarda adattiamo e completiamo i mobili, sulle misure di casa tua.</p>
-          <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-        </div>
-      </a>
-    </section>
     <section class="section altri" aria-labelledby="altri-title">
-      <h2 class="h-display altri__title" id="altri-title">Cos'altro cerchi?</h2>
+      <h2 class="altri__title" id="altri-title">Potrebbe interessarti anche</h2>
       <ul class="altri__list">
         <li>
-          <a class="altri__card" href="@base/cucine/">
-            <div class="altri__media"><cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Cucine</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
           <a class="altri__card" href="@base/divani-e-poltrone/">
-            <div class="altri__media"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <div class="altri__media"><cm-img name="stock-divano-pelle" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
             <span class="altri__name">Divani e poltrone</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/letti/">
-            <div class="altri__media"><cm-img name="stock-letto-imbottito" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Letti</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/armadi/">
-            <div class="altri__media"><cm-img name="notte-armadio-bianco-maniglia-scura" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Armadi e cabine</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/camerette/">
-            <div class="altri__media"><cm-img name="stock-cameretta" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Camerette</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
@@ -228,7 +156,7 @@
         </li>
         <li>
           <a class="altri__card" href="@base/su-misura/">
-            <div class="altri__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <div class="altri__media"><cm-img name="stock-legno-lavorazione" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
             <span class="altri__name">Su misura</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
@@ -236,7 +164,7 @@
       </ul>
     </section>
 
-    <!--PARTIAL:contatti-->
+    <!--PARTIAL:prenota-->
   </main>
 
   <!--PARTIAL:footer-->

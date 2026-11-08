@@ -13,4 +13,7 @@ export function initReveals() {
       scrollTrigger: { trigger: el, start: 'top 88%', once: true },
     });
   });
+
+  const due = document.querySelector('.chi__due');
+  if (due) new IntersectionObserver(([e], io) => { if (e.isIntersecting) { due.classList.add('is-in'); io.disconnect(); } }, { threshold: 0.35 }).observe(due);
 }

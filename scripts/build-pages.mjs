@@ -24,29 +24,9 @@ function prefill(form, msg, label, cls = 'btn btn--ghost btn--sm') {
 
 // --- Blocchi della pagina di categoria ----------------------------------------
 
-function tipiSection(c) {
-  if (!c.tipi?.length) return '';
-  return `
-    <section class="section tipi" id="tipi" aria-labelledby="tipi-title">
-      <h2 class="h-display tipi__title" id="tipi-title">${esc(c.tipiTitolo)}</h2>
-      <ul class="tipi__list tipi__list--${c.tipi.length}">${c.tipi.map((t) => `
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="${t.id}">
-            <div class="tipo__media">${media(t.img, t.nome, '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw', ' alt=""')}</div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">${esc(t.nome)}</h3>
-              <p>${esc(t.testo)}</p>
-            </div>
-            ${arrow}
-          </a>
-        </li>`).join('')}
-      </ul>
-    </section>`;
-}
-
 function proposalCard(c, p) {
   const tipo = c.tipi.find((t) => t.id === p.tipo);
-  const marchi = p.marchi || c.marchi;
+  const marchi = p.marchi || []; // i marchi della categoria stanno una volta sola nell'introduzione
   return `
         <article class="pcard reveal-card" data-tipo="${p.tipo}" data-id="${p.id}">
           <div class="pcard__media">${media(p.img, p.titolo, '(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw', ' alt=""')}</div>
@@ -65,18 +45,20 @@ function proposteSection(c) {
   if (!items.length) return '';
   const chips = c.tipi.length > 1
     ? `<div class="filters" role="group" aria-label="Filtra per tipo">
-          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti">Tutte</button>${c.tipi.filter((t) => items.some((p) => p.tipo === t.id)).map((t) => `
-          <button type="button" class="filter" aria-pressed="false" data-pf="${t.id}">${esc(t.nome)}</button>`).join('')}
+          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti" data-desc="">Tutte</button>${c.tipi.filter((t) => items.some((p) => p.tipo === t.id)).map((t) => `
+          <button type="button" class="filter" aria-pressed="false" data-pf="${t.id}" data-desc="${esc(t.testo)}">${esc(t.nome)}</button>`).join('')}
         </div>`
     : '';
   return `
     <section class="section proposte" id="proposte" aria-labelledby="proposte-title">
       <div class="section__head section__head--row">
-        <h2 class="h-display" id="proposte-title">Le proposte</h2>
+        <h2 class="h-display" id="proposte-title">${esc(c.tipiTitolo || 'Le proposte')}</h2>
         ${chips}
       </div>
+      <p class="proposte__desc" id="proposte-desc" aria-live="polite"></p>
       <div class="cards3 proposte__grid" id="proposte-grid">${items.map((p) => proposalCard(c, p)).join('')}
       </div>
+      <a class="proposte__misura" href="@base/su-misura/"><span>Ogni proposta si adatta alle tue misure: i pezzi che mancano li costruiamo nella nostra falegnameria di Massa Lombarda.</span> ${arrow}</a>
     </section>`;
 }
 
@@ -183,47 +165,39 @@ function storieSection(c) {
     </section>`;
 }
 
-function misuraSections(c) {
-  if (c.slug !== 'su-misura') {
-    return `
-    <section class="section plus" aria-label="Su misura">
-      <a class="plus__card" href="@base/su-misura/">
-        <div class="plus__media">${img('su-misura-dettaglio-maniglia', '(max-width: 860px) 100vw, 40vw', ' alt=""')}</div>
-        <div class="plus__body">
-          <span class="tag">Falegnameria propria</span>
-          <h2 class="plus__title">Serve un pezzo in più?<br>Lo facciamo su misura.</h2>
-          <p>Nella nostra falegnameria di Massa Lombarda adattiamo e completiamo i mobili, sulle misure di casa tua.</p>
-          ${arrow}
-        </div>
-      </a>
-    </section>`;
-  }
-  const steps = [
-    ['L\'idea', 'Si parte da te: come vivi la casa, che cosa ti serve, che cosa ti piace.', 'stock-legno-progetto'],
-    ['Il progetto', 'Rilievo delle misure, disegno e scelta di legni, laccature e ferramenta.', 'su-misura-modulo-rovere'],
-    ['La falegnameria', 'A Massa Lombarda il progetto diventa mobile, pezzo per pezzo.', 'stock-legno-lavorazione'],
-    ['Il montaggio', 'Marco e Mauro seguono consegna e montaggio, e restano al tuo fianco anche dopo.', 'su-misura-dettaglio-maniglia'],
-  ];
+// Il metodo di lavoro: un solo racconto, con le stesse tappe, in Su misura e Ristrutturi
+function metodoSection(titolo, sottotitolo) {
   return `
-    <section class="section percorso" aria-labelledby="percorso-title">
-      <div class="section__head">
-        <h2 class="h-display" id="percorso-title">Dall'idea<br>al montaggio</h2>
+    <section class="section tappe" id="tappe" aria-labelledby="tappe-title">
+      <div class="tappe__grid">
+        <div class="tappe__head">
+          <h2 class="h-display" id="tappe-title">${titolo}</h2>
+          <p class="lead">${esc(sottotitolo)}</p>
+          <div class="tappe__line" aria-hidden="true"><i></i></div>
+        </div>
+        <ol class="tappe__list">${ristr.tappe.map((t) => `
+          <li class="tappa">
+            <div class="tappa__media">${media(t.img, t.titolo, '(max-width: 860px) 100vw, 40vw', ' alt=""')}</div>
+            <div class="tappa__body">
+              <h3>${esc(t.titolo)}</h3>
+              <p>${esc(t.testo)}</p>
+            </div>
+          </li>`).join('')}
+        </ol>
       </div>
-      <ol class="percorso__list">${steps.map(([t, d, im]) => `
-        <li class="percorso__step reveal-card">
-          <div class="percorso__media">${media(im, t, '(max-width: 860px) 100vw, 25vw', ' alt=""')}</div>
-          <h3>${t}</h3>
-          <p>${d}</p>
-        </li>`).join('')}
-      </ol>
-    </section>
+    </section>`;
+}
+
+function misuraSections(c) {
+  if (c.slug !== 'su-misura') return ''; // nelle categorie il su misura è una riga dentro le proposte
+  return metodoSection('Dal progetto<br>alla casa', 'Gli stessi passaggi, che tu stia arredando una stanza o tutta la casa.') + `
     <section class="section officina" aria-labelledby="officina-title">
       <div class="officina__grid">
         <div class="officina__big">${ph('Falegnameria di Massa Lombarda')}</div>
         <div class="officina__small">${img('su-misura-dettaglio-maniglia', '(max-width: 860px) 100vw, 30vw')}</div>
         <div class="officina__small">${media('stock-legno-tavole', 'Legni e finiture', '(max-width: 860px) 100vw, 30vw', ' alt=""')}</div>
         <div class="officina__text">
-          <h2 class="h-display" id="officina-title">La nostra<br>falegnameria</h2>
+          <h2 class="officina__title" id="officina-title">La nostra falegnameria</h2>
           <p>Un laboratorio vero, a pochi chilometri dallo showroom: per questo possiamo adattare un mobile di serie o costruirne uno nuovo, e seguirlo fino a casa tua.</p>
         </div>
       </div>
@@ -231,10 +205,11 @@ function misuraSections(c) {
 }
 
 function altriSection(c) {
-  const others = categorie.filter((o) => o.slug !== c.slug);
+  const others = (c.correlate || []).map((k) => categorie.find((o) => o.slug === k)).filter(Boolean);
+  if (!others.length) return '';
   return `
     <section class="section altri" aria-labelledby="altri-title">
-      <h2 class="h-display altri__title" id="altri-title">Cos'altro cerchi?</h2>
+      <h2 class="altri__title" id="altri-title">${c.altriTitolo || 'Potrebbe interessarti anche'}</h2>
       <ul class="altri__list">${others.map((o) => `
         <li>
           <a class="altri__card" href="@base/${o.slug}/">
@@ -347,9 +322,9 @@ function page(c) {
         </div>
       </div>
     </section>
-${tipiSection(c)}${percorsoSection(c)}${proposteSection(c)}${extraSection(c)}${misuraSections(c)}${occasioniSection(c)}${storieSection(c)}${altriSection(c)}
+${percorsoSection(c)}${proposteSection(c)}${extraSection(c)}${misuraSections(c)}${occasioniSection(c)}${storieSection(c)}${altriSection(c)}
 
-    <!--PARTIAL:contatti-->
+    <!--PARTIAL:prenota-->
   </main>
 
   <!--PARTIAL:footer-->
@@ -362,7 +337,7 @@ ${tipiSection(c)}${percorsoSection(c)}${proposteSection(c)}${extraSection(c)}${m
 // --- Galleria della home -------------------------------------------------------
 const CATS = { cucine: 'Cucine', giorno: 'Zona giorno', notte: 'Zona notte', misura: 'Su misura' };
 const galleria = read('galleria.json').items;
-const tiles = galleria.map((g) => {
+const tileHTML = (g) => {
   const cap = `<div class="tile__cap"><span>${CATS[g.cat]}</span><h3>${esc(g.titolo)}</h3></div>`;
   if (!g.img || !images[g.img]) return `
         <li class="tile tile--ph" data-cat="${g.cat}">
@@ -383,8 +358,40 @@ const tiles = galleria.map((g) => {
           </button>
           ${cap}
         </li>`;
-}).join('');
-fs.writeFileSync('src/partials/galleria.html', `<ul class="grid" id="grid">${tiles}\n      </ul>\n`);
+};
+const galleriaHome = galleria.filter((g) => g.home).slice(0, 6);
+fs.writeFileSync('src/partials/galleria.html', `<ul class="grid grid--home" id="grid">${galleriaHome.map(tileHTML).join('')}
+      </ul>
+      <div class="galleria__more"><a class="btn btn--ghost" href="@base/galleria/">Vedi tutta la galleria <svg class="ico" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+`);
+
+function galleriaPage() {
+  const c = {
+    slug: 'galleria', nome: 'Galleria', form: 'Casa intera',
+    title: 'Galleria · Cassani & Martignani, arredamento a Lugo',
+    description: 'Cucine, zona giorno, zona notte e su misura: le foto degli ambienti proposti nello showroom Cassani & Martignani di Lugo (RA).',
+    h1: ['Galleria'], sub: 'Cucine, soggiorni, camere e su misura: gli ambienti da cui partire.',
+    hero: 'stock-soggiorno-scuro', lead: '', testo: [], marchi: [], tipi: [], correlate: ['cucine', 'divani-e-poltrone', 'soggiorno'],
+  };
+  let html = page(c);
+  const filters = `<div class="filters" role="group" aria-label="Filtra per ambiente">
+          <button type="button" class="filter is-on" aria-pressed="true" data-f="tutti">Tutti</button>${Object.entries(CATS).map(([k, v]) => `
+          <button type="button" class="filter" aria-pressed="false" data-f="${k}">${v}</button>`).join('')}
+        </div>`;
+  const body = `
+    <section class="section galleria" id="galleria" aria-labelledby="galleria-title">
+      <div class="section__head section__head--row">
+        <h2 class="visually-hidden" id="galleria-title">Tutte le foto</h2>
+        ${filters}
+      </div>
+      <ul class="grid" id="grid">${galleria.map(tileHTML).join('')}
+      </ul>
+    </section>`;
+  html = html.replace(/\n    <section class="section pintro"[\s\S]*?<\/section>\n/, `\n${body}\n`);
+  html = html.replace('<!--PARTIAL:tail-->', '<!--PARTIAL:lightbox-->\n  <!--PARTIAL:tail-->');
+  fs.mkdirSync('galleria', { recursive: true });
+  fs.writeFileSync('galleria/index.html', html);
+}
 
 // --- Griglia delle categorie in home -----------------------------------------
 const catTiles = categorie.map((c, i) => {
@@ -425,27 +432,10 @@ function ristrPage() {
   const c = {
     slug: 'ristrutturi', nome: 'Ristrutturi casa', form: 'Casa intera', title: ristr.title, description: ristr.description,
     h1: ristr.h1, sub: ristr.sub, hero: ristr.hero, lead: ristr.lead, testo: [], marchi: [], tipi: [],
+    correlate: ristr.correlate, altriTitolo: 'Stanza per stanza',
   };
   let html = page(c);
-  const body = `
-    <section class="section tappe" id="tappe" aria-labelledby="tappe-title">
-      <div class="tappe__grid">
-        <div class="tappe__head">
-          <h2 class="h-display" id="tappe-title">Dal cantiere<br>alla casa finita</h2>
-          <p class="lead">Cinque passaggi, un solo riferimento.</p>
-          <div class="tappe__line" aria-hidden="true"><i></i></div>
-        </div>
-        <ol class="tappe__list">${ristr.tappe.map((t) => `
-          <li class="tappa">
-            <div class="tappa__media">${media(t.img, t.titolo, '(max-width: 860px) 100vw, 40vw', ' alt=""')}</div>
-            <div class="tappa__body">
-              <h3>${esc(t.titolo)}</h3>
-              <p>${esc(t.testo)}</p>
-            </div>
-          </li>`).join('')}
-        </ol>
-      </div>
-    </section>
+  const body = metodoSection('Dal cantiere<br>alla casa finita', 'Cinque passaggi, un solo riferimento.') + `
     <section class="section servizi" aria-labelledby="servizi-title">
       <div class="servizi__grid">
         <div class="servizi__media">${img('stock-ristr-cantiere', '(max-width: 860px) 100vw, 40vw', ' alt=""')}</div>
@@ -465,9 +455,6 @@ function ristrPage() {
               <a class="btn btn--ghost" href="#tappe">Come lavoriamo</a>
             </div>`);
   html = html.replace('<li><a href="@base/ristrutturi/">Ristrutturi</a></li>', '<li><a href="@base/ristrutturi/" aria-current="page">Ristrutturi</a></li>');
-  html = html.replace("Cos'altro cerchi?", 'Stanza per stanza');
-  // niente "serve un pezzo in più": la falegnameria è già una tappa
-  html = html.replace(/\n    <section class="section plus"[\s\S]*?<\/section>/, '');
   fs.mkdirSync('ristrutturi', { recursive: true });
   fs.writeFileSync('ristrutturi/index.html', html);
 }
@@ -521,10 +508,47 @@ fs.writeFileSync('src/partials/menu.html', `<!-- Menu mobile a schermo intero --
 </div>
 `);
 
+// --- Recensioni: compaiono solo se ce ne sono di vere ------------------------
+const recensioni = read('recensioni.json');
+const stars = (n) => `<span class="rev__stars" aria-label="${n} stelle su 5">${'★'.repeat(n)}${'☆'.repeat(5 - n)}</span>`;
+fs.writeFileSync('src/partials/recensioni.html', recensioni.items.length ? `<section class="section recensioni" id="recensioni" aria-labelledby="rev-title">
+      <div class="section__head section__head--row">
+        <h2 class="rev__title" id="rev-title">Dicono di noi</h2>
+        ${recensioni.google_url ? `<a class="btn btn--ghost btn--sm" href="${esc(recensioni.google_url)}" target="_blank" rel="noopener">Tutte le recensioni su Google</a>` : ''}
+      </div>
+      <ul class="rev__list">${recensioni.items.map((r) => `
+        <li class="rev">
+          ${stars(r.stelle || 5)}
+          <blockquote><p>${esc(r.testo)}</p></blockquote>
+          <p class="rev__who">${esc(r.nome)}${r.quando ? ` · ${esc(r.quando)}` : ''}</p>
+        </li>`).join('')}
+      </ul>
+    </section>
+` : '<!-- recensioni: nessuna voce in src/data/recensioni.json -->\n');
+
+// --- Regola: nessuna foto due volte nella stessa pagina --------------------------
+// (il menu è escluso: è un pannello a parte). Avvisa durante la build.
+const partials = (n) => (fs.existsSync(`src/partials/${n}.html`) ? fs.readFileSync(`src/partials/${n}.html`, 'utf8') : '');
+function checkDupes(label, html) {
+  let full = html;
+  for (let k = 0; k < 3; k++) full = full.replace(/<!--PARTIAL:([a-z]+)-->/g, (_, n) => (n === 'menu' ? '' : partials(n)));
+  const names = [...full.matchAll(/<cm-img name="([^"]+)"/g)].map((m) => m[1])
+    .concat([...full.matchAll(/data-poster="@base\/video\/([^"]+)-poster/g)].map((m) => `video:${m[1]}`));
+  const count = names.reduce((a, n) => ((a[n] = (a[n] || 0) + 1), a), {});
+  const dup = Object.entries(count).filter(([, n]) => n > 1);
+  if (dup.length) console.warn(`  ! foto ripetute in ${label}: ${dup.map(([n, k]) => `${n} ×${k}`).join(', ')}`);
+  return dup.length;
+}
+
 // --- Pagine -------------------------------------------------------------------
 for (const c of categorie) {
   fs.mkdirSync(c.slug, { recursive: true });
   fs.writeFileSync(`${c.slug}/index.html`, page(c));
 }
 ristrPage();
-console.log('pagine:', [...categorie.map((c) => c.slug), 'ristrutturi'].join(', '));
+galleriaPage();
+let dupPages = 0;
+for (const slug of [...categorie.map((c) => c.slug), 'ristrutturi', 'galleria']) dupPages += checkDupes(slug, fs.readFileSync(`${slug}/index.html`, 'utf8')) ? 1 : 0;
+dupPages += checkDupes('home', fs.readFileSync('index.html', 'utf8')) ? 1 : 0;
+console.log(dupPages ? `regola foto: ${dupPages} pagine da sistemare` : 'regola foto: nessuna foto ripetuta');
+console.log('pagine:', [...categorie.map((c) => c.slug), 'ristrutturi', 'galleria'].join(', '));

@@ -80,6 +80,7 @@ fs.writeFileSync('public/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>${SITE}</loc><lastmod>${today}</lastmod><priority>1.0</priority></url>
   <url><loc>${SITE}ristrutturi/</loc><lastmod>${today}</lastmod><priority>0.8</priority></url>
+  <url><loc>${SITE}galleria/</loc><lastmod>${today}</lastmod><priority>0.6</priority></url>
 ${pages.map((a) => `  <url><loc>${SITE}${a.slug}/</loc><lastmod>${today}</lastmod><priority>0.8</priority></url>`).join('\n')}
   <url><loc>${SITE}privacy.html</loc><lastmod>${today}</lastmod><priority>0.2</priority></url>
   <url><loc>${SITE}cookie.html</loc><lastmod>${today}</lastmod><priority>0.2</priority></url>

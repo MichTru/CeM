@@ -55,61 +55,6 @@
           </div>
         </div>
 
-        <form class="form" id="form" action="[ENDPOINT FORM]" method="POST" novalidate>
-          <h3 class="form__title">Prenota una visita o chiedi un preventivo</h3>
-          <fieldset class="form__kind">
-            <legend class="visually-hidden">Tipo di richiesta</legend>
-            <label><input type="radio" name="richiesta" value="Visita in showroom" checked><span>Visita in showroom</span></label>
-            <label><input type="radio" name="richiesta" value="Preventivo"><span>Preventivo</span></label>
-          </fieldset>
-
-          <fieldset class="when" id="when">
-            <legend class="when__legend">Quando vuoi venire?</legend>
-            <div class="when__days" id="when-days" role="radiogroup" aria-label="Giorno della visita"></div>
-            <div class="when__slots" role="radiogroup" aria-label="Fascia oraria">
-              <label class="slot"><input type="radio" name="fascia" value="Mattina, 9:30–12:30"><span><b>Mattina</b> 9:30–12:30</span></label>
-              <label class="slot"><input type="radio" name="fascia" value="Pomeriggio, 15:00–19:00"><span><b>Pomeriggio</b> 15:00–19:00</span></label>
-            </div>
-            <p class="when__summary" id="when-summary" aria-live="polite">Scegli un giorno e una fascia: ti richiamiamo per confermare l'orario.</p>
-            <input type="hidden" name="appuntamento" id="f-appuntamento">
-          </fieldset>
-
-          <div class="field">
-            <label for="f-nome">Nome e cognome</label>
-            <input id="f-nome" name="nome" type="text" autocomplete="name" required>
-          </div>
-          <div class="field-row">
-            <div class="field">
-              <label for="f-tel">Telefono</label>
-              <input id="f-tel" name="telefono" type="tel" autocomplete="tel" inputmode="tel">
-            </div>
-            <div class="field">
-              <label for="f-email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required>
-            </div>
-          </div>
-          <div class="field">
-            <label for="f-amb">Ambiente d'interesse</label>
-            <select id="f-amb" name="ambiente">
-              <option>Cucina</option>
-              <option>Zona giorno</option>
-              <option>Zona notte</option>
-              <option>Su misura</option>
-              <option>Complementi</option>
-              <option>Elettrodomestici</option>
-              <option>Casa intera</option>
-            </select>
-          </div>
-          <div class="field">
-            <label for="f-msg">Messaggio</label>
-            <textarea id="f-msg" name="messaggio" rows="4"></textarea>
-          </div>
-          <label class="check">
-            <input type="checkbox" name="privacy" required>
-            <span>Ho letto l'<a href="@base/privacy.html">informativa privacy</a> e acconsento al trattamento dei dati per ricevere una risposta.</span>
-          </label>
-          <button class="btn btn--light form__send" type="submit">Invia la richiesta</button>
-          <p class="form__msg" id="form-msg" role="status" aria-live="polite"></p>
-        </form>
+        <!--PARTIAL:form-->
       </div>
     </section>

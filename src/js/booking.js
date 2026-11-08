@@ -1,5 +1,5 @@
 import { romeNow } from './contacts.js';
-import { scrollToEl } from './motion.js';
+import { scrollToEl, lenis } from './motion.js';
 
 // Prenotazione: giorno e fascia oraria tra gli orari di apertura (ora italiana).
 // Mar–sab mattina e pomeriggio, lunedì solo pomeriggio, domenica chiuso.
@@ -94,7 +94,27 @@ export function initBooking() {
   form.querySelectorAll('input[name="richiesta"]').forEach((r) => r.addEventListener('change', toggle));
   toggle();
 
-  // Bottoni "Vienila a vedere" e simili: precompilano il modulo
+  // Nelle pagine interne il modulo sta in un pannello che si apre dal basso
+  const sheet = document.getElementById('sheet');
+  const openSheet = () => {
+    if (!sheet || sheet.open) return;
+    lenis?.stop();
+    sheet.showModal();
+    document.documentElement.classList.add('sheet-open');
+    sheet.querySelector('.sheet__inner').scrollTop = 0;
+  };
+  const closeSheet = () => { if (sheet?.open) sheet.close(); };
+  if (sheet) {
+    sheet.addEventListener('close', () => { lenis?.start(); document.documentElement.classList.remove('sheet-open'); });
+    sheet.addEventListener('click', (e) => { if (e.target === sheet || e.target.closest('[data-sheet-close]')) closeSheet(); });
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('[data-sheet-open]')) { e.preventDefault(); openSheet(); return; }
+      const a = e.target.closest('a[href$="#contatti"]');
+      if (a && !a.closest('#sheet') && !a.hasAttribute('data-prefill')) { e.preventDefault(); e.stopPropagation(); openSheet(); }
+    }, true);
+  }
+
+  // Bottoni "La voglio vedere" e simili: precompilano il modulo
   document.addEventListener('click', (e) => {
     const b = e.target.closest('[data-prefill]');
     if (!b) return;
@@ -107,6 +127,7 @@ export function initBooking() {
     const visita = form.querySelector('input[name="richiesta"][value^="Visita"]');
     visita.checked = true;
     toggle();
+    if (sheet) { e.preventDefault(); openSheet(); return; }
     if (b.tagName !== 'A') {
       e.preventDefault();
       scrollToEl(document.getElementById('contatti'));

@@ -338,5 +338,45 @@
   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
   "foreign_landing_url": "https://www.rawpixel.com/image/9676968/image-person-wood-public-domain",
   "source": "rawpixel"
+ },
+ "stock-letto-scuro": {
+  "title": "Bedroom Bed",
+  "creator": "Jay Mantri",
+  "creator_url": "https://jaymantri.com",
+  "license": "cc0",
+  "license_version": "1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "foreign_landing_url": "https://stocksnap.io/photo/bedroom-bed-12B5400E80",
+  "source": "stocksnap"
+ },
+ "stock-cameretta-soffitta": {
+  "title": "Free study room telescope image",
+  "creator": null,
+  "creator_url": null,
+  "license": "cc0",
+  "license_version": "1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "foreign_landing_url": "https://www.rawpixel.com/image/5913539/image-books-light-public-domain",
+  "source": "rawpixel"
+ },
+ "stock-tavolo-luminoso": {
+  "title": "Dining Table",
+  "creator": "Matt Bango",
+  "creator_url": "https://mattbango.photo",
+  "license": "cc0",
+  "license_version": "1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "foreign_landing_url": "https://stocksnap.io/photo/dining-table-NCEEGGU7W4",
+  "source": "stocksnap"
+ },
+ "stock-soggiorno-scuro": {
+  "title": "Living Room",
+  "creator": "Dan Gold",
+  "creator_url": "https://stocksnap.io/author/35902",
+  "license": "cc0",
+  "license_version": "1.0",
+  "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+  "foreign_landing_url": "https://stocksnap.io/photo/living-room-BI0P6D3WL9",
+  "source": "stocksnap"
  }
 }

@@ -1,73 +1,98 @@
 {
- "_come_si_usa": "Voci della galleria in home, nell'ordine in cui compaiono. 'img' è il nome di una foto preparata con npm run images; 'video' (facoltativo) è il nome di un loop in public/video; senza 'img' compare un segnaposto con l'etichetta 'ph'. 'cat' è il filtro: cucine, giorno, notte, misura.",
+ "_come_si_usa": "Voci della galleria in home, nell'ordine in cui compaiono. 'img' è il nome di una foto preparata con npm run images; 'video' (facoltativo) è il nome di un loop in public/video; senza 'img' compare un segnaposto con l'etichetta 'ph'. 'cat' è il filtro: cucine, giorno, notte, misura. Con 'home: true' la foto compare anche nella home (al massimo 6, senza ripetere foto già presenti in home).",
  "items": [
   {
    "img": "cucina-isola-salvia-rovere-vetrine",
    "video": "loop-cucina-isola-salvia",
    "titolo": "Isola salvia e rovere",
-   "cat": "cucine"
+   "cat": "cucine",
+   "home": false
   },
   {
    "img": "giorno-parete-attrezzata-geometrica",
    "titolo": "Parete a moduli geometrici",
-   "cat": "giorno"
+   "cat": "giorno",
+   "home": false
   },
   {
    "img": "notte-armadio-bianco-maniglia-scura",
    "titolo": "Armadio bianco, maniglia in legno",
-   "cat": "notte"
+   "cat": "notte",
+   "home": false
   },
   {
    "img": "cucina-loft-isola-cemento",
    "titolo": "Loft con isola in cemento",
-   "cat": "cucine"
+   "cat": "cucine",
+   "home": false
   },
   {
    "img": "cucina-nera-penisola-legno",
    "titolo": "Nero opaco e penisola in legno",
-   "cat": "cucine"
+   "cat": "cucine",
+   "home": true
   },
   {
    "img": "giorno-divano-velluto-verde-lampada",
    "video": "loop-giorno-velluto-verde",
    "titolo": "Velluto verde e luce calda",
-   "cat": "giorno"
+   "cat": "giorno",
+   "home": false
   },
   {
    "titolo": "Modulo in rovere, su misura",
    "cat": "misura",
-   "img": "su-misura-modulo-rovere"
+   "img": "su-misura-modulo-rovere",
+   "home": false
   },
   {
    "titolo": "Letto in legno e luce calda",
    "cat": "notte",
-   "img": "stock-letto-legno"
+   "img": "stock-letto-legno",
+   "home": false
   },
   {
    "img": "stock-letto-imbottito",
    "titolo": "Testiera imbottita",
-   "cat": "notte"
+   "cat": "notte",
+   "home": false
   },
   {
    "img": "giorno-divano-angolare-vetrata",
    "video": "loop-giorno-vetrata",
    "titolo": "Angolare sulla vetrata",
-   "cat": "giorno"
+   "cat": "giorno",
+   "home": true
   },
   {
    "img": "cucina-bianca-angolo-legno-scuro",
    "titolo": "Bianco e legno scuro",
-   "cat": "cucine"
+   "cat": "cucine",
+   "home": true
   },
   {
    "titolo": "La pialla sul legno",
    "cat": "misura",
-   "img": "stock-legno-lavorazione"
+   "img": "stock-legno-lavorazione",
+   "home": false
   },
   {
    "titolo": "Attrezzi da banco",
    "cat": "misura",
-   "img": "stock-legno-tavole"
+   "img": "stock-legno-tavole",
+   "home": true
+  },
+  {
+   "img": "stock-letto-contenitore",
+   "titolo": "Letto imbottito e luce del mattino",
+   "cat": "notte",
+   "home": true
+  },
+  {
+   "img": "stock-divano-letto",
+   "titolo": "Daybed e parete trapuntata",
+   "cat": "giorno",
+   "home": true
   }
  ]
 }

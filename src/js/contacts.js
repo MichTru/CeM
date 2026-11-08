@@ -40,7 +40,7 @@ export function openStatus(now = romeNow()) {
 }
 
 function initStatus() {
-  const els = [...document.querySelectorAll('#status, .menu__status')];
+  const els = [...document.querySelectorAll('#status, .menu__status, .prenota__status')];
   if (!els.length) return;
   const paint = () => {
     const s = openStatus();

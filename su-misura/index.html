@@ -81,32 +81,51 @@
       </div>
     </section>
 
-    <section class="section percorso" aria-labelledby="percorso-title">
-      <div class="section__head">
-        <h2 class="h-display" id="percorso-title">Dall'idea<br>al montaggio</h2>
+    <section class="section tappe" id="tappe" aria-labelledby="tappe-title">
+      <div class="tappe__grid">
+        <div class="tappe__head">
+          <h2 class="h-display" id="tappe-title">Dal progetto<br>alla casa</h2>
+          <p class="lead">Gli stessi passaggi, che tu stia arredando una stanza o tutta la casa.</p>
+          <div class="tappe__line" aria-hidden="true"><i></i></div>
+        </div>
+        <ol class="tappe__list">
+          <li class="tappa">
+            <div class="tappa__media"><cm-img name="stock-ristr-pianta" sizes="(max-width: 860px) 100vw, 40vw" alt=""></cm-img></div>
+            <div class="tappa__body">
+              <h3>La planimetria</h3>
+              <p>Partiamo dalla pianta e da come vorrai vivere la casa, anche a lavori appena iniziati.</p>
+            </div>
+          </li>
+          <li class="tappa">
+            <div class="tappa__media"><cm-img name="stock-ristr-misure" sizes="(max-width: 860px) 100vw, 40vw" alt=""></cm-img></div>
+            <div class="tappa__body">
+              <h3>Il rilievo in cantiere</h3>
+              <p>Veniamo a prendere le misure anche a lavori in corso, e ci sentiamo con la tua impresa o il tuo architetto per impianti, prese e scarichi.</p>
+            </div>
+          </li>
+          <li class="tappa">
+            <div class="tappa__media"><cm-img name="cucina-loft-isola-cemento" sizes="(max-width: 860px) 100vw, 40vw" alt=""></cm-img></div>
+            <div class="tappa__body">
+              <h3>Un progetto per tutta la casa</h3>
+              <p>Cucina, zona giorno e camere pensate insieme, con un unico preventivo per tutte le stanze.</p>
+            </div>
+          </li>
+          <li class="tappa">
+            <div class="tappa__media"><cm-img name="stock-legno-lavorazione" sizes="(max-width: 860px) 100vw, 40vw" alt=""></cm-img></div>
+            <div class="tappa__body">
+              <h3>In falegnameria</h3>
+              <p>Quello che il catalogo non risolve lo costruiamo su misura a Massa Lombarda: nicchie, sottoscala, mansarde.</p>
+            </div>
+          </li>
+          <li class="tappa">
+            <div class="tappa__media"><cm-img name="giorno-divano-angolare-vetrata" sizes="(max-width: 860px) 100vw, 40vw" alt=""></cm-img></div>
+            <div class="tappa__body">
+              <h3>Il montaggio a fine lavori</h3>
+              <p>Programmiamo consegne e montaggi sull'avanzamento del cantiere: quando l'impresa ha finito, arriviamo noi.</p>
+            </div>
+          </li>
+        </ol>
       </div>
-      <ol class="percorso__list">
-        <li class="percorso__step reveal-card">
-          <div class="percorso__media"><cm-img name="stock-legno-progetto" sizes="(max-width: 860px) 100vw, 25vw" alt=""></cm-img></div>
-          <h3>L'idea</h3>
-          <p>Si parte da te: come vivi la casa, che cosa ti serve, che cosa ti piace.</p>
-        </li>
-        <li class="percorso__step reveal-card">
-          <div class="percorso__media"><cm-img name="su-misura-modulo-rovere" sizes="(max-width: 860px) 100vw, 25vw" alt=""></cm-img></div>
-          <h3>Il progetto</h3>
-          <p>Rilievo delle misure, disegno e scelta di legni, laccature e ferramenta.</p>
-        </li>
-        <li class="percorso__step reveal-card">
-          <div class="percorso__media"><cm-img name="stock-legno-lavorazione" sizes="(max-width: 860px) 100vw, 25vw" alt=""></cm-img></div>
-          <h3>La falegnameria</h3>
-          <p>A Massa Lombarda il progetto diventa mobile, pezzo per pezzo.</p>
-        </li>
-        <li class="percorso__step reveal-card">
-          <div class="percorso__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 860px) 100vw, 25vw" alt=""></cm-img></div>
-          <h3>Il montaggio</h3>
-          <p>Marco e Mauro seguono consegna e montaggio, e restano al tuo fianco anche dopo.</p>
-        </li>
-      </ol>
     </section>
     <section class="section officina" aria-labelledby="officina-title">
       <div class="officina__grid">
@@ -114,32 +133,18 @@
         <div class="officina__small"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 860px) 100vw, 30vw"></cm-img></div>
         <div class="officina__small"><cm-img name="stock-legno-tavole" sizes="(max-width: 860px) 100vw, 30vw" alt=""></cm-img></div>
         <div class="officina__text">
-          <h2 class="h-display" id="officina-title">La nostra<br>falegnameria</h2>
+          <h2 class="officina__title" id="officina-title">La nostra falegnameria</h2>
           <p>Un laboratorio vero, a pochi chilometri dallo showroom: per questo possiamo adattare un mobile di serie o costruirne uno nuovo, e seguirlo fino a casa tua.</p>
         </div>
       </div>
     </section>
     <section class="section altri" aria-labelledby="altri-title">
-      <h2 class="h-display altri__title" id="altri-title">Cos'altro cerchi?</h2>
+      <h2 class="altri__title" id="altri-title">Potrebbe interessarti anche</h2>
       <ul class="altri__list">
         <li>
           <a class="altri__card" href="@base/cucine/">
-            <div class="altri__media"><cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <div class="altri__media"><cm-img name="stock-cucina-isola" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
             <span class="altri__name">Cucine</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/divani-e-poltrone/">
-            <div class="altri__media"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Divani e poltrone</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/letti/">
-            <div class="altri__media"><cm-img name="stock-letto-imbottito" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Letti</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
@@ -151,22 +156,8 @@
           </a>
         </li>
         <li>
-          <a class="altri__card" href="@base/camerette/">
-            <div class="altri__media"><cm-img name="stock-cameretta" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Camerette</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/zona-pranzo/">
-            <div class="altri__media"><cm-img name="stock-tavolo-pranzo" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Zona pranzo</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
           <a class="altri__card" href="@base/soggiorno/">
-            <div class="altri__media"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <div class="altri__media"><cm-img name="stock-mobile-tv" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
             <span class="altri__name">Soggiorno</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
@@ -174,7 +165,7 @@
       </ul>
     </section>
 
-    <!--PARTIAL:contatti-->
+    <!--PARTIAL:prenota-->
   </main>
 
   <!--PARTIAL:footer-->

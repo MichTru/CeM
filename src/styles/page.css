@@ -132,8 +132,9 @@
 .officina__text p { color: var(--sabbia); max-width: 52ch; }
 
 /* Altri ambienti */
-.altri__title { font-size: clamp(1.6rem, 1.1rem + 2vw, 3rem); margin-bottom: 28px; }
-.altri__list { display: grid; grid-template-columns: repeat(5, 1fr); gap: var(--gap); }
+.altri__title { font-weight: 300; font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.8rem); margin-bottom: 20px; }
+.altri__list { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--gap); }
+.altri__card { aspect-ratio: 16 / 10; }
 .altri__card {
   position: relative; display: block; aspect-ratio: 3 / 4;
   border-radius: var(--r-card); overflow: hidden;
@@ -342,4 +343,35 @@
   .tappa:nth-child(even) .tappa__media { order: 0; }
   .servizi__grid { grid-template-columns: 1fr; }
   .servizi__list { grid-template-columns: 1fr; }
+}
+
+/* --- Revisione: proposte --------------------------------------------------------- */
+.proposte__desc { min-height: 1.6em; margin: -18px 0 22px; color: var(--sabbia); max-width: 60ch; }
+.proposte__misura {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  margin-top: var(--gap); padding: 18px 20px 18px 24px;
+  border-radius: var(--r-card); border: 1px dashed var(--line-strong);
+  text-decoration: none; color: rgb(245 239 230 / 0.88); font-size: 0.95rem;
+  transition: border-color 0.4s, background-color 0.4s;
+}
+.proposte__misura:hover { border-color: var(--cognac-chiaro); background: rgb(154 100 64 / 0.08); }
+.proposte__misura .round-arrow { flex: none; }
+.officina__title { font-weight: 300; font-size: clamp(1.5rem, 1.1rem + 1.4vw, 2.4rem); line-height: 1.1; }
+
+/* Carosello delle proposte su mobile */
+@media (max-width: 860px) {
+  .proposte__grid {
+    display: flex; gap: 10px;
+    overflow-x: auto; scroll-snap-type: x mandatory;
+    margin: 0 calc(-1 * var(--gutter)); padding: 2px var(--gutter) 14px;
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .proposte__grid::-webkit-scrollbar { display: none; }
+  .proposte__grid > .pcard { flex: 0 0 84%; scroll-snap-align: start; }
+  .proposte__grid > .pcard.is-hidden { display: none; }
+  .proposte .filters { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 calc(-1 * var(--gutter)); padding: 0 var(--gutter); }
+  .proposte .filters .filter { flex: none; }
+  .altri__list { grid-template-columns: repeat(3, 1fr); }
+  .altri__card { aspect-ratio: 3 / 4; }
 }

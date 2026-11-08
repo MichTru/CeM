@@ -1,24 +1,75 @@
 {
-  "title": "Arredare casa durante la ristrutturazione a Lugo · Cassani & Martignani",
-  "description": "Stai ristrutturando casa in Romagna? Dalla planimetria al montaggio a fine lavori: rilievo in cantiere, un unico preventivo per tutte le stanze, falegnameria su misura e un solo riferimento.",
-  "h1": ["Stai ristrutturando", "casa?"],
-  "sub": "Ti aiutiamo ad arredarla tutta, dal cantiere alla casa finita.",
-  "hero": "stock-ristr-lavori",
-  "homeImg": "stock-ristr-cantiere",
-  "lead": "Quando si ristruttura, l'arredamento va pensato insieme ai lavori: misure, prese, scarichi, nicchie. Prima ci pensiamo insieme, meno sorprese a fine cantiere.",
-  "tappe": [
-    { "titolo": "La planimetria", "breve": "Planimetria", "testo": "Partiamo dalla pianta e da come vorrai vivere la casa, anche a lavori appena iniziati.", "img": "stock-ristr-pianta" },
-    { "titolo": "Il rilievo in cantiere", "breve": "Rilievo", "testo": "Veniamo a prendere le misure anche a lavori in corso, e ci sentiamo con la tua impresa o il tuo architetto per impianti, prese e scarichi.", "img": "stock-ristr-misure" },
-    { "titolo": "Un progetto per tutta la casa", "breve": "Progetto", "testo": "Cucina, zona giorno e camere pensate insieme, con un unico preventivo per tutte le stanze.", "img": "cucina-isola-salvia-rovere-vetrine" },
-    { "titolo": "In falegnameria", "breve": "Falegnameria", "testo": "Quello che il catalogo non risolve lo costruiamo su misura a Massa Lombarda: nicchie, sottoscala, mansarde.", "img": "stock-legno-lavorazione" },
-    { "titolo": "Il montaggio a fine lavori", "breve": "Montaggio", "testo": "Programmiamo consegne e montaggi sull'avanzamento del cantiere: quando l'impresa ha finito, arriviamo noi.", "img": "giorno-divano-angolare-vetrata" }
-  ],
-  "servizi": [
-    { "titolo": "Con la tua impresa o il tuo architetto", "testo": "Ci sentiamo direttamente per misure, impianti, prese e scarichi, così il progetto e il cantiere vanno nella stessa direzione." },
-    { "titolo": "Rilievo in cantiere", "testo": "Prendiamo le misure a lavori in corso o partiamo dalla planimetria, se i muri non ci sono ancora." },
-    { "titolo": "Un unico preventivo", "testo": "Tutte le stanze in un solo preventivo, più semplice da leggere e da confrontare." },
-    { "titolo": "Consegne a fine lavori", "testo": "Consegne e montaggi seguono i tempi del cantiere, non il contrario." },
-    { "titolo": "Su misura dalla falegnameria", "testo": "I pezzi fuori standard li costruiamo noi, sulle misure reali della casa." },
-    { "titolo": "Un solo riferimento", "testo": "Marco e Mauro ti seguono dall'inizio alla fine, e anche dopo, con l'assistenza post-vendita." }
-  ]
+ "title": "Arredare casa durante la ristrutturazione a Lugo · Cassani & Martignani",
+ "description": "Stai ristrutturando casa in Romagna? Dalla planimetria al montaggio a fine lavori: rilievo in cantiere, un unico preventivo per tutte le stanze, falegnameria su misura e un solo riferimento.",
+ "h1": [
+  "Stai ristrutturando",
+  "casa?"
+ ],
+ "sub": "Ti aiutiamo ad arredarla tutta, dal cantiere alla casa finita.",
+ "hero": "stock-ristr-lavori",
+ "homeImg": "stock-ristr-cantiere",
+ "lead": "Quando si ristruttura, l'arredamento va pensato insieme ai lavori: misure, prese, scarichi, nicchie. Prima ci pensiamo insieme, meno sorprese a fine cantiere.",
+ "tappe": [
+  {
+   "titolo": "La planimetria",
+   "breve": "Planimetria",
+   "testo": "Partiamo dalla pianta e da come vorrai vivere la casa, anche a lavori appena iniziati.",
+   "img": "stock-ristr-pianta"
+  },
+  {
+   "titolo": "Il rilievo in cantiere",
+   "breve": "Rilievo",
+   "testo": "Veniamo a prendere le misure anche a lavori in corso, e ci sentiamo con la tua impresa o il tuo architetto per impianti, prese e scarichi.",
+   "img": "stock-ristr-misure"
+  },
+  {
+   "titolo": "Un progetto per tutta la casa",
+   "breve": "Progetto",
+   "testo": "Cucina, zona giorno e camere pensate insieme, con un unico preventivo per tutte le stanze.",
+   "img": "cucina-loft-isola-cemento"
+  },
+  {
+   "titolo": "In falegnameria",
+   "breve": "Falegnameria",
+   "testo": "Quello che il catalogo non risolve lo costruiamo su misura a Massa Lombarda: nicchie, sottoscala, mansarde.",
+   "img": "stock-legno-lavorazione"
+  },
+  {
+   "titolo": "Il montaggio a fine lavori",
+   "breve": "Montaggio",
+   "testo": "Programmiamo consegne e montaggi sull'avanzamento del cantiere: quando l'impresa ha finito, arriviamo noi.",
+   "img": "giorno-divano-angolare-vetrata"
+  }
+ ],
+ "servizi": [
+  {
+   "titolo": "Con la tua impresa o il tuo architetto",
+   "testo": "Ci sentiamo direttamente per misure, impianti, prese e scarichi, così il progetto e il cantiere vanno nella stessa direzione."
+  },
+  {
+   "titolo": "Rilievo in cantiere",
+   "testo": "Prendiamo le misure a lavori in corso o partiamo dalla planimetria, se i muri non ci sono ancora."
+  },
+  {
+   "titolo": "Un unico preventivo",
+   "testo": "Tutte le stanze in un solo preventivo, più semplice da leggere e da confrontare."
+  },
+  {
+   "titolo": "Consegne a fine lavori",
+   "testo": "Consegne e montaggi seguono i tempi del cantiere, non il contrario."
+  },
+  {
+   "titolo": "Su misura dalla falegnameria",
+   "testo": "I pezzi fuori standard li costruiamo noi, sulle misure reali della casa."
+  },
+  {
+   "titolo": "Un solo riferimento",
+   "testo": "Marco e Mauro ti seguono dall'inizio alla fine, e anche dopo, con l'assistenza post-vendita."
+  }
+ ],
+ "correlate": [
+  "cucine",
+  "divani-e-poltrone",
+  "letti"
+ ]
 }

@@ -81,59 +81,25 @@
       </div>
     </section>
 
-    <section class="section tipi" id="tipi" aria-labelledby="tipi-title">
-      <h2 class="h-display tipi__title" id="tipi-title">Cosa cerchi per la zona pranzo?</h2>
-      <ul class="tipi__list tipi__list--3">
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="tavoli">
-            <div class="tipo__media"><cm-img name="stock-tavolo-pranzo" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Tavoli</h3>
-              <p>Fissi o allungabili, in legno, vetro o ceramica.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="sedie">
-            <div class="tipo__media"><cm-img name="stock-sedie" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Sedie</h3>
-              <p>Comode a lungo, da abbinare o da mescolare.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="madie">
-            <div class="tipo__media"><cm-img name="stock-madia" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Madie e credenze</h3>
-              <p>Per piatti, bicchieri e tutto quello che serve a tavola.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-      </ul>
-    </section>
     <section class="section proposte" id="proposte" aria-labelledby="proposte-title">
       <div class="section__head section__head--row">
-        <h2 class="h-display" id="proposte-title">Le proposte</h2>
+        <h2 class="h-display" id="proposte-title">Cosa cerchi per la zona pranzo?</h2>
         <div class="filters" role="group" aria-label="Filtra per tipo">
-          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti">Tutte</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="tavoli">Tavoli</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="sedie">Sedie</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="madie">Madie e credenze</button>
+          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti" data-desc="">Tutte</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="tavoli" data-desc="Fissi o allungabili, in legno, vetro o ceramica.">Tavoli</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="sedie" data-desc="Comode a lungo, da abbinare o da mescolare.">Sedie</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="madie" data-desc="Per piatti, bicchieri e tutto quello che serve a tavola.">Madie e credenze</button>
         </div>
       </div>
+      <p class="proposte__desc" id="proposte-desc" aria-live="polite"></p>
       <div class="cards3 proposte__grid" id="proposte-grid">
         <article class="pcard reveal-card" data-tipo="tavoli" data-id="tavolo-allungabile">
-          <div class="pcard__media"><cm-img name="stock-tavolo-pranzo" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-tavolo-luminoso" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
           <div class="pcard__body">
             <span class="pcard__brand">Tavoli</span>
             <h3 class="pcard__title">Tavolo allungabile</h3>
             <p>Sei posti tutti i giorni, dieci nelle feste: si allunga in pochi secondi.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Zamagna · Felis · Samoa</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Tavolo allungabile (zona pranzo).">La voglio vedere</button>
           </div>
         </article>
@@ -143,7 +109,7 @@
             <span class="pcard__brand">Sedie</span>
             <h3 class="pcard__title">Sedie comode a lungo</h3>
             <p>Imbottite o in legno, da abbinare al tavolo o da mescolare con carattere.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Zamagna · Felis · Samoa</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Sedie comode a lungo (zona pranzo).">La voglio vedere</button>
           </div>
         </article>
@@ -153,11 +119,12 @@
             <span class="pcard__brand">Madie e credenze</span>
             <h3 class="pcard__title">Madia e credenza</h3>
             <p>Per piatti e bicchieri buoni, con il piano su cui appoggiare quello che serve a tavola.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Zamagna · Felis · Samoa</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Madia e credenza (zona pranzo).">La voglio vedere</button>
           </div>
         </article>
       </div>
+      <a class="proposte__misura" href="@base/su-misura/"><span>Ogni proposta si adatta alle tue misure: i pezzi che mancano li costruiamo nella nostra falegnameria di Massa Lombarda.</span> <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
     </section>
     <section class="section extra" aria-labelledby="extra-title">
       <div class="extra__card reveal-card">
@@ -170,73 +137,34 @@
         </div>
       </div>
     </section>
-    <section class="section plus" aria-label="Su misura">
-      <a class="plus__card" href="@base/su-misura/">
-        <div class="plus__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 860px) 100vw, 40vw" alt=""></cm-img></div>
-        <div class="plus__body">
-          <span class="tag">Falegnameria propria</span>
-          <h2 class="plus__title">Serve un pezzo in più?<br>Lo facciamo su misura.</h2>
-          <p>Nella nostra falegnameria di Massa Lombarda adattiamo e completiamo i mobili, sulle misure di casa tua.</p>
-          <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-        </div>
-      </a>
-    </section>
     <section class="section altri" aria-labelledby="altri-title">
-      <h2 class="h-display altri__title" id="altri-title">Cos'altro cerchi?</h2>
+      <h2 class="altri__title" id="altri-title">Potrebbe interessarti anche</h2>
       <ul class="altri__list">
         <li>
           <a class="altri__card" href="@base/cucine/">
-            <div class="altri__media"><cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <div class="altri__media"><cm-img name="stock-cucina-isola" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
             <span class="altri__name">Cucine</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
         <li>
-          <a class="altri__card" href="@base/divani-e-poltrone/">
-            <div class="altri__media"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Divani e poltrone</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/letti/">
-            <div class="altri__media"><cm-img name="stock-letto-imbottito" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Letti</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/armadi/">
-            <div class="altri__media"><cm-img name="notte-armadio-bianco-maniglia-scura" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Armadi e cabine</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/camerette/">
-            <div class="altri__media"><cm-img name="stock-cameretta" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Camerette</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
           <a class="altri__card" href="@base/soggiorno/">
-            <div class="altri__media"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <div class="altri__media"><cm-img name="stock-mobile-tv" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
             <span class="altri__name">Soggiorno</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
         <li>
-          <a class="altri__card" href="@base/su-misura/">
-            <div class="altri__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Su misura</span>
+          <a class="altri__card" href="@base/divani-e-poltrone/">
+            <div class="altri__media"><cm-img name="stock-divano-pelle" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <span class="altri__name">Divani e poltrone</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
       </ul>
     </section>
 
-    <!--PARTIAL:contatti-->
+    <!--PARTIAL:prenota-->
   </main>
 
   <!--PARTIAL:footer-->

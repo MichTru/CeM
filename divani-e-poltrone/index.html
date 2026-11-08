@@ -81,51 +81,6 @@
       </div>
     </section>
 
-    <section class="section tipi" id="tipi" aria-labelledby="tipi-title">
-      <h2 class="h-display tipi__title" id="tipi-title">Che divano cerchi?</h2>
-      <ul class="tipi__list tipi__list--4">
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="angolare">
-            <div class="tipo__media"><cm-img name="stock-divano-angolare" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Angolari</h3>
-              <p>Per chi è in tanti, o ama allungarsi: con penisola o ad angolo.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="lineare">
-            <div class="tipo__media"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Lineari</h3>
-              <p>Due, tre o quattro posti, da centrare sulla parete giusta.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="letto">
-            <div class="tipo__media"><cm-img name="stock-divano-letto" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Divani letto</h3>
-              <p>Un divano di giorno, un letto vero per gli ospiti di notte.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="poltrona">
-            <div class="tipo__media"><cm-img name="stock-poltrona" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Poltrone e relax</h3>
-              <p>La poltrona da lettura o quella con il movimento relax.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-      </ul>
-    </section>
     <section class="section guida" id="percorso" aria-labelledby="guida-title">
       <div class="guida__card">
         <div class="guida__intro">
@@ -137,19 +92,20 @@
           <noscript><p>Il percorso guidato funziona con JavaScript attivo: in alternativa sfoglia le proposte qui sotto.</p></noscript>
         </div>
       </div>
-      <script type="application/json" id="guida-data">{"form":"Zona giorno","nome":"Divani e poltrone","domande":[{"id":"posti","testo":"Quanti siete sul divano?","peso":2,"opzioni":[{"v":"due","label":"In due"},{"v":"tre","label":"Tre o quattro"},{"v":"famiglia","label":"Tutta la famiglia, e gli amici"}]},{"id":"forma","testo":"Che forma preferisci?","peso":2,"opzioni":[{"v":"lineare","label":"Lineare"},{"v":"angolare","label":"Angolare o con penisola"},{"v":"boh","label":"Consigliatemi voi","jolly":true}]},{"id":"funzione","testo":"Cosa deve saper fare?","peso":3,"opzioni":[{"v":"relax","label":"Solo farmi rilassare"},{"v":"letto","label":"Diventare un letto per gli ospiti"},{"v":"reclinabile","label":"Schienali e poggiapiedi relax"}]},{"id":"rivestimento","testo":"Che rivestimento ti piace?","peso":1,"opzioni":[{"v":"tessuto","label":"Tessuto"},{"v":"velluto","label":"Velluto"},{"v":"pelle","label":"Pelle"},{"v":"sfoderabile","label":"Sfoderabile","nota":"Con bambini o animali in casa"}]}],"proposte":[{"id":"divano-velluto","tipo":"lineare","tag":{"posti":["tre"],"forma":["lineare"],"funzione":["relax"],"rivestimento":["velluto"]},"titolo":"Tre posti in velluto"},{"id":"divano-angolare-vetrata","tipo":"angolare","tag":{"posti":["famiglia","tre"],"forma":["angolare"],"funzione":["relax"],"rivestimento":["tessuto","sfoderabile"]},"titolo":"Angolare per tutta la famiglia"},{"id":"divano-angolare-penisola","tipo":"angolare","tag":{"posti":["tre","famiglia"],"forma":["angolare"],"funzione":["relax"],"rivestimento":["tessuto","sfoderabile"]},"titolo":"Con penisola, per allungarsi"},{"id":"divano-letto","tipo":"letto","tag":{"posti":["due","tre"],"forma":["lineare"],"funzione":["letto"],"rivestimento":["tessuto","sfoderabile"]},"titolo":"Divano letto con materasso vero"},{"id":"divano-pelle-relax","tipo":"lineare","tag":{"posti":["due","tre"],"forma":["lineare"],"funzione":["reclinabile"],"rivestimento":["pelle"]},"titolo":"Pelle con movimento relax"},{"id":"divano-due-posti","tipo":"lineare","tag":{"posti":["due"],"forma":["lineare"],"funzione":["relax"],"rivestimento":["tessuto","velluto"]},"titolo":"Due posti compatto"},{"id":"poltrona-lettura","tipo":"poltrona","tag":{"posti":["due"],"forma":["lineare"],"funzione":["relax","reclinabile"],"rivestimento":["tessuto","pelle","velluto"]},"titolo":"Poltrona da lettura"}]}</script>
+      <script type="application/json" id="guida-data">{"form":"Zona giorno","nome":"Divani e poltrone","domande":[{"id":"posti","testo":"Quanti siete sul divano?","peso":2,"opzioni":[{"v":"due","label":"In due"},{"v":"tre","label":"Tre o quattro"},{"v":"famiglia","label":"Tutta la famiglia, e gli amici"}]},{"id":"forma","testo":"Che forma preferisci?","peso":2,"opzioni":[{"v":"lineare","label":"Lineare"},{"v":"angolare","label":"Angolare o con penisola"},{"v":"boh","label":"Consigliatemi voi","jolly":true}]},{"id":"funzione","testo":"Cosa deve saper fare?","peso":3,"opzioni":[{"v":"relax","label":"Solo farmi rilassare"},{"v":"letto","label":"Diventare un letto per gli ospiti"},{"v":"reclinabile","label":"Schienali e poggiapiedi relax"}]},{"id":"rivestimento","testo":"Che rivestimento ti piace?","peso":1,"opzioni":[{"v":"tessuto","label":"Tessuto"},{"v":"velluto","label":"Velluto"},{"v":"pelle","label":"Pelle"},{"v":"sfoderabile","label":"Sfoderabile","nota":"Con bambini o animali in casa"}]}],"proposte":[{"id":"divano-velluto","tipo":"lineare","tag":{"posti":["tre"],"forma":["lineare"],"funzione":["relax"],"rivestimento":["velluto"]},"titolo":"Tre posti in velluto"},{"id":"divano-angolare-penisola","tipo":"angolare","tag":{"posti":["tre","famiglia"],"forma":["angolare"],"funzione":["relax"],"rivestimento":["tessuto","sfoderabile"]},"titolo":"Con penisola, per allungarsi"},{"id":"divano-letto","tipo":"letto","tag":{"posti":["due","tre"],"forma":["lineare"],"funzione":["letto"],"rivestimento":["tessuto","sfoderabile"]},"titolo":"Divano letto con materasso vero"},{"id":"divano-pelle-relax","tipo":"lineare","tag":{"posti":["due","tre"],"forma":["lineare"],"funzione":["reclinabile"],"rivestimento":["pelle"]},"titolo":"Pelle con movimento relax"},{"id":"divano-due-posti","tipo":"lineare","tag":{"posti":["due"],"forma":["lineare"],"funzione":["relax"],"rivestimento":["tessuto","velluto"]},"titolo":"Due posti compatto"},{"id":"poltrona-lettura","tipo":"poltrona","tag":{"posti":["due"],"forma":["lineare"],"funzione":["relax","reclinabile"],"rivestimento":["tessuto","pelle","velluto"]},"titolo":"Poltrona da lettura"}]}</script>
     </section>
     <section class="section proposte" id="proposte" aria-labelledby="proposte-title">
       <div class="section__head section__head--row">
-        <h2 class="h-display" id="proposte-title">Le proposte</h2>
+        <h2 class="h-display" id="proposte-title">Che divano cerchi?</h2>
         <div class="filters" role="group" aria-label="Filtra per tipo">
-          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti">Tutte</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="angolare">Angolari</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="lineare">Lineari</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="letto">Divani letto</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="poltrona">Poltrone e relax</button>
+          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti" data-desc="">Tutte</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="angolare" data-desc="Per chi è in tanti, o ama allungarsi: con penisola o ad angolo.">Angolari</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="lineare" data-desc="Due, tre o quattro posti, da centrare sulla parete giusta.">Lineari</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="letto" data-desc="Un divano di giorno, un letto vero per gli ospiti di notte.">Divani letto</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="poltrona" data-desc="La poltrona da lettura o quella con il movimento relax.">Poltrone e relax</button>
         </div>
       </div>
+      <p class="proposte__desc" id="proposte-desc" aria-live="polite"></p>
       <div class="cards3 proposte__grid" id="proposte-grid">
         <article class="pcard reveal-card" data-tipo="lineare" data-id="divano-velluto">
           <div class="pcard__media"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
@@ -157,18 +113,8 @@
             <span class="pcard__brand">Lineari</span>
             <h3 class="pcard__title">Tre posti in velluto</h3>
             <p>Seduta profonda, cuscini morbidi e un velluto che cattura la luce, con la poltrona coordinata.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Felis · Samoa · Zamagna</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Tre posti in velluto (divani e poltrone).">La voglio vedere</button>
-          </div>
-        </article>
-        <article class="pcard reveal-card" data-tipo="angolare" data-id="divano-angolare-vetrata">
-          <div class="pcard__media"><cm-img name="giorno-divano-angolare-vetrata" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
-          <div class="pcard__body">
-            <span class="pcard__brand">Angolari</span>
-            <h3 class="pcard__title">Angolare per tutta la famiglia</h3>
-            <p>Una grande composizione ad angolo in tessuto chiaro, con posto per tutti e i tavolini al centro.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Felis · Samoa · Zamagna</p>
-            <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Angolare per tutta la famiglia (divani e poltrone).">La voglio vedere</button>
           </div>
         </article>
         <article class="pcard reveal-card" data-tipo="angolare" data-id="divano-angolare-penisola">
@@ -177,7 +123,7 @@
             <span class="pcard__brand">Angolari</span>
             <h3 class="pcard__title">Con penisola, per allungarsi</h3>
             <p>La penisola trasforma un posto in una chaise longue: per leggere o guardare un film con le gambe distese.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Felis · Samoa · Zamagna</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Con penisola, per allungarsi (divani e poltrone).">La voglio vedere</button>
           </div>
         </article>
@@ -187,7 +133,7 @@
             <span class="pcard__brand">Divani letto</span>
             <h3 class="pcard__title">Divano letto con materasso vero</h3>
             <p>Di giorno un divano comodo, di notte un letto con un materasso alto, che si apre in un gesto.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Felis · Samoa · Zamagna</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Divano letto con materasso vero (divani e poltrone).">La voglio vedere</button>
           </div>
         </article>
@@ -197,7 +143,7 @@
             <span class="pcard__brand">Lineari</span>
             <h3 class="pcard__title">Pelle con movimento relax</h3>
             <p>Schienali reclinabili e poggiapiedi che si alzano, in una pelle morbida che migliora con gli anni.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Felis · Samoa · Zamagna</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Pelle con movimento relax (divani e poltrone).">La voglio vedere</button>
           </div>
         </article>
@@ -207,7 +153,7 @@
             <span class="pcard__brand">Lineari</span>
             <h3 class="pcard__title">Due posti compatto</h3>
             <p>Proporzioni giuste per i soggiorni piccoli, braccioli sottili e una seduta che non rinuncia al comfort.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Felis · Samoa · Zamagna</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Due posti compatto (divani e poltrone).">La voglio vedere</button>
           </div>
         </article>
@@ -217,11 +163,12 @@
             <span class="pcard__brand">Poltrone e relax</span>
             <h3 class="pcard__title">Poltrona da lettura</h3>
             <p>Lo schienale alto e un buon bracciolo: il posto dove finire un libro, accanto a una lampada.</p>
-            <p class="pcard__brands"><span>In showroom</span> Voltan · Cinquanta3 · Felis · Samoa · Zamagna</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona giorno" data-msg="Vorrei vedere in showroom: Poltrona da lettura (divani e poltrone).">La voglio vedere</button>
           </div>
         </article>
       </div>
+      <a class="proposte__misura" href="@base/su-misura/"><span>Ogni proposta si adatta alle tue misure: i pezzi che mancano li costruiamo nella nostra falegnameria di Massa Lombarda.</span> <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
     </section>
     <section class="section extra" aria-labelledby="extra-title">
       <div class="extra__card reveal-card">
@@ -234,45 +181,13 @@
         </div>
       </div>
     </section>
-    <section class="section plus" aria-label="Su misura">
-      <a class="plus__card" href="@base/su-misura/">
-        <div class="plus__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 860px) 100vw, 40vw" alt=""></cm-img></div>
-        <div class="plus__body">
-          <span class="tag">Falegnameria propria</span>
-          <h2 class="plus__title">Serve un pezzo in più?<br>Lo facciamo su misura.</h2>
-          <p>Nella nostra falegnameria di Massa Lombarda adattiamo e completiamo i mobili, sulle misure di casa tua.</p>
-          <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-        </div>
-      </a>
-    </section>
     <section class="section altri" aria-labelledby="altri-title">
-      <h2 class="h-display altri__title" id="altri-title">Cos'altro cerchi?</h2>
+      <h2 class="altri__title" id="altri-title">Potrebbe interessarti anche</h2>
       <ul class="altri__list">
         <li>
-          <a class="altri__card" href="@base/cucine/">
-            <div class="altri__media"><cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Cucine</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/letti/">
-            <div class="altri__media"><cm-img name="stock-letto-imbottito" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Letti</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/armadi/">
-            <div class="altri__media"><cm-img name="notte-armadio-bianco-maniglia-scura" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Armadi e cabine</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/camerette/">
-            <div class="altri__media"><cm-img name="stock-cameretta" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Camerette</span>
+          <a class="altri__card" href="@base/soggiorno/">
+            <div class="altri__media"><cm-img name="stock-mobile-tv" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <span class="altri__name">Soggiorno</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
@@ -284,23 +199,16 @@
           </a>
         </li>
         <li>
-          <a class="altri__card" href="@base/soggiorno/">
-            <div class="altri__media"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Soggiorno</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/su-misura/">
-            <div class="altri__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Su misura</span>
+          <a class="altri__card" href="@base/letti/">
+            <div class="altri__media"><cm-img name="stock-letto-legno" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <span class="altri__name">Letti</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
         </li>
       </ul>
     </section>
 
-    <!--PARTIAL:contatti-->
+    <!--PARTIAL:prenota-->
   </main>
 
   <!--PARTIAL:footer-->

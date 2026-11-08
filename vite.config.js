@@ -25,7 +25,8 @@ function picture(attrs) {
   return `<picture class="pic ${cls}" style="--lqip:url('${img.lqip}');aspect-ratio:${img.w}/${img.h}">` +
     `<source type="image/avif" srcset="${set('avif')}" sizes="${sizes}">` +
     `<source type="image/webp" srcset="${set('webp')}" sizes="${sizes}">` +
-    `<img src="@base/img/${name}-${mid}.webp" width="${img.w}" height="${img.h}" alt="${alt}" loading="${loading}" decoding="async"${prio ? ` fetchpriority="${prio}"` : ''}>` +
+    // le immagini fuori dalla prima schermata scaricano dopo la foto principale
+    `<img src="@base/img/${name}-${mid}.webp" width="${img.w}" height="${img.h}" alt="${alt}" loading="${loading}" decoding="async" fetchpriority="${prio || (loading === 'lazy' ? 'low' : 'auto')}">` +
     `</picture>` +
     (img.stock && !/\bnobadge\b/.test(attrs) ? `<span class="ispirazione">Foto d'ispirazione</span>` : '');
 }
@@ -46,6 +47,7 @@ function cmHtml() {
       handler(html) {
         return html
           .replace(/<!--PARTIAL:([a-z]+)-->/g, (_, n) => partial(n))
+          .replace(/<!--PARTIAL:([a-z]+)-->/g, (_, n) => partial(n)) // partial dentro i partial
           .replace(/<cm-img([^>]*)><\/cm-img>/g, (_, a) => picture(a))
           .replace('<!--LOGO-INTRO-->', logoInline)
           .replaceAll('@base/', base);
@@ -68,6 +70,7 @@ export default defineConfig({
         ...Object.fromEntries(categorie.map((a) => [a.slug, resolve(import.meta.dirname, `${a.slug}/index.html`)])),
         crediti: resolve(import.meta.dirname, 'crediti.html'),
         ristrutturi: resolve(import.meta.dirname, 'ristrutturi/index.html'),
+        galleria: resolve(import.meta.dirname, 'galleria/index.html'),
       },
     },
   },

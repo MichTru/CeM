@@ -22,6 +22,12 @@ export function initRooms() {
 // I video in loop: poster e video si caricano solo vicino allo schermo,
 // e partono solo quando sono visibili.
 export function initLoops() {
+  // poster e video partono dopo il caricamento della pagina, per non rubare banda alla foto principale
+  if (document.readyState !== 'complete') { addEventListener('load', () => setTimeout(startLoops, 1200), { once: true }); return; }
+  setTimeout(startLoops, 600);
+}
+
+function startLoops() {
   const vids = [...document.querySelectorAll('video.loop')];
   const near = new IntersectionObserver((entries) => {
     entries.forEach(({ target: v, isIntersecting }) => {

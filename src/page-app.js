@@ -5,6 +5,7 @@ import { initConsent } from './js/consent.js';
 import { initContacts } from './js/contacts.js';
 import { initReveals } from './js/reveal.js';
 import { initGuida, initProposte } from './js/guida.js';
+import { initLoops } from './js/rooms.js';
 
 document.querySelectorAll('[data-year]').forEach((el) => (el.textContent = new Date().getFullYear()));
 
@@ -16,6 +17,9 @@ initContacts();
 initReveals();
 initGuida();
 initProposte();
+// la galleria (con l'elenco delle immagini) si carica solo dove c'è
+if (document.getElementById('grid')) import('./js/gallery.js').then((m) => m.initGallery());
+initLoops();
 
 // Hero della pagina: entrata del titolo e parallasse leggera
 const title = document.querySelector('.phero__title');

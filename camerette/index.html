@@ -81,59 +81,25 @@
       </div>
     </section>
 
-    <section class="section tipi" id="tipi" aria-labelledby="tipi-title">
-      <h2 class="h-display tipi__title" id="tipi-title">Che cameretta cerchi?</h2>
-      <ul class="tipi__list tipi__list--3">
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="bambini">
-            <div class="tipo__media"><cm-img name="stock-cameretta" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Per bambini</h3>
-              <p>Colori, contenitori bassi e tanto spazio per giocare.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="ragazzi">
-            <div class="tipo__media"><cm-img name="stock-cameretta-ragazzi" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Per ragazzi</h3>
-              <p>Una scrivania vera, più ordine e un letto da grandi.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="tipo reveal-card" href="#proposte" data-tipo="castello">
-            <div class="tipo__media"><cm-img name="stock-letto-castello" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 25vw" alt=""></cm-img></div>
-            <div class="tipo__body">
-              <h3 class="tipo__name">Castelli e soppalchi</h3>
-              <p>Due letti nello spazio di uno, o un letto in alto.</p>
-            </div>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-      </ul>
-    </section>
     <section class="section proposte" id="proposte" aria-labelledby="proposte-title">
       <div class="section__head section__head--row">
-        <h2 class="h-display" id="proposte-title">Le proposte</h2>
+        <h2 class="h-display" id="proposte-title">Che cameretta cerchi?</h2>
         <div class="filters" role="group" aria-label="Filtra per tipo">
-          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti">Tutte</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="bambini">Per bambini</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="ragazzi">Per ragazzi</button>
-          <button type="button" class="filter" aria-pressed="false" data-pf="castello">Castelli e soppalchi</button>
+          <button type="button" class="filter is-on" aria-pressed="true" data-pf="tutti" data-desc="">Tutte</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="bambini" data-desc="Colori, contenitori bassi e tanto spazio per giocare.">Per bambini</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="ragazzi" data-desc="Una scrivania vera, più ordine e un letto da grandi.">Per ragazzi</button>
+          <button type="button" class="filter" aria-pressed="false" data-pf="castello" data-desc="Due letti nello spazio di uno, o un letto in alto.">Castelli e soppalchi</button>
         </div>
       </div>
+      <p class="proposte__desc" id="proposte-desc" aria-live="polite"></p>
       <div class="cards3 proposte__grid" id="proposte-grid">
         <article class="pcard reveal-card" data-tipo="bambini" data-id="cameretta-bambini">
-          <div class="pcard__media"><cm-img name="stock-cameretta" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
+          <div class="pcard__media"><cm-img name="stock-cameretta-soffitta" sizes="(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 33vw" alt=""></cm-img></div>
           <div class="pcard__body">
             <span class="pcard__brand">Per bambini</span>
             <h3 class="pcard__title">Cameretta per giocare</h3>
             <p>Contenitori bassi alla loro altezza, colori calmi e il pavimento libero per giocare.</p>
-            <p class="pcard__brands"><span>In showroom</span> Nidi · Albamobili · Cinquanta3 · Voltan</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona notte" data-msg="Vorrei vedere in showroom: Cameretta per giocare (camerette).">La voglio vedere</button>
           </div>
         </article>
@@ -143,7 +109,7 @@
             <span class="pcard__brand">Per ragazzi</span>
             <h3 class="pcard__title">La stanza per studiare</h3>
             <p>Una scrivania vera con la luce giusta, una libreria e un letto da grandi.</p>
-            <p class="pcard__brands"><span>In showroom</span> Nidi · Albamobili · Cinquanta3 · Voltan</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona notte" data-msg="Vorrei vedere in showroom: La stanza per studiare (camerette).">La voglio vedere</button>
           </div>
         </article>
@@ -153,43 +119,19 @@
             <span class="pcard__brand">Castelli e soppalchi</span>
             <h3 class="pcard__title">Castello o soppalco</h3>
             <p>Due letti nello spazio di uno, oppure il letto in alto e sotto la scrivania.</p>
-            <p class="pcard__brands"><span>In showroom</span> Nidi · Albamobili · Cinquanta3 · Voltan</p>
+            
             <button type="button" class="btn btn--ghost btn--sm" data-prefill data-ambiente="Zona notte" data-msg="Vorrei vedere in showroom: Castello o soppalco (camerette).">La voglio vedere</button>
           </div>
         </article>
       </div>
-    </section>
-    <section class="section plus" aria-label="Su misura">
-      <a class="plus__card" href="@base/su-misura/">
-        <div class="plus__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 860px) 100vw, 40vw" alt=""></cm-img></div>
-        <div class="plus__body">
-          <span class="tag">Falegnameria propria</span>
-          <h2 class="plus__title">Serve un pezzo in più?<br>Lo facciamo su misura.</h2>
-          <p>Nella nostra falegnameria di Massa Lombarda adattiamo e completiamo i mobili, sulle misure di casa tua.</p>
-          <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-        </div>
-      </a>
+      <a class="proposte__misura" href="@base/su-misura/"><span>Ogni proposta si adatta alle tue misure: i pezzi che mancano li costruiamo nella nostra falegnameria di Massa Lombarda.</span> <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span></a>
     </section>
     <section class="section altri" aria-labelledby="altri-title">
-      <h2 class="h-display altri__title" id="altri-title">Cos'altro cerchi?</h2>
+      <h2 class="altri__title" id="altri-title">Potrebbe interessarti anche</h2>
       <ul class="altri__list">
         <li>
-          <a class="altri__card" href="@base/cucine/">
-            <div class="altri__media"><cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Cucine</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/divani-e-poltrone/">
-            <div class="altri__media"><cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Divani e poltrone</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
           <a class="altri__card" href="@base/letti/">
-            <div class="altri__media"><cm-img name="stock-letto-imbottito" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <div class="altri__media"><cm-img name="stock-letto-legno" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
             <span class="altri__name">Letti</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
@@ -202,22 +144,8 @@
           </a>
         </li>
         <li>
-          <a class="altri__card" href="@base/zona-pranzo/">
-            <div class="altri__media"><cm-img name="stock-tavolo-pranzo" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Zona pranzo</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
-          <a class="altri__card" href="@base/soggiorno/">
-            <div class="altri__media"><cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
-            <span class="altri__name">Soggiorno</span>
-            <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
-          </a>
-        </li>
-        <li>
           <a class="altri__card" href="@base/su-misura/">
-            <div class="altri__media"><cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
+            <div class="altri__media"><cm-img name="stock-legno-lavorazione" sizes="(max-width: 600px) 50vw, 15vw" alt="" nobadge></cm-img></div>
             <span class="altri__name">Su misura</span>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </a>
@@ -225,7 +153,7 @@
       </ul>
     </section>
 
-    <!--PARTIAL:contatti-->
+    <!--PARTIAL:prenota-->
   </main>
 
   <!--PARTIAL:footer-->

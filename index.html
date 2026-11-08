@@ -147,43 +147,43 @@
       </div>
 
       <div class="bento">
-        <a class="bento__card bento__card--feature" href="#galleria" data-filter="cucine">
+        <a class="bento__card bento__card--feature" href="@base/cucine/#proposte">
           <div class="bento__media">
-            <cm-img name="cucina-isola-salvia-rovere-vetrine" sizes="(max-width: 860px) 100vw, 26vw" alt=""></cm-img>
+            <cm-img name="cucina-loft-isola-cemento" sizes="(max-width: 860px) 100vw, 26vw" alt=""></cm-img>
           </div>
           <div class="bento__body">
             <span class="tag">In evidenza</span>
-            <h2 class="bento__title">Isola salvia<br>e rovere</h2>
+            <h2 class="bento__title">Loft con isola<br>in cemento</h2>
             <span class="bento__meta">Cucine</span>
           </div>
         </a>
 
-        <a class="bento__card bento__card--misura" href="@base/su-misura/">
+        <a class="bento__card bento__card--misura" href="@base/cucine/#percorso">
           <div class="bento__head">
-            <h2 class="bento__title">Su misura</h2>
+            <h2 class="bento__title">Trova la tua cucina</h2>
             <span class="round-arrow" aria-hidden="true"><svg class="ico"><use href="#i-arrow"/></svg></span>
           </div>
           <div class="bento__media bento__media--inset">
-            <cm-img name="su-misura-dettaglio-maniglia" sizes="(max-width: 860px) 100vw, 24vw" alt="Dettaglio di un cassetto in rovere con maniglia in ottone"></cm-img>
+            <cm-img name="stock-cucina-penisola" sizes="(max-width: 860px) 100vw, 24vw" alt="" nobadge></cm-img>
           </div>
         </a>
 
         <div class="bento__card bento__card--close">
           <h2 class="bento__title bento__title--over">Da vicino</h2>
           <div class="bento__media">
-            <cm-img name="giorno-divano-velluto-verde-lampada" sizes="(max-width: 860px) 100vw, 22vw" class="pic--close"></cm-img>
+            <cm-img name="giorno-parete-attrezzata-geometrica" sizes="(max-width: 860px) 100vw, 22vw" class="pic--close"></cm-img>
           </div>
-          <div class="hotspot" style="--x:18%;--y:24%">
-            <button type="button" aria-expanded="false" aria-describedby="hs-1" aria-label="Dettaglio: lampada"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
-            <span class="hotspot__label" id="hs-1" role="tooltip">Lampada a sfere in vetro opale</span>
+          <div class="hotspot" style="--x:24%;--y:34%">
+            <button type="button" aria-expanded="false" aria-describedby="hs-1" aria-label="Dettaglio: moduli"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            <span class="hotspot__label" id="hs-1" role="tooltip">Moduli geometrici in legno e laccato</span>
           </div>
-          <div class="hotspot" style="--x:40%;--y:62%">
-            <button type="button" aria-expanded="false" aria-describedby="hs-2" aria-label="Dettaglio: divano"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
-            <span class="hotspot__label" id="hs-2" role="tooltip">Divano in velluto verde salvia</span>
+          <div class="hotspot" style="--x:58%;--y:58%">
+            <button type="button" aria-expanded="false" aria-describedby="hs-2" aria-label="Dettaglio: mobile TV"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            <span class="hotspot__label hotspot__label--left" id="hs-2" role="tooltip">Mobile TV sospeso</span>
           </div>
-          <div class="hotspot" style="--x:80%;--y:66%">
-            <button type="button" aria-expanded="false" aria-describedby="hs-3" aria-label="Dettaglio: poltrona"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
-            <span class="hotspot__label hotspot__label--left" id="hs-3" role="tooltip">Poltrona girevole coordinata</span>
+          <div class="hotspot" style="--x:38%;--y:80%">
+            <button type="button" aria-expanded="false" aria-describedby="hs-3" aria-label="Dettaglio: tappeto"><svg class="ico" aria-hidden="true"><use href="#i-plus"/></svg></button>
+            <span class="hotspot__label" id="hs-3" role="tooltip">Tappeto a pelo corto sui toni del grigio</span>
           </div>
         </div>
       </div>
@@ -207,13 +207,7 @@
     <section class="section galleria" id="galleria" aria-labelledby="galleria-title">
       <div class="section__head section__head--row">
         <h2 class="h-display" id="galleria-title">Galleria</h2>
-        <div class="filters" role="group" aria-label="Filtra per ambiente">
-          <button type="button" class="filter is-on" aria-pressed="true" data-f="tutti">Tutti</button>
-          <button type="button" class="filter" aria-pressed="false" data-f="cucine">Cucine</button>
-          <button type="button" class="filter" aria-pressed="false" data-f="giorno">Zona giorno</button>
-          <button type="button" class="filter" aria-pressed="false" data-f="notte">Zona notte</button>
-          <button type="button" class="filter" aria-pressed="false" data-f="misura">Su misura</button>
-        </div>
+        <p class="lead galleria__lead">Ambienti da cui partire: le foto complete sono nella galleria.</p>
       </div>
 
       <!--PARTIAL:galleria-->
@@ -267,8 +261,14 @@
           <p>Siamo una realtà piccola, e ne siamo contenti: chi ti accoglie è anche chi ti consiglia, segue il progetto, ti consegna il risultato e resta a disposizione dopo la vendita. Proponiamo prodotti avanzati nella tecnologia e nel design, senza perdere di vista il giusto rapporto tra qualità e prezzo.</p>
           <p>L'obiettivo è semplice: dare uno stile alla tua casa e farne il posto dove stai bene, magari cucinando qualcosa insieme o leggendo un libro.</p>
         </div>
-        <div class="chi__media">
-          <div class="ph ph--parallax" data-ph="Showroom di via Baracca"><span>Foto da inserire · Showroom di via Baracca</span></div>
+        <!-- Le due ditte che diventano una. Quando arriva la foto dello showroom, va qui. -->
+        <div class="chi__media chi__due" aria-hidden="true">
+          <span class="due__nome due__nome--a">Cassani<br>Arredamenti</span>
+          <span class="due__piu">+</span>
+          <span class="due__nome due__nome--b">Arredamenti<br>Martignani</span>
+          <span class="due__linea"></span>
+          <img class="due__logo" src="@base/logo/logo-cassani-martignani-light.svg" alt="" width="260" height="58" loading="lazy">
+          <span class="due__dove">Via Francesco Baracca 70 · Lugo</span>
         </div>
       </div>
 
@@ -285,18 +285,12 @@
       </div>
     </section>
 
+    <!--PARTIAL:recensioni-->
     <!--PARTIAL:contatti-->
   </main>
 
   <!--PARTIAL:footer-->
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Galleria a schermo intero" hidden>
-    <div class="lightbox__stage"></div>
-    <button type="button" class="lightbox__close round-btn" aria-label="Chiudi"><svg class="ico" aria-hidden="true"><use href="#i-close"/></svg></button>
-    <button type="button" class="lightbox__prev round-btn" aria-label="Precedente"><svg class="ico ico--flip" aria-hidden="true"><use href="#i-chev"/></svg></button>
-    <button type="button" class="lightbox__next round-btn" aria-label="Successiva"><svg class="ico" aria-hidden="true"><use href="#i-chev"/></svg></button>
-    <p class="lightbox__caption" aria-live="polite"></p>
-  </div>
+  <!--PARTIAL:lightbox-->
 
   <!--PARTIAL:tail-->
 </body>

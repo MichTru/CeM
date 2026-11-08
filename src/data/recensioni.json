@@ -1,0 +1,6 @@
+{
+  "_come_si_usa": "Recensioni vere dalla scheda Google dello showroom, copiate così come sono (testo, nome come appare su Google, stelle, mese). Finché 'items' è vuoto il blocco non compare. 'google_url' è il link alla scheda Google per leggere tutte le recensioni.",
+  "_esempio": { "testo": "Testo della recensione, copiato da Google.", "nome": "Nome come appare su Google", "stelle": 5, "quando": "ottobre 2026" },
+  "google_url": "",
+  "items": []
+}

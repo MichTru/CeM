@@ -12,8 +12,7 @@
   ],
   "sub": "Con isola, a penisola, lineari o ad angolo: progettate sulle tue misure.",
   "hero": "cucina-nera-penisola-legno",
-  "tile": "cucina-isola-salvia-rovere-vetrine",
-  "video": "loop-cucina-isola-salvia",
+  "tile": "stock-cucina-isola",
   "lead": "La cucina è la stanza in cui si passa più tempo, e la scelta che si fa una volta sola. Nel nostro showroom di Lugo la vedi dal vero, apri le ante, tocchi i piani e capisci come si muove la luce sulle finiture.",
   "testo": [
    "Partiamo dal rilievo delle misure a casa tua e dalle tue abitudini: chi cucina, quanto spazio serve, come si apre la stanza sul soggiorno. Poi scegliamo insieme composizione, finiture ed elettrodomestici, e prepariamo il progetto con il preventivo.",
@@ -55,7 +54,12 @@
    }
   ],
   "percorso": "cucine",
-  "extra": "elettrodomestici"
+  "extra": "elettrodomestici",
+  "correlate": [
+   "zona-pranzo",
+   "soggiorno",
+   "su-misura"
+  ]
  },
  {
   "slug": "divani-e-poltrone",
@@ -70,8 +74,7 @@
   ],
   "sub": "Angolari, lineari, letto o relax: provali in showroom prima di scegliere.",
   "hero": "giorno-divano-angolare-vetrata",
-  "tile": "giorno-divano-velluto-verde-lampada",
-  "video": "loop-giorno-velluto-verde",
+  "tile": "stock-divano-pelle",
   "lead": "Un divano si sceglie sedendosi. In showroom provi sedute e schienali, tocchi tessuti, pelli e velluti, e capisci quale misura sta davvero nel tuo soggiorno.",
   "testo": [
    "Ti aiutiamo a scegliere forma, profondità e rivestimento, a valutare se serve un letto per gli ospiti o un meccanismo relax, e a tenere il divano coerente con il resto della zona giorno."
@@ -112,7 +115,12 @@
    }
   ],
   "percorso": "divani",
-  "extra": "complementi"
+  "extra": "complementi",
+  "correlate": [
+   "soggiorno",
+   "zona-pranzo",
+   "letti"
+  ]
  },
  {
   "slug": "letti",
@@ -126,8 +134,8 @@
    "e materassi"
   ],
   "sub": "Imbottiti, contenitore o in legno, con il materasso giusto per te.",
-  "hero": "stock-letto-imbottito",
-  "tile": "stock-letto-imbottito",
+  "hero": "stock-letto-legno",
+  "tile": "stock-letto-legno",
   "lead": "Su un letto passiamo un terzo della vita. In showroom puoi provare i materassi, scegliere la testiera e decidere se ti serve il contenitore, con calma e senza fretta.",
   "testo": [
    "Ti aiutiamo a scegliere misura, struttura e rivestimento, e ad abbinare materasso e rete al tuo modo di dormire. La consegna e il montaggio li segue la nostra squadra."
@@ -170,7 +178,12 @@
    }
   ],
   "percorso": "letti",
-  "extra": "complementi"
+  "extra": "complementi",
+  "correlate": [
+   "armadi",
+   "camerette",
+   "divani-e-poltrone"
+  ]
  },
  {
   "slug": "armadi",
@@ -218,6 +231,11 @@
     "testo": "Una stanza solo per abiti, scarpe e valigie.",
     "img": "stock-cabina-armadio"
    }
+  ],
+  "correlate": [
+   "letti",
+   "camerette",
+   "su-misura"
   ]
  },
  {
@@ -265,6 +283,11 @@
     "testo": "Due letti nello spazio di uno, o un letto in alto.",
     "img": "stock-letto-castello"
    }
+  ],
+  "correlate": [
+   "letti",
+   "armadi",
+   "su-misura"
   ]
  },
  {
@@ -314,7 +337,12 @@
     "img": "stock-madia"
    }
   ],
-  "extra": "complementi"
+  "extra": "complementi",
+  "correlate": [
+   "cucine",
+   "soggiorno",
+   "divani-e-poltrone"
+  ]
  },
  {
   "slug": "soggiorno",
@@ -328,8 +356,8 @@
    "su misura"
   ],
   "sub": "Pareti attrezzate, librerie e mobili porta TV per la tua zona giorno.",
-  "hero": "giorno-parete-attrezzata-geometrica",
-  "tile": "giorno-parete-attrezzata-geometrica",
+  "hero": "stock-soggiorno-scuro",
+  "tile": "stock-mobile-tv",
   "lead": "La parete del soggiorno tiene insieme tutto: televisione, libri, ricordi, quello che non vuoi vedere. La progettiamo perché sia ordinata e leggera, non un muro di ante.",
   "testo": [
    "Scegliamo con te moduli, mensole e finiture, misuriamo la parete e, quando serve, la falegnameria di Massa Lombarda realizza il pezzo che il catalogo non prevede."
@@ -363,7 +391,12 @@
     "img": "stock-mobile-tv"
    }
   ],
-  "extra": "complementi"
+  "extra": "complementi",
+  "correlate": [
+   "divani-e-poltrone",
+   "zona-pranzo",
+   "su-misura"
+  ]
  },
  {
   "slug": "su-misura",
@@ -378,12 +411,17 @@
   ],
   "sub": "Quello che il catalogo non risolve, lo costruiamo a Massa Lombarda.",
   "hero": "su-misura-modulo-rovere",
-  "tile": "su-misura-dettaglio-maniglia",
+  "tile": "stock-legno-lavorazione",
   "lead": "Una nicchia, una mansarda, una parete fuori squadra: a volte il prodotto giusto ha bisogno di un pezzo in più. La nostra falegnameria di Massa Lombarda adatta e completa i mobili dei marchi che trattiamo, o realizza da zero quello che serve.",
   "testo": [
    "Si parte dal rilievo delle misure e dal progetto, poi scegliamo insieme legni, laccature e ferramenta. In falegnameria il progetto diventa mobile, pezzo per pezzo, e il montaggio lo seguiamo noi, fino all'assistenza dopo la consegna."
   ],
   "marchi": [],
-  "tipi": []
+  "tipi": [],
+  "correlate": [
+   "cucine",
+   "armadi",
+   "soggiorno"
+  ]
  }
 ]

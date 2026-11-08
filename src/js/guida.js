@@ -140,12 +140,15 @@ export function initProposte() {
   if (!grid) return;
   const cards = [...grid.querySelectorAll('.pcard')];
   const chips = [...document.querySelectorAll('[data-pf]')];
+  const desc = document.getElementById('proposte-desc');
   const apply = (f) => {
     chips.forEach((b) => {
       const on = b.dataset.pf === f;
       b.classList.toggle('is-on', on);
       b.setAttribute('aria-pressed', on);
+      if (on && desc) desc.textContent = b.dataset.desc || '';
     });
+    grid.scrollTo?.({ left: 0, behavior: reduced ? 'auto' : 'smooth' });
     const before = new Map(cards.filter((c) => !c.classList.contains('is-hidden')).map((c) => [c, c.getBoundingClientRect()]));
     cards.forEach((c) => c.classList.toggle('is-hidden', f !== 'tutti' && c.dataset.tipo !== f));
     if (reduced) return;
