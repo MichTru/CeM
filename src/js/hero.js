@@ -50,7 +50,7 @@ export function initHero() {
   const sub = document.getElementById('hero-sub');
 
   let current = 0;
-  let busy = false;
+  let active = null; // transizione in corso: un nuovo click la chiude subito e parte la successiva
   let auto = null;
   let autoplayOn = !reduced;
   let started = false;
@@ -74,7 +74,7 @@ export function initHero() {
   function placePill(animate) {
     const t = tabs[current];
     const props = { x: t.offsetLeft, y: t.offsetTop, width: t.offsetWidth };
-    if (animate && !reduced) gsap.to(pill, { ...props, duration: 0.75, ease: 'expo.out' });
+    if (animate && !reduced) gsap.to(pill, { ...props, duration: 0.75, ease: 'expo.out', overwrite: 'auto' });
     else gsap.set(pill, props);
   }
 
@@ -83,12 +83,13 @@ export function initHero() {
   shape();
 
   // --- Sipario a lamelle ------------------------------------------------------
-  async function curtain(slide, forward, done) {
+  async function curtain(slide, forward, ctx) {
     const pic = slide.querySelector('.pic');
     const img = slide.querySelector('img');
     if (!img.complete || !img.naturalWidth) {
       try { await Promise.race([img.decode(), new Promise((r) => setTimeout(r, 900))]); } catch { /* ignorato */ }
     }
+    if (ctx.ended) return; // nel frattempo è stata scelta un'altra tab
     const src = img.currentSrc || img.src;
     const W = slide.offsetWidth;
     const H = slide.offsetHeight;
@@ -113,33 +114,31 @@ export function initHero() {
       strips.push(el);
     }
     slide.appendChild(wrap);
+    ctx.wrap = wrap;
     pic.style.opacity = '0';
 
     const order = { each: 0.065, from: forward ? 'start' : 'end' };
-    gsap.fromTo(wrap, { scale: 1.06 }, { scale: 1, duration: 1.5, ease: 'expo.out' });
-    gsap.fromTo(strips.map((e) => e.firstChild), { opacity: 1 }, { opacity: 0, duration: 1.1, ease: 'power2.out', stagger: order });
-    gsap.fromTo(strips,
+    ctx.tweens.push(gsap.fromTo(wrap, { scale: 1.06 }, { scale: 1, duration: 1.5, ease: 'expo.out' }));
+    ctx.tweens.push(gsap.fromTo(strips.map((e) => e.firstChild), { opacity: 1 }, { opacity: 0, duration: 1.1, ease: 'power2.out', stagger: order }));
+    ctx.tweens.push(gsap.fromTo(strips,
       { rotationY: forward ? -88 : 88, transformPerspective: 1400, transformOrigin: forward ? '0% 50%' : '100% 50%' },
       {
         rotationY: 0,
         duration: 1.0,
         ease: 'power3.out',
         stagger: order,
-        onComplete() {
-          pic.style.opacity = '';
-          wrap.remove();
-          done();
-        },
-      });
+        onComplete: () => ctx.done(),
+      }));
   }
 
   // --- Cambio tab -------------------------------------------------------------
   function select(i, { user = false, focus = false } = {}) {
     if (user) stopAutoplay();
-    if (i === current || busy) return;
+    if (i === current) return;
+    // la transizione precedente si chiude al suo stato finale, senza aspettarla
+    active?.finish();
     const prev = current;
     current = i;
-    busy = true;
 
     tabs.forEach((t, k) => {
       const on = k === i;
@@ -159,26 +158,45 @@ export function initHero() {
     const forward = i > prev;
     to.classList.add('is-entering');
 
+    const ctx = { tweens: [], wrap: null, ended: false };
     const done = () => {
+      if (ctx.ended) return;
+      ctx.ended = true;
+      ctx.tweens.forEach((t) => t.kill());
+      ctx.wrap?.remove();
+      to.querySelector('.pic').style.opacity = '';
       from.classList.remove('is-active');
       gsap.set(from.querySelector('img'), { scale: 1 });
       to.classList.add('is-active');
       to.classList.remove('is-entering');
       gsap.set(to, { clearProps: 'opacity' });
-      busy = false;
+      if (active === tr) active = null;
       if (autoplayOn && started) runAutoplay();
     };
+    ctx.done = done;
+    const tr = {
+      finish() {
+        done();
+        // testi subito al loro posto
+        gsap.killTweensOf(title.querySelectorAll('.w > span'));
+        gsap.killTweensOf(sub);
+        title.innerHTML = wordsHTML(SLIDES[i].title);
+        sub.textContent = SLIDES[i].sub;
+        gsap.set(sub, { opacity: 1, y: 0 });
+      },
+    };
+    active = tr;
 
     if (reduced) {
-      gsap.fromTo(to, { opacity: 0 }, { opacity: 1, duration: 0.6, ease: 'none', onComplete: done });
+      ctx.tweens.push(gsap.fromTo(to, { opacity: 0 }, { opacity: 1, duration: 0.6, ease: 'none', onComplete: done }));
       title.innerHTML = wordsHTML(SLIDES[i].title);
       sub.textContent = SLIDES[i].sub;
       return;
     }
 
     // La nuova foto entra a lamelle verticali, come una tenda a pannelli
-    curtain(to, forward, done);
-    gsap.fromTo(from.querySelector('img'), { scale: 1 }, { scale: 1.05, duration: 1.2, ease: EASE_MOVE });
+    curtain(to, forward, ctx);
+    ctx.tweens.push(gsap.fromTo(from.querySelector('img'), { scale: 1 }, { scale: 1.05, duration: 1.2, ease: EASE_MOVE }));
 
     // Il titolo si riscrive parola per parola
     const out = title.querySelectorAll('.w > span');
